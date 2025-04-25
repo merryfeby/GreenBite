@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/frameLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -32,7 +30,6 @@
             app:layout_constraintVertical_bias="0.204" />
 
         <EditText
-            android:id="@+id/editTextTextPostalAddress"
             android:layout_width="287dp"
             android:layout_height="33dp"
             android:ems="10"
@@ -58,7 +55,6 @@
             app:layout_constraintVertical_bias="0.263" />
 
         <EditText
-            android:id="@+id/editTextTextEmailAddress2"
             android:layout_width="288dp"
             android:layout_height="52dp"
             android:ems="10"
@@ -84,7 +80,6 @@
             app:layout_constraintVertical_bias="0.366" />
 
         <EditText
-            android:id="@+id/editTextText"
             android:layout_width="293dp"
             android:layout_height="53dp"
             android:ems="10"
@@ -110,7 +105,6 @@
             app:layout_constraintVertical_bias="0.478" />
 
         <EditText
-            android:id="@+id/editTextTextPassword2"
             android:layout_width="287dp"
             android:layout_height="33dp"
             android:ems="10"
@@ -136,7 +130,6 @@
             app:layout_constraintVertical_bias="0.588" />
 
         <EditText
-            android:id="@+id/editTextPhone"
             android:layout_width="287dp"
             android:layout_height="33dp"
             android:ems="10"
@@ -175,7 +168,6 @@
             app:layout_constraintVertical_bias="0.795" />
 
         <EditText
-            android:id="@+id/editTextNumber"
             android:layout_width="287dp"
             android:layout_height="33dp"
             android:ems="10"
@@ -188,7 +180,6 @@
             app:layout_constraintVertical_bias="0.85" />
 
         <Button
-            android:id="@+id/button"
             android:layout_width="291dp"
             android:layout_height="57dp"
             android:backgroundTint="#33C98B"
