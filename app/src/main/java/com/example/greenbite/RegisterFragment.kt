@@ -5,55 +5,42 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
+import com.example.greenbite.databinding.FragmentRegisterBinding
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [RegisterFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class RegisterFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    lateinit var binding: FragmentRegisterBinding
+    val viewModel by viewModels<UserViewModel>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_register, container, false)
-    }
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_register, container, false)
+        viewModel.init()
+        binding.viewModel = viewModel
+        binding.lifecycleOwner = this
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment RegisterFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            RegisterFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
+        binding.buttonRegister1.setOnClickListener(){
+            val email = binding.etEmail.text.toString()
+            val name = binding.etName.text.toString()
+            val password = binding.etPassword.text.toString()
+            val phone = binding.etPhone.text.toString()
+            val address = binding.etAddress.text.toString()
+            val passcode = binding.etPasscode.text.toString()
+
+            if (email == "" || name == "" || password == "" || phone == "" || address == "" || passcode == ""){
+                Toast.makeText(requireContext(), "Please fill all the fields", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
             }
+            viewModel.insertUser(UserEntity(email, name, password, phone, address, passcode))
+            findNavController().navigate(R.id.action_global_loginFragment)
+        }
+
+        return binding.root
     }
 }
