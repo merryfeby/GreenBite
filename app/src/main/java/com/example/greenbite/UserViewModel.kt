@@ -15,9 +15,9 @@ class UserViewModel:ViewModel() {
     val users: LiveData<List<UserEntity>>
         get() = _users
 
-    fun setActiveUser(username: String) {
+    fun setActiveUser(email: String) {
         viewModelScope.launch {
-            val user = App.db.userDao().get(username)
+            val user = App.db.userDao().get(email)
             if (user != null) {
                 _activeUser.value = user!!
             } else {
@@ -41,6 +41,24 @@ class UserViewModel:ViewModel() {
             App.db.userDao().insert(user)
             setActiveUser("")
             refreshList()
+        }
+    }
+
+    fun checkEmailExists(email: String, callback: (Boolean) -> Unit) {
+        viewModelScope.launch {
+            val user = App.db.userDao().get(email)
+            callback(user != null)
+        }
+    }
+
+    fun checkLogin(email: String, password: String, callback: (Boolean) -> Unit) {
+        viewModelScope.launch {
+            val user = App.db.userDao().get(email)
+            if (user != null && user.password == password) {
+                callback(true)
+            } else {
+                callback(false)
+            }
         }
     }
 }

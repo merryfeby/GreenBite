@@ -21,7 +21,7 @@ class LoginFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_login, container, false)
-        binding.btnRegister1.setOnClickListener(){
+        binding.tvRegister.setOnClickListener(){
             findNavController().navigate(R.id.action_global_registerFragment)
         }
         binding.btnLogin1.setOnClickListener(){
@@ -32,9 +32,22 @@ class LoginFragment : Fragment() {
                 Toast.makeText(context, "fields must be filled !", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
-            viewModel.setActiveUser(email)
-            Toast.makeText(context, "Login successful", Toast.LENGTH_SHORT).show()
-            findNavController().navigate(R.id.action_loginFragment_to_homeFragment)
+
+            viewModel.checkEmailExists(email) { exists ->
+                if (!exists) {
+                    Toast.makeText(context, "Email not registered", Toast.LENGTH_SHORT).show()
+                } else {
+                    viewModel.checkLogin(email, password) { success ->
+                        if (success) {
+                            viewModel.setActiveUser(email)
+                            Toast.makeText(context, "Login successful", Toast.LENGTH_SHORT).show()
+                            findNavController().navigate(R.id.action_loginFragment_to_homeFragment)
+                        } else {
+                            Toast.makeText(context, "Incorrect password", Toast.LENGTH_SHORT).show()
+                        }
+                    }
+                }
+            }
         }
         return binding.root
     }
