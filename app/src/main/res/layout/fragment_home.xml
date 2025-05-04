@@ -6,6 +6,9 @@
         <variable
             name="userViewModel"
             type="com.example.greenbite.UserViewModel" />
+        <variable
+            name="menuViewModel"
+            type="com.example.greenbite.MenuViewModel" />
     </data>
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -72,7 +75,7 @@
             app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/btnMore"
             android:layout_width="136dp"
             android:layout_height="48dp"
             android:layout_marginTop="16dp"
@@ -86,8 +89,8 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvMenu"
-            android:layout_width="338dp"
-            android:layout_height="353dp"
+            android:layout_width="386dp"
+            android:layout_height="344dp"
             android:layout_marginTop="12dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.506"
