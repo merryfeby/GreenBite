@@ -38,4 +38,19 @@
     <action
         android:id="@+id/action_global_homeFragment"
         app:destination="@id/homeFragment" />
+    <fragment
+        android:id="@+id/deliveryFragment"
+        android:name="com.example.greenbite.DeliveryFragment"
+        android:label="fragment_delivery"
+        tools:layout="@layout/fragment_delivery" />
+    <fragment
+        android:id="@+id/historyFragment"
+        android:name="com.example.greenbite.HistoryFragment"
+        android:label="fragment_history"
+        tools:layout="@layout/fragment_history" />
+    <fragment
+        android:id="@+id/profleFragment"
+        android:name="com.example.greenbite.ProfleFragment"
+        android:label="fragment_profle"
+        tools:layout="@layout/fragment_profle" />
 </navigation>

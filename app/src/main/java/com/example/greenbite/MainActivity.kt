@@ -28,8 +28,24 @@ class MainActivity : AppCompatActivity() {
 
         binding.bottomNav.setOnItemSelectedListener { item ->
             when (item.itemId) {
-                R.id.home_nav -> {
+                R.id.im_home -> {
                     navController.navigate(R.id.homeFragment)
+                    true
+                }
+                R.id.im_menu -> {
+                    navController.navigate(R.id.menuFragment)
+                    true
+                }
+                R.id.im_delivery -> {
+                    navController.navigate(R.id.deliveryFragment)
+                    true
+                }
+                R.id.im_history -> {
+                    navController.navigate(R.id.historyFragment)
+                    true
+                }
+                R.id.im_profile -> {
+                    navController.navigate(R.id.profleFragment)
                     true
                 }
                 else -> false

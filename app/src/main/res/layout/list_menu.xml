@@ -20,7 +20,7 @@
             android:layout_height="265dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="51dp"
-            android:backgroundTint="#F6F1F1"
+            android:backgroundTint="#FFFFFF"
             app:cornerRadius="10dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
