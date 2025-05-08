@@ -18,4 +18,7 @@ interface MenuDao {
 
     @Insert
     suspend fun insertAllMenu(menu: List<MenuEntity>)
+
+    @Query("SELECT * FROM Menu WHERE category_menu = :category")
+    fun getMenuByCategory(category: String): LiveData<List<MenuEntity>>
 }

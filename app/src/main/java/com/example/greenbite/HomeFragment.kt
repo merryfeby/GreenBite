@@ -6,7 +6,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.greenbite.databinding.FragmentHomeBinding
 
@@ -21,7 +23,7 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         // Inflate the layout for this fragment
-        binding = FragmentHomeBinding.inflate(inflater, container, false)
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_home, container, false)
         binding.lifecycleOwner = viewLifecycleOwner
         binding.userViewModel = userViewModel
 
@@ -30,7 +32,7 @@ class HomeFragment : Fragment() {
         }
 
         binding.btnMore.setOnClickListener(){
-
+            findNavController().navigate(R.id.action_global_menuFragment)
         }
 
         return binding.root
@@ -44,16 +46,13 @@ class HomeFragment : Fragment() {
 
     private fun setupRecyclerView() {
         menuAdapter = MenuAdapter()
-        binding.rvMenu.apply {
-            layoutManager = GridLayoutManager(requireContext(), 2)
-            adapter = menuAdapter
-        }
+        binding.rvMenu.layoutManager = GridLayoutManager(requireContext(), 2)
+        binding.rvMenu.adapter = menuAdapter
     }
 
     private fun observeMenuItems() {
         menuViewModel.topMenuItems.observe(viewLifecycleOwner) { menuItems ->
-            Log.d("HomeFragment", "Menu items received: ${menuItems.size}")
-            menuAdapter.submitList(menuItems)
+            menuAdapter.submitList(menuItems.toMutableList())
         }
     }
 }
