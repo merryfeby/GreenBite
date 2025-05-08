@@ -9,6 +9,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.activityViewModels
@@ -65,25 +66,49 @@ class MenuFragment : Fragment() {
         }
     }
 
-    private fun categoryButton(){
+    private fun categoryButton() {
+        val buttons = listOf(
+            binding.btnAll,
+            binding.btnSmoothie,
+            binding.btnSalad,
+            binding.btnLeanBowl,
+            binding.btnWraps
+        )
+
+        fun setActive(btn:TextView) {
+            buttons.forEach { button ->
+                if (button == btn) {
+                    button.setBackgroundResource(R.drawable.button_active)
+                    button.setTextColor(ContextCompat.getColor(requireContext(), R.color.white))
+                } else {
+                    button.setBackgroundResource(R.drawable.button_inactive)
+                    button.setTextColor(ContextCompat.getColor(requireContext(), R.color.green))
+                }
+            }
+        }
+
         binding.btnAll.setOnClickListener {
             menuViewModel.setCategory("All")
+            setActive(binding.btnAll)
         }
-
         binding.btnSmoothie.setOnClickListener {
             menuViewModel.setCategory("Smoothie")
+            setActive(binding.btnSmoothie)
         }
-
         binding.btnSalad.setOnClickListener {
             menuViewModel.setCategory("Salad")
+            setActive(binding.btnSalad)
         }
-
         binding.btnLeanBowl.setOnClickListener {
             menuViewModel.setCategory("Lean-Bowl")
+            setActive(binding.btnLeanBowl)
+        }
+        binding.btnWraps.setOnClickListener {
+            menuViewModel.setCategory("Wraps")
+            setActive(binding.btnWraps)
         }
 
-        binding.btnWraps.setOnClickListener(){
-            menuViewModel.setCategory("Wraps")
-        }
+        setActive(binding.btnAll)
     }
+
 }

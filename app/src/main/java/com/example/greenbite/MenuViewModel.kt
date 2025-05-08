@@ -28,4 +28,5 @@ class MenuViewModel : ViewModel() {
     fun setCategory(category: String) {
         _currentCategory.value = category
     }
+
 }

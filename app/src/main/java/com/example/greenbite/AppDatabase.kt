@@ -42,9 +42,9 @@ abstract class AppDatabase : RoomDatabase() {
         }
 
         private suspend fun populateDatabase(menuDao: MenuDao) {
-            getDummyMenuItems().forEach { menuItem ->
-                menuDao.insertMenu(menuItem)
-            }
+//            getDummyMenuItems().forEach { menuItem ->
+//                menuDao.insertMenu(menuItem)
+//            }
         }
 
         private fun getDummyMenuItems(): List<MenuEntity> {
