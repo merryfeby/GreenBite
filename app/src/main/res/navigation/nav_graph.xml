@@ -48,4 +48,10 @@
         android:name="com.example.greenbite.MenuFragment"
         android:label="fragment_menu"
         tools:layout="@layout/fragment_menu" />
+    <action
+        android:id="@+id/action_global_menuFragment"
+        app:destination="@id/menuFragment" />
+    <action
+        android:id="@+id/action_global_homeFragment"
+        app:destination="@id/homeFragment" />
 </navigation>
