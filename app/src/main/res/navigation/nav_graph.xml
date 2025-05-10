@@ -49,8 +49,10 @@
         android:label="fragment_history"
         tools:layout="@layout/fragment_history" />
     <fragment
-        android:id="@+id/profleFragment"
-        android:name="com.example.greenbite.ProfleFragment"
-        android:label="fragment_profle"
-        tools:layout="@layout/fragment_profle" />
+        android:id="@+id/profileFragment"
+        android:name="com.example.greenbite.ProfileFragment"
+        android:label="ProfileFragment" />
+    <action
+        android:id="@+id/action_global_profileFragment"
+        app:destination="@id/profileFragment" />
 </navigation>
