@@ -29,6 +29,16 @@
         android:id="@+id/action_global_registerFragment"
         app:destination="@id/registerFragment" />
     <fragment
+        android:id="@+id/menuFragment"
+        android:name="com.example.greenbite.MenuFragment"
+        android:label="MenuFragment" />
+    <action
+        android:id="@+id/action_global_menuFragment"
+        app:destination="@id/menuFragment" />
+    <action
+        android:id="@+id/action_global_homeFragment"
+        app:destination="@id/homeFragment" />
+    <fragment
         android:id="@+id/deliveryFragment"
         android:name="com.example.greenbite.DeliveryFragment"
         android:label="fragment_delivery"
@@ -39,13 +49,10 @@
         android:label="fragment_history"
         tools:layout="@layout/fragment_history" />
     <fragment
-        android:id="@+id/profleFragment"
-        android:name="com.example.greenbite.ProfleFragment"
-        android:label="fragment_profle"
-        tools:layout="@layout/fragment_profle" />
-    <fragment
-        android:id="@+id/menuFragment"
-        android:name="com.example.greenbite.MenuFragment"
-        android:label="fragment_menu"
-        tools:layout="@layout/fragment_menu" />
+        android:id="@+id/profileFragment"
+        android:name="com.example.greenbite.ProfileFragment"
+        android:label="ProfileFragment" />
+    <action
+        android:id="@+id/action_global_profileFragment"
+        app:destination="@id/profileFragment" />
 </navigation>

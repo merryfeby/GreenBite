@@ -9,7 +9,6 @@ import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
-import com.example.greenbite.databinding.FragmentLoginBinding
 import com.example.greenbite.databinding.FragmentRegisterBinding
 
 class RegisterFragment : Fragment() {
@@ -59,6 +58,4 @@ class RegisterFragment : Fragment() {
 
         return binding.root
     }
-
-
 }

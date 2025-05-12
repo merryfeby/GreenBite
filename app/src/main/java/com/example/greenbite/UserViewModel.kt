@@ -61,4 +61,9 @@ class UserViewModel:ViewModel() {
             }
         }
     }
+
+    fun logout() {
+        _activeUser.value = UserEntity("","","","","","")
+
+    }
 }

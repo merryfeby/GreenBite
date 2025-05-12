@@ -36,6 +36,5 @@ class MenuAdapter : ListAdapter<MenuEntity, MenuAdapter.ViewHolder>(menuDiffUtil
         holder.binding.rvNamaMenu.text = menu.nama_menu
         holder.binding.rvRatingMenu.text = menu.rating_menu.toString()
         holder.binding.rvHargaMenu.text = "Rp ${menu.price_menu}"
-        holder.binding.btnAddMenu
     }
 }
