@@ -20,7 +20,7 @@
             android:layout_height="265dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="51dp"
-            android:backgroundTint="#FFFFFF"
+            android:backgroundTint="@color/white"
             app:cornerRadius="10dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -73,6 +73,26 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"
                 android:text="4.8"
+                android:textSize="10sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/rvRatingMenu2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_weight="1"
+                android:text="|"
+                android:textSize="10sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/rvRatingMenu3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_weight="1"
+                android:text="120 Ratings"
                 android:textSize="10sp"
                 android:textStyle="bold" />
 

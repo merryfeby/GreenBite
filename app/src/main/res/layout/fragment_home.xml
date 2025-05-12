@@ -10,9 +10,11 @@
             name="menuViewModel"
             type="com.example.greenbite.MenuViewModel" />
     </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="#F9F8F8"
         tools:context=".HomeFragment">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -92,6 +94,7 @@
             android:layout_width="377dp"
             android:layout_height="514dp"
             android:layout_marginTop="12dp"
+            android:background="#F9F8F8"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.506"
             app:layout_constraintStart_toStartOf="parent"

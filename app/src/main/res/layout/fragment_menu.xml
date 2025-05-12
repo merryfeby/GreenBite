@@ -14,6 +14,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="#F9F8F8"
         tools:context=".MenuFragment">
 
         <TextView
@@ -29,7 +30,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rvAllMenu"
+            android:id="@+id/rv_history"
             android:layout_width="371dp"
             android:layout_height="510dp"
             android:layout_marginTop="40dp"
