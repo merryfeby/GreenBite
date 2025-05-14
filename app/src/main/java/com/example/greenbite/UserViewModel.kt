@@ -64,6 +64,13 @@ class UserViewModel:ViewModel() {
 
     fun logout() {
         _activeUser.value = UserEntity("","","","","","")
+    }
 
+    fun updateUser(user: UserEntity) {
+        viewModelScope.launch {
+            App.db.userDao().updateUser(user)
+            setActiveUser(user.email)
+            refreshList()
+        }
     }
 }

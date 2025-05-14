@@ -30,7 +30,7 @@ class ProfileFragment : Fragment() {
             binding.tvUserEmail.text = "${user?.email ?: "Guest"}"
         }
         binding.btnEditProfile.setOnClickListener {
-
+            findNavController().navigate(R.id.action_profileFragment_to_editProfileFragment)
         }
         binding.btnLogoutProfile.setOnClickListener(){
             Toast.makeText(requireContext(), "Signing out...", Toast.LENGTH_SHORT).show()

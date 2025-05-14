@@ -89,11 +89,11 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvMenu"
-            android:layout_width="377dp"
-            android:layout_height="514dp"
-            android:layout_marginTop="12dp"
+            android:layout_width="378dp"
+            android:layout_height="350dp"
+            android:layout_marginTop="24dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.506"
+            app:layout_constraintHorizontal_bias="0.514"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView15" />
 
@@ -101,10 +101,10 @@
             android:id="@+id/imageView2"
             android:layout_width="394dp"
             android:layout_height="158dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="8dp"
             android:src="@drawable/banner"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.494"
+            app:layout_constraintHorizontal_bias="0.529"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
 
