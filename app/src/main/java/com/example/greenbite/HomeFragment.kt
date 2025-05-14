@@ -35,6 +35,10 @@ class HomeFragment : Fragment() {
             findNavController().navigate(R.id.action_global_menuFragment)
         }
 
+        binding.btnCartHome.setOnClickListener(){
+            findNavController().navigate(R.id.action_homeFragment_to_cartFragment)
+        }
+
         return binding.root
     }
 

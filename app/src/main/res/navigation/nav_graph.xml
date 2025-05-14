@@ -9,7 +9,11 @@
         android:id="@+id/homeFragment"
         android:name="com.example.greenbite.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_cartFragment"
+            app:destination="@id/cartFragment" />
+    </fragment>
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.example.greenbite.LoginFragment"
@@ -63,4 +67,9 @@
         android:id="@+id/editProfileFragment"
         android:name="com.example.greenbite.EditProfileFragment"
         android:label="EditProfileFragment" />
+    <fragment
+        android:id="@+id/cartFragment"
+        android:name="com.example.greenbite.CartFragment"
+        android:label="fragment_cart"
+        tools:layout="@layout/fragment_cart" />
 </navigation>

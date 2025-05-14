@@ -35,11 +35,6 @@ class MenuFragment : Fragment() {
         binding.userViewModel = userViewModel
         binding.menuViewModel = menuViewModel
 
-
-        binding.btnMenuBack.setOnClickListener(){
-            findNavController().navigate(R.id.action_global_homeFragment)
-        }
-
         categoryButton()
 
 
