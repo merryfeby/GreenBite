@@ -46,12 +46,26 @@
     <fragment
         android:id="@+id/menuFragment"
         android:name="com.example.greenbite.MenuFragment"
-        android:label="fragment_menu"
-        tools:layout="@layout/fragment_menu" />
+        android:label="MenuFragment" />
     <action
         android:id="@+id/action_global_menuFragment"
         app:destination="@id/menuFragment" />
     <action
         android:id="@+id/action_global_homeFragment"
         app:destination="@id/homeFragment" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.greenbite.ProfileFragment"
+        android:label="ProfileFragment" >
+        <action
+            android:id="@+id/action_profileFragment_to_editProfileFragment"
+            app:destination="@id/editProfileFragment" />
+    </fragment>
+    <action
+        android:id="@+id/action_global_profileFragment"
+        app:destination="@id/profileFragment" />
+    <fragment
+        android:id="@+id/editProfileFragment"
+        android:name="com.example.greenbite.EditProfileFragment"
+        android:label="EditProfileFragment" />
 </navigation>

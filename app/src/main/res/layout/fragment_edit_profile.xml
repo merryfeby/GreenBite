@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="userViewModel"
+            type="com.example.greenbite.UserViewModel" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/btnSaveEdit"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:backgroundTint="#33C98B"
+        tools:context=".EditProfileFragment">
+
+        <TextView
+            android:id="@+id/textView17"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="44dp"
+            android:layout_marginEnd="156dp"
+            android:fontFamily="sans-serif-black"
+            android:text="Edit Profile"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/imgProfileBackBtn"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/imgProfileBackBtn"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="44dp"
+            android:background="#00FFFFFF"
+            android:src="@drawable/back_svgrepo_com"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView25"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="sans-serif-medium"
+            android:text="Phone Number"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etEditPassword" />
+
+        <Button
+            android:id="@+id/btnEditSave"
+            android:layout_width="332dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="28dp"
+            android:backgroundTint="#33C98B"
+            android:text="Save Changes"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.518"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etEditPosscode" />
+
+        <EditText
+            android:id="@+id/etEditName"
+            android:layout_width="331dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="12dp"
+            android:background="#e0f7e9"
+            android:ems="10"
+            android:inputType="text"
+            android:padding="12dp"
+            android:textColor="#3E3A3A"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.512"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView23" />
+
+        <TextView
+            android:id="@+id/textView24"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="sans-serif-medium"
+            android:text="Email"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etEditName" />
+
+        <EditText
+            android:id="@+id/etEditEmail"
+            android:layout_width="331dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="4dp"
+            android:background="#e0f7e9"
+            android:ems="10"
+            android:inputType="text"
+            android:padding="12dp"
+            android:textColor="#3E3A3A"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.512"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView24" />
+
+        <TextView
+            android:id="@+id/textView28"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="sans-serif-medium"
+            android:text="Password"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etEditEmail" />
+
+        <EditText
+            android:id="@+id/etEditPassword"
+            android:layout_width="331dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="20dp"
+            android:background="#e0f7e9"
+            android:ems="10"
+            android:inputType="textPassword"
+            android:padding="12dp"
+            android:textColor="#3E3A3A"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.512"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView28" />
+
+        <EditText
+            android:id="@+id/etEditPhone"
+            android:layout_width="331dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="12dp"
+            android:background="#e0f7e9"
+            android:ems="10"
+            android:inputType="text"
+            android:padding="12dp"
+            android:textColor="#3E3A3A"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.512"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView25" />
+
+        <TextView
+            android:id="@+id/textView26"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="sans-serif-medium"
+            android:text="Address"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etEditPhone" />
+
+        <EditText
+            android:id="@+id/etEditAddress"
+            android:layout_width="331dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="12dp"
+            android:background="#e0f7e9"
+            android:ems="10"
+            android:inputType="text"
+            android:padding="12dp"
+            android:textColor="#3E3A3A"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.512"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView26" />
+
+        <EditText
+            android:id="@+id/etEditPosscode"
+            android:layout_width="331dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="24dp"
+            android:background="#e0f7e9"
+            android:ems="10"
+            android:inputType="text"
+            android:padding="12dp"
+            android:textColor="#3E3A3A"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.512"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView27" />
+
+        <TextView
+            android:id="@+id/textView27"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="sans-serif-medium"
+            android:text="Posscode"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etEditAddress" />
+
+        <TextView
+            android:id="@+id/textView23"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="84dp"
+            android:fontFamily="sans-serif-medium"
+            android:text="Name"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

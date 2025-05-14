@@ -3,6 +3,7 @@ package com.example.greenbite
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
+import androidx.room.Update
 
 @Dao
 interface UserDao {
@@ -14,4 +15,7 @@ interface UserDao {
 
     @Query("SELECT * FROM users where email = :email")
     suspend fun get(email:String):UserEntity?
+
+    @Update
+    suspend fun updateUser(user: UserEntity)
 }
