@@ -5,15 +5,22 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.sqlite.db.SupportSQLiteDatabase
+import com.example.greenbite.Table.CartDao
+import com.example.greenbite.Table.CartEntity
+import com.example.greenbite.Table.MenuDao
+import com.example.greenbite.Table.MenuEntity
+import com.example.greenbite.Table.UserDao
+import com.example.greenbite.Table.UserEntity
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-@Database(entities = [UserEntity::class, MenuEntity::class], version = 3)
+@Database(entities = [UserEntity::class, MenuEntity::class, CartEntity::class], version = 6)
 abstract class AppDatabase : RoomDatabase() {
 
     abstract fun userDao(): UserDao
     abstract fun menuDao(): MenuDao
+    abstract fun cartDao(): CartDao
 
     companion object {
         @Volatile

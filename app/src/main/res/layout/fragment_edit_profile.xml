@@ -5,14 +5,14 @@
     <data>
         <variable
             name="userViewModel"
-            type="com.example.greenbite.UserViewModel" />
+            type="com.example.greenbite.Table.UserViewModel" />
     </data>
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/btnSaveEdit"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:backgroundTint="#33C98B"
-        tools:context=".EditProfileFragment">
+        tools:context=".Customer.EditProfileFragment">
 
         <TextView
             android:id="@+id/textView17"

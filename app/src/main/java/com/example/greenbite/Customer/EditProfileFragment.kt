@@ -1,4 +1,4 @@
-package com.example.greenbite
+package com.example.greenbite.Customer
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -9,6 +9,9 @@ import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
+import com.example.greenbite.R
+import com.example.greenbite.Table.UserEntity
+import com.example.greenbite.Table.UserViewModel
 import com.example.greenbite.databinding.FragmentEditProfileBinding
 
 

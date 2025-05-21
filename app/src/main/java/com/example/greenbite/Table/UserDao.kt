@@ -1,4 +1,4 @@
-package com.example.greenbite
+package com.example.greenbite.Table
 
 import androidx.room.Dao
 import androidx.room.Insert
@@ -8,13 +8,13 @@ import androidx.room.Update
 @Dao
 interface UserDao {
     @Insert
-    suspend fun insert(user:UserEntity)
+    suspend fun insert(user: UserEntity)
 
     @Query("SELECT * FROM users")
     suspend fun fetch():List<UserEntity>
 
     @Query("SELECT * FROM users where email = :email")
-    suspend fun get(email:String):UserEntity?
+    suspend fun get(email:String): UserEntity?
 
     @Update
     suspend fun updateUser(user: UserEntity)

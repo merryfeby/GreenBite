@@ -5,15 +5,18 @@
     <data>
         <variable
             name="userViewModel"
-            type="com.example.greenbite.UserViewModel" />
+            type="com.example.greenbite.Table.UserViewModel" />
         <variable
             name="menuViewModel"
-            type="com.example.greenbite.MenuViewModel" />
+            type="com.example.greenbite.Table.MenuViewModel" />
+        <variable
+            name="cartViewModel"
+            type="com.example.greenbite.Table.CartViewModel" />
     </data>
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".HomeFragment">
+        tools:context=".Customer.HomeFragment">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraintLayout"

@@ -2,10 +2,21 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="userViewModel"
+            type="com.example.greenbite.Table.UserViewModel" />
+        <variable
+            name="menuViewModel"
+            type="com.example.greenbite.Table.MenuViewModel" />
+        <variable
+            name="cartViewModel"
+            type="com.example.greenbite.Table.CartViewModel" />
+    </data>
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".CartFragment">
+        tools:context=".Customer.CartFragment">
 
         <ImageButton
             android:id="@+id/btnCartBack"
@@ -39,10 +50,10 @@
             android:layout_marginBottom="16dp"
             app:layout_constraintBottom_toTopOf="@+id/cardPaymentSummary"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_default="spread"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvCartTitle"
-            app:layout_constraintHeight_default="spread"
-            app:layout_constraintVertical_weight="1"/>
+            app:layout_constraintVertical_weight="1" />
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cardPaymentSummary"
@@ -109,25 +120,6 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="@+id/tvDeliveryFeeLabel" />
 
-                <TextView
-                    android:id="@+id/tvDiscountLabel"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="12dp"
-                    android:text="Discount"
-                    android:textColor="#757575"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/tvDeliveryFeeLabel" />
-
-                <TextView
-                    android:id="@+id/tvDiscount"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="-Rp 10,900"
-                    android:textColor="#4CAF50"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/tvDiscountLabel" />
-
                 <View
                     android:id="@+id/divider"
                     android:layout_width="0dp"
@@ -136,7 +128,7 @@
                     android:background="#E0E0E0"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/tvDiscountLabel" />
+                    app:layout_constraintTop_toBottomOf="@+id/tvDeliveryFeeLabel" />
 
                 <TextView
                     android:id="@+id/tvTotalLabel"
@@ -152,7 +144,7 @@
                     android:id="@+id/tvTotal"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Rp 28,000"
+                    android:text="Rp 30,000"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="@+id/tvTotalLabel" />
@@ -173,6 +165,19 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/tvCartEmpty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:fontFamily="sans-serif-black"
+            android:text="Cart is empty !"
+            android:textSize="34sp"
+            app:layout_constraintEnd_toEndOf="@+id/rvCart"
+            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintStart_toStartOf="@+id/rvCart"
+            app:layout_constraintTop_toTopOf="@+id/rvCart" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

@@ -5,10 +5,13 @@
     <data>
         <variable
             name="menu"
-            type="com.example.greenbite.MenuEntity" />
+            type="com.example.greenbite.Table.MenuEntity" />
         <variable
             name="user"
-            type="com.example.greenbite.UserEntity" />
+            type="com.example.greenbite.Table.UserEntity" />
+        <variable
+            name="cart"
+            type="com.example.greenbite.Table.CartEntity" />
     </data>
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"

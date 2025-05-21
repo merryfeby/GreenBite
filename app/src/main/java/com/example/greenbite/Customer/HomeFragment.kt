@@ -1,7 +1,6 @@
-package com.example.greenbite
+package com.example.greenbite.Customer
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -10,6 +9,11 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
+import com.example.greenbite.Table.CartViewModel
+import com.example.greenbite.MenuAdapter
+import com.example.greenbite.Table.MenuViewModel
+import com.example.greenbite.R
+import com.example.greenbite.Table.UserViewModel
 import com.example.greenbite.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
@@ -17,6 +21,7 @@ class HomeFragment : Fragment() {
     private val userViewModel: UserViewModel by activityViewModels()
     private lateinit var menuAdapter: MenuAdapter
     private val menuViewModel: MenuViewModel by activityViewModels()
+    private val cartViewModel: CartViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -49,7 +54,8 @@ class HomeFragment : Fragment() {
     }
 
     private fun setupRecyclerView() {
-        menuAdapter = MenuAdapter()
+        val userEmail = userViewModel.activeUser.value?.email ?: "guest"
+        menuAdapter = MenuAdapter(cartViewModel, userEmail)
         binding.rvMenu.layoutManager = GridLayoutManager(requireContext(), 2)
         binding.rvMenu.adapter = menuAdapter
     }

@@ -5,7 +5,7 @@
     <data>
         <variable
             name="viewModel"
-            type="com.example.greenbite.UserViewModel" />
+            type="com.example.greenbite.Table.UserViewModel" />
     </data>
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/frameLayout"
