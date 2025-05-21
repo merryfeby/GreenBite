@@ -5,12 +5,6 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.sqlite.db.SupportSQLiteDatabase
-import com.example.greenbite.Table.CartDao
-import com.example.greenbite.Table.CartEntity
-import com.example.greenbite.Table.MenuDao
-import com.example.greenbite.Table.MenuEntity
-import com.example.greenbite.Table.UserDao
-import com.example.greenbite.Table.UserEntity
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

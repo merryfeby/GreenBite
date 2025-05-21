@@ -6,9 +6,6 @@ import android.widget.Toast
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.example.greenbite.Table.CartEntity
-import com.example.greenbite.Table.CartViewModel
-import com.example.greenbite.Table.MenuEntity
 import com.example.greenbite.databinding.ListMenuBinding
 import java.text.NumberFormat
 import java.util.Locale

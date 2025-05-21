@@ -5,13 +5,13 @@
     <data>
         <variable
             name="menuViewModel"
-            type="com.example.greenbite.Table.MenuViewModel" />
+            type="com.example.greenbite.MenuViewModel" />
         <variable
             name="userViewModel"
-            type="com.example.greenbite.Table.UserViewModel" />
+            type="com.example.greenbite.UserViewModel" />
         <variable
             name="cartViewModel"
-            type="com.example.greenbite.Table.CartViewModel" />
+            type="com.example.greenbite.CartViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

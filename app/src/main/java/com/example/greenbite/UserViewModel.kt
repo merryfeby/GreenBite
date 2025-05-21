@@ -1,10 +1,9 @@
-package com.example.greenbite.Table
+package com.example.greenbite
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.greenbite.App
 import kotlinx.coroutines.launch
 
 class UserViewModel:ViewModel() {

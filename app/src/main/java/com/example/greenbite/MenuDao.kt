@@ -1,4 +1,4 @@
-package com.example.greenbite.Table
+package com.example.greenbite
 
 import androidx.lifecycle.LiveData
 import androidx.room.Dao

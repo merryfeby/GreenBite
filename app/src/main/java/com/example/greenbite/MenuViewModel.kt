@@ -1,11 +1,10 @@
-package com.example.greenbite.Table
+package com.example.greenbite
 
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.switchMap
-import com.example.greenbite.App
 
 class MenuViewModel : ViewModel() {
 

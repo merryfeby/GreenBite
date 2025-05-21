@@ -10,9 +10,9 @@ import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.greenbite.CartAdapter
-import com.example.greenbite.Table.CartViewModel
+import com.example.greenbite.CartViewModel
 import com.example.greenbite.R
-import com.example.greenbite.Table.UserViewModel
+import com.example.greenbite.UserViewModel
 import com.example.greenbite.databinding.FragmentCartBinding
 import java.text.NumberFormat
 import java.util.Locale

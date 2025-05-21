@@ -6,8 +6,6 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.greenbite.databinding.ListCartBinding
 import android.view.LayoutInflater
-import com.example.greenbite.Table.CartEntity
-import com.example.greenbite.Table.CartViewModel
 import java.text.NumberFormat
 import java.util.Locale
 

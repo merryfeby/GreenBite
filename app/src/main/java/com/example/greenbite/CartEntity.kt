@@ -1,4 +1,4 @@
-package com.example.greenbite.Table
+package com.example.greenbite
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

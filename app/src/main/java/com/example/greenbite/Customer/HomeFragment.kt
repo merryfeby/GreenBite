@@ -9,11 +9,11 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
-import com.example.greenbite.Table.CartViewModel
+import com.example.greenbite.CartViewModel
 import com.example.greenbite.MenuAdapter
-import com.example.greenbite.Table.MenuViewModel
+import com.example.greenbite.MenuViewModel
 import com.example.greenbite.R
-import com.example.greenbite.Table.UserViewModel
+import com.example.greenbite.UserViewModel
 import com.example.greenbite.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {

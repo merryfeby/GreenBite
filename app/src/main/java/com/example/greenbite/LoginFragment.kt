@@ -9,7 +9,6 @@ import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
-import com.example.greenbite.Table.UserViewModel
 import com.example.greenbite.databinding.FragmentLoginBinding
 
 class LoginFragment : Fragment() {
