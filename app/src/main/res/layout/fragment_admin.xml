@@ -1,13 +1,176 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout3"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#F2F2F2"
     tools:context=".AdminFragment">
 
-    <TextView
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout3"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="120dp"
+        android:background="#32C98B"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        tools:layout_editor_absoluteX="0dp">
 
-</FrameLayout>
+        <TextView
+            android:id="@+id/textView30"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="36dp"
+            android:text="GreenBite"
+            android:textColor="#FFFFFF"
+            android:textSize="34sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView31"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="100dp"
+            android:layout_marginTop="12dp"
+            android:text="Welcome, Admin"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp"
+            app:layout_constraintStart_toEndOf="@+id/textView30"
+            app:layout_constraintTop_toTopOf="@+id/textView30" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <Button
+        android:id="@+id/BtnEmployee_AdminFrag"
+        android:layout_width="346dp"
+        android:layout_height="130dp"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="#FFFFFF"
+        app:cornerRadius="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout3" />
+
+    <TextView
+        android:id="@+id/txtEmployee"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="40dp"
+        android:text="Employees"
+        android:textSize="34sp"
+        app:layout_constraintStart_toStartOf="@+id/BtnEmployee_AdminFrag"
+        app:layout_constraintTop_toTopOf="@+id/BtnEmployee_AdminFrag" />
+
+    <ImageView
+        android:id="@+id/imgEmployee"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="48dp"
+        android:src="@drawable/employee"
+        app:layout_constraintStart_toEndOf="@+id/txtEmployee"
+        app:layout_constraintTop_toTopOf="@+id/txtEmployee" />
+
+    <Button
+        android:id="@+id/btnProduct_AdminFrag"
+        android:layout_width="346dp"
+        android:layout_height="130dp"
+        android:layout_marginTop="12dp"
+        android:backgroundTint="#FFFFFF"
+        app:cornerRadius="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/BtnEmployee_AdminFrag" />
+
+    <TextView
+        android:id="@+id/txtProduct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="40dp"
+        android:text="Products"
+        android:textSize="34sp"
+        app:layout_constraintStart_toStartOf="@+id/btnProduct_AdminFrag"
+        app:layout_constraintTop_toTopOf="@+id/btnProduct_AdminFrag" />
+
+    <ImageView
+        android:id="@+id/imgProduct"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="76dp"
+        android:src="@drawable/fast_food"
+        app:layout_constraintStart_toEndOf="@+id/txtProduct"
+        app:layout_constraintTop_toTopOf="@+id/txtProduct" />
+
+    <Button
+        android:id="@+id/btnOrder_AdminFrag"
+        android:layout_width="346dp"
+        android:layout_height="130dp"
+        android:layout_marginTop="12dp"
+        android:backgroundTint="#FFFFFF"
+        app:cornerRadius="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnProduct_AdminFrag" />
+
+    <TextView
+        android:id="@+id/txtOrder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="40dp"
+        android:text="Orders"
+        android:textSize="34sp"
+        app:layout_constraintStart_toStartOf="@+id/btnOrder_AdminFrag"
+        app:layout_constraintTop_toTopOf="@+id/btnOrder_AdminFrag" />
+
+    <ImageView
+        android:id="@+id/imageView14"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="112dp"
+        android:src="@drawable/shipment"
+        app:layout_constraintStart_toEndOf="@+id/txtOrder"
+        app:layout_constraintTop_toTopOf="@+id/txtOrder" />
+
+    <Button
+        android:id="@+id/btnReport_AdminFrag"
+        android:layout_width="346dp"
+        android:layout_height="130dp"
+        android:layout_marginTop="12dp"
+        android:backgroundTint="#FFFFFF"
+        app:cornerRadius="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnOrder_AdminFrag" />
+
+    <TextView
+        android:id="@+id/txtReport"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="40dp"
+        android:text="Reports"
+        android:textSize="34sp"
+        app:layout_constraintStart_toStartOf="@+id/btnReport_AdminFrag"
+        app:layout_constraintTop_toTopOf="@+id/btnReport_AdminFrag" />
+
+    <ImageView
+        android:id="@+id/imageView16"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="92dp"
+        android:src="@drawable/report"
+        app:layout_constraintStart_toEndOf="@+id/txtReport"
+        app:layout_constraintTop_toTopOf="@+id/txtReport" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
