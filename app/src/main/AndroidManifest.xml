@@ -12,7 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GreenBite"
         tools:targetApi="31"
-        android:name=".App">
+        android:name=".App"
+        android:usesCleartextTraffic="true">
         <activity
             android:name=".MainActivity"
             android:exported="true">
