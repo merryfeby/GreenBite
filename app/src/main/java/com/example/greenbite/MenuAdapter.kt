@@ -10,12 +10,12 @@ import com.example.greenbite.databinding.ListMenuBinding
 import java.text.NumberFormat
 import java.util.Locale
 
-class MenuDiffUtil: DiffUtil.ItemCallback<MenuEntity>(){
-    override fun areItemsTheSame(oldItem: MenuEntity, newItem: MenuEntity): Boolean {
-        return oldItem.id_menu == newItem.id_menu
+class MenuDiffUtil: DiffUtil.ItemCallback<Product>(){
+    override fun areItemsTheSame(oldItem: Product, newItem: Product): Boolean {
+        return oldItem.productID == newItem.productID
     }
 
-    override fun areContentsTheSame(oldItem: MenuEntity, newItem: MenuEntity): Boolean {
+    override fun areContentsTheSame(oldItem: Product, newItem: Product): Boolean {
         return oldItem == newItem
     }
 }
@@ -25,7 +25,7 @@ val menuDiffUtil = MenuDiffUtil()
 class MenuAdapter(
     private val cartViewModel: CartViewModel,
     private val userEmail: String
-) : ListAdapter<MenuEntity, MenuAdapter.ViewHolder>(menuDiffUtil) {
+) : ListAdapter<Product, MenuAdapter.ViewHolder>(menuDiffUtil) {
 
     class ViewHolder(val binding: ListMenuBinding) : RecyclerView.ViewHolder(binding.root)
 
@@ -40,17 +40,19 @@ class MenuAdapter(
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val menu = getItem(position)
 
-        val formattedPrice = NumberFormat.getNumberInstance(Locale("in", "ID")).format(menu.price_menu)
-        holder.binding.rvNamaMenu.text = menu.nama_menu
-        holder.binding.rvRatingMenu.text = menu.rating_menu.toString()
-        holder.binding.rvHargaMenu.text = "Rp $formattedPrice"
+        val formattedPrice = NumberFormat.getNumberInstance(Locale("in", "ID")).format(menu.price.toDouble())
+        holder.binding.tvProductNameMenu.text = menu.name
+        holder.binding.tvRatingMenu.text = menu.rating.toString()
+        holder.binding.tvPriceMenu.text = "Rp $formattedPrice"
+        holder.binding.tvCategoryNameMenu.text = menu.category.name
+        holder.binding.tvTotalRating.text = "${menu.total_rating} Ratings"
 
         holder.binding.btnAddMenu.setOnClickListener {
             val cartItem = CartEntity(
                 user_email = userEmail,
-                id_menu = menu.id_menu,
-                nama_menu = menu.nama_menu,
-                harga = menu.price_menu.toDouble(),
+                id_menu = menu.productID,
+                nama_menu = menu.name,
+                harga = menu.price.toDouble(),
                 jumlah = 1
             )
             cartViewModel.addToCart(cartItem)

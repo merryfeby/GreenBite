@@ -11,10 +11,12 @@ data class Product(
     var name: String,
     var categoryID: Int,
     var price: String,
-    var rating: Int,
+    var rating: Double,
     var description: String,
     var img_url: String?,
     var deleted_at: String?,
     var created_at: String,
-    var updated_at: String
+    var updated_at: String,
+    val category: Category,
+    val total_rating :Int?
 )
