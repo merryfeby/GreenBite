@@ -68,7 +68,7 @@
                     android:paddingEnd="16dp">
 
                     <TextView
-                        android:id="@+id/btnAll"
+                        android:id="@+id/btnAll_MenuFrag"
                         android:layout_width="80dp"
                         android:layout_height="40dp"
                         android:layout_marginEnd="8dp"
@@ -83,7 +83,7 @@
                         app:cornerRadius="10dp" />
 
                     <TextView
-                        android:id="@+id/btnFoods"
+                        android:id="@+id/btnFoods_MenuFrag"
                         android:layout_width="120dp"
                         android:layout_height="40dp"
                         android:layout_marginEnd="8dp"
@@ -100,7 +100,7 @@
                         app:strokeWidth="1dp" />
 
                     <TextView
-                        android:id="@+id/btnBeverages"
+                        android:id="@+id/btnBeverages_MenuFrag"
                         android:layout_width="95dp"
                         android:layout_height="40dp"
                         android:layout_marginEnd="8dp"
@@ -117,7 +117,7 @@
                         app:strokeWidth="1dp" />
 
                     <TextView
-                        android:id="@+id/btnSnacks"
+                        android:id="@+id/btnSnacks_MenuFrag"
                         android:layout_width="125dp"
                         android:layout_height="40dp"
                         android:layout_marginEnd="8dp"
@@ -134,7 +134,7 @@
                         app:strokeWidth="1dp" />
 
                     <TextView
-                        android:id="@+id/btnWraps"
+                        android:id="@+id/btnWraps_MenuFrag"
                         android:layout_width="95dp"
                         android:layout_height="40dp"
                         android:background="@drawable/button_inactive"
