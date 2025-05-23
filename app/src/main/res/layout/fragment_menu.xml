@@ -9,13 +9,16 @@
         <variable
             name="userViewModel"
             type="com.example.greenbite.UserViewModel" />
+        <variable
+            name="cartViewModel"
+            type="com.example.greenbite.CartViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#F9F8F8"
-        tools:context=".MenuFragment">
+        tools:context=".Customer.MenuFragment">
 
         <TextView
             android:id="@+id/textView7"
@@ -80,7 +83,7 @@
                         app:cornerRadius="10dp" />
 
                     <TextView
-                        android:id="@+id/btnSmoothie"
+                        android:id="@+id/btnFoods"
                         android:layout_width="120dp"
                         android:layout_height="40dp"
                         android:layout_marginEnd="8dp"
@@ -89,7 +92,7 @@
                         android:gravity="center"
                         android:paddingStart="4dp"
                         android:paddingEnd="4dp"
-                        android:text="Smoothie"
+                        android:text="Foods"
                         android:textColor="#32C98B"
                         android:textSize="14sp"
                         app:cornerRadius="10dp"
@@ -97,7 +100,7 @@
                         app:strokeWidth="1dp" />
 
                     <TextView
-                        android:id="@+id/btnSalad"
+                        android:id="@+id/btnBeverages"
                         android:layout_width="95dp"
                         android:layout_height="40dp"
                         android:layout_marginEnd="8dp"
@@ -106,7 +109,7 @@
                         android:gravity="center"
                         android:paddingStart="4dp"
                         android:paddingEnd="4dp"
-                        android:text="Salad"
+                        android:text="Beverages"
                         android:textColor="#32C98B"
                         android:textSize="14sp"
                         app:cornerRadius="10dp"
@@ -114,7 +117,7 @@
                         app:strokeWidth="1dp" />
 
                     <TextView
-                        android:id="@+id/btnLeanBowl"
+                        android:id="@+id/btnSnacks"
                         android:layout_width="125dp"
                         android:layout_height="40dp"
                         android:layout_marginEnd="8dp"
@@ -123,7 +126,7 @@
                         android:gravity="center"
                         android:paddingStart="4dp"
                         android:paddingEnd="4dp"
-                        android:text="Lean-Bowl"
+                        android:text="Snacks"
                         android:textColor="#32C98B"
                         android:textSize="14sp"
                         app:cornerRadius="10dp"

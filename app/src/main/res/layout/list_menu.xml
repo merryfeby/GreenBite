@@ -9,6 +9,9 @@
         <variable
             name="user"
             type="com.example.greenbite.UserEntity" />
+        <variable
+            name="cart"
+            type="com.example.greenbite.CartEntity" />
     </data>
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"

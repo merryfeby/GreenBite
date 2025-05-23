@@ -9,11 +9,14 @@
         <variable
             name="menuViewModel"
             type="com.example.greenbite.MenuViewModel" />
+        <variable
+            name="cartViewModel"
+            type="com.example.greenbite.CartViewModel" />
     </data>
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".HomeFragment">
+        tools:context=".Customer.HomeFragment">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraintLayout"

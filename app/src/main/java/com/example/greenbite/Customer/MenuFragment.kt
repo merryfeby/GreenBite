@@ -1,21 +1,20 @@
-package com.example.greenbite
+package com.example.greenbite.Customer
 
-import android.content.res.ColorStateList
 import android.os.Bundle
-import android.provider.ContactsContract.Data
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.activityViewModels
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
-import com.example.greenbite.databinding.FragmentHomeBinding
+import com.example.greenbite.CartViewModel
+import com.example.greenbite.MenuAdapter
+import com.example.greenbite.MenuViewModel
+import com.example.greenbite.R
+import com.example.greenbite.UserViewModel
 import com.example.greenbite.databinding.FragmentMenuBinding
 
 
@@ -24,6 +23,7 @@ class MenuFragment : Fragment() {
     private val userViewModel: UserViewModel by activityViewModels()
     private lateinit var menuAdapter: MenuAdapter
     private val menuViewModel: MenuViewModel by activityViewModels()
+    private val cartViewModel: CartViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -37,7 +37,6 @@ class MenuFragment : Fragment() {
 
         categoryButton()
 
-
         return binding.root
     }
 
@@ -48,11 +47,10 @@ class MenuFragment : Fragment() {
     }
 
     private fun setupRecyclerView() {
-        menuAdapter = MenuAdapter()
-        binding.rvAllMenu.apply {
-            layoutManager = GridLayoutManager(requireContext(), 2)
-            adapter = menuAdapter
-        }
+        val userEmail = userViewModel.activeUser.value?.email ?: "guest"
+        menuAdapter = MenuAdapter(cartViewModel, userEmail)
+        binding.rvAllMenu.layoutManager = GridLayoutManager(requireContext(), 2)
+        binding.rvAllMenu.adapter = menuAdapter
     }
 
     private fun observeMenuItems() {

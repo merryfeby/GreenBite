@@ -1,13 +1,7 @@
 package com.example.greenbite
 
-import androidx.room.ColumnInfo
-import retrofit2.http.Body
-import retrofit2.http.DELETE
 import retrofit2.http.GET
-import retrofit2.http.POST
-import retrofit2.http.PUT
 import retrofit2.http.Path
-import retrofit2.http.Query
 
 data class TopMenu(
     val id_menu:Int,
@@ -22,4 +16,10 @@ data class TopMenu(
 interface WebService {
     @GET("topmenus")
     suspend fun getTopMenus(): List<TopMenu>
+
+    @GET("products")
+    suspend fun getAllProducts(): List<Product>
+
+    @GET("products/{category}")
+    suspend fun getProductsByCategory(@Path("category") category:Int): List<Product>
 }

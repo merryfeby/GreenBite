@@ -9,11 +9,12 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-@Database(entities = [UserEntity::class, MenuEntity::class], version = 3)
+@Database(entities = [UserEntity::class, MenuEntity::class, CartEntity::class], version = 6)
 abstract class AppDatabase : RoomDatabase() {
 
     abstract fun userDao(): UserDao
     abstract fun menuDao(): MenuDao
+    abstract fun cartDao(): CartDao
 
     companion object {
         @Volatile
