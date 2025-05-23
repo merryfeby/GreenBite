@@ -14,6 +14,7 @@ data class TopMenu(
 )
 
 interface WebService {
+    //CUSTOMER
     @GET("topmenus")
     suspend fun getTopMenus(): List<TopMenu>
 
@@ -22,4 +23,7 @@ interface WebService {
 
     @GET("products/category/name/{categoryName}")
     suspend fun getProductsByCategory(@Path("categoryName") category: String): List<Product>
+
+    //EMPLOYEE
+    //ADMIN
 }

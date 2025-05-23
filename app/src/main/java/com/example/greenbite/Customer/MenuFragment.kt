@@ -90,19 +90,19 @@ class MenuFragment : Fragment() {
         }
 
         binding.btnAll.setOnClickListener {
-            menuViewModel.setCategory("All")
+            productViewModel.setCategory("All")
             setActive(binding.btnAll)
         }
         binding.btnFoods.setOnClickListener {
-            menuViewModel.setCategory("Foods")
+            productViewModel.setCategory("Foods")
             setActive(binding.btnFoods)
         }
         binding.btnBeverages.setOnClickListener {
-            menuViewModel.setCategory("Beverages")
+            productViewModel.setCategory("Beverages")
             setActive(binding.btnBeverages)
         }
         binding.btnSnacks.setOnClickListener {
-            menuViewModel.setCategory("Snacks")
+            productViewModel.setCategory("Snacks")
             setActive(binding.btnSnacks)
         }
 
