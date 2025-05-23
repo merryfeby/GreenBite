@@ -12,6 +12,8 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.example.greenbite.CartViewModel
 import com.example.greenbite.MenuAdapter
 import com.example.greenbite.MenuViewModel
+import com.example.greenbite.Product
+import com.example.greenbite.ProductViewModel
 import com.example.greenbite.R
 import com.example.greenbite.UserViewModel
 import com.example.greenbite.databinding.FragmentHomeBinding
@@ -21,6 +23,7 @@ class HomeFragment : Fragment() {
     private val userViewModel: UserViewModel by activityViewModels()
     private lateinit var menuAdapter: MenuAdapter
     private val menuViewModel: MenuViewModel by activityViewModels()
+    private val productViewModel: ProductViewModel by activityViewModels()
     private val cartViewModel: CartViewModel by activityViewModels()
 
     override fun onCreateView(
@@ -50,7 +53,7 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setupRecyclerView()
-        observeMenuItems()
+//        observeMenuItems()
     }
 
     private fun setupRecyclerView() {
@@ -60,9 +63,15 @@ class HomeFragment : Fragment() {
         binding.rvMenu.adapter = menuAdapter
     }
 
-    private fun observeMenuItems() {
-        menuViewModel.topMenuItems.observe(viewLifecycleOwner) { menuItems ->
-            menuAdapter.submitList(menuItems.toMutableList())
-        }
-    }
+//    private fun observeMenuItems() {
+//        menuViewModel.topMenuItems.observe(viewLifecycleOwner) { menuItems ->
+//            menuAdapter.submitList(menuItems.toMutableList())
+//        }
+//    }
+
+//    private fun observeMenuItems() {
+//        productViewModel.currentCategoryMenu.observe(viewLifecycleOwner) { filteredItems: List<Product>? ->
+//            menuAdapter.submitList(filteredItems?.toList() ?: emptyList())
+//        }
+//    }
 }

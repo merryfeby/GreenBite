@@ -12,6 +12,9 @@
         <variable
             name="cartViewModel"
             type="com.example.greenbite.CartViewModel" />
+        <variable
+            name="productViewModel"
+            type="com.example.greenbite.ProductViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -133,21 +136,6 @@
                         app:strokeColor="#32C98B"
                         app:strokeWidth="1dp" />
 
-                    <TextView
-                        android:id="@+id/btnWraps"
-                        android:layout_width="95dp"
-                        android:layout_height="40dp"
-                        android:background="@drawable/button_inactive"
-                        android:fontFamily="sans-serif-medium"
-                        android:gravity="center"
-                        android:paddingStart="4dp"
-                        android:paddingEnd="4dp"
-                        android:text="Wraps"
-                        android:textColor="#32C98B"
-                        android:textSize="14sp"
-                        app:cornerRadius="10dp"
-                        app:strokeColor="#32C98B"
-                        app:strokeWidth="1dp" />
                 </LinearLayout>
             </HorizontalScrollView>
         </androidx.constraintlayout.widget.ConstraintLayout>

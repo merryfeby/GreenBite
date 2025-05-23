@@ -20,6 +20,6 @@ interface WebService {
     @GET("products")
     suspend fun getAllProducts(): List<Product>
 
-    @GET("products/{category}")
-    suspend fun getProductsByCategory(@Path("category") category:Int): List<Product>
+    @GET("products/category/name/{categoryName}")
+    suspend fun getProductsByCategory(@Path("categoryName") category: String): List<Product>
 }
