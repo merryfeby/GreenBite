@@ -57,11 +57,6 @@ class MenuFragment : Fragment() {
         binding.rvAllMenu.adapter = menuAdapter
     }
 
-//    private fun observeMenuItems() {
-//        menuViewModel.currentCategoryMenu.observe(viewLifecycleOwner) { filteredItems ->
-//            menuAdapter.submitList(filteredItems.toMutableList())
-//        }
-//    }
     private fun observeMenuItems() {
         productViewModel.currentCategoryMenu.observe(viewLifecycleOwner) { filteredItems: List<Product>? ->
             Log.d("MenuFragment", "Filtered items: $filteredItems")
