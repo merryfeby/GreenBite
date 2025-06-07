@@ -5,7 +5,7 @@
     <data>
         <variable
             name="viewModel"
-            type="com.example.greenbite.UserViewModel" />
+            type="com.example.greenbite.UsersViewModel" />
     </data>
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/frameLayout"
@@ -182,7 +182,7 @@
                 app:layout_constraintVertical_bias="0.795" />
 
             <EditText
-                android:id="@+id/etPasscode"
+                android:id="@+id/etPostcode"
                 android:layout_width="287dp"
                 android:layout_height="58dp"
                 android:ems="10"

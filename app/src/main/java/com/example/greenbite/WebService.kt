@@ -1,6 +1,11 @@
 package com.example.greenbite
 
+import com.squareup.moshi.Json
+import com.squareup.moshi.JsonClass
+import retrofit2.Response
+import retrofit2.http.Body
 import retrofit2.http.GET
+import retrofit2.http.POST
 import retrofit2.http.Path
 
 data class TopMenu(
@@ -13,6 +18,29 @@ data class TopMenu(
     val totalrating_menu:Int,
 )
 
+
+@JsonClass(generateAdapter = true)
+data class UserRegistrationResponse(
+    @Json(name = "message")
+    val message: String
+)
+
+@JsonClass(generateAdapter = true)
+data class LoginRequest(
+    @Json(name = "email")
+    val email: String,
+    @Json(name = "password")
+    val password: String
+)
+
+@JsonClass(generateAdapter = true)
+data class LoginResponse(
+    @Json(name = "message")
+    val message: String,
+    @Json(name = "user")
+    val user: User
+)
+
 interface WebService {
     //CUSTOMER
     @GET("topmenus")
@@ -23,6 +51,15 @@ interface WebService {
 
     @GET("products/category/name/{categoryName}")
     suspend fun getProductsByCategory(@Path("categoryName") category: String): List<Product>
+
+    @POST("users")
+    suspend fun createUser(@Body user: User): Response<UserRegistrationResponse>
+
+    @GET("users/email/{email}")
+    suspend fun getUserByEmail(@Path("email") email: String): Response<User>
+
+    @POST("login")
+    suspend fun loginUser(@Body loginRequest: LoginRequest): Response<LoginResponse>
 
     //EMPLOYEE
     //ADMIN
