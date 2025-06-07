@@ -7,10 +7,10 @@
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/frameLayout6"
+        android:id="@+id/frameLayout11"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".AdminMenuFragment">
+        tools:context=".AdminReportDetail" >
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraintLayout3"
@@ -48,39 +48,5 @@
                 app:layout_constraintTop_toTopOf="@+id/textView30" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <TextView
-            android:id="@+id/textView35"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:text="Find by Category"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.055"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/constraintLayout3" />
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rvMenu_AdminFrag"
-            android:layout_width="314dp"
-            android:layout_height="432dp"
-            android:layout_marginTop="20dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView35" />
-
-        <Button
-            android:id="@+id/btnAdd_MenuFrag"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="264dp"
-            android:layout_marginTop="460dp"
-            android:backgroundTint="#33C98B"
-            android:text="Add Menu"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView35" />
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
