@@ -13,7 +13,7 @@ import com.example.greenbite.databinding.FragmentLoginBinding
 
 class LoginFragment : Fragment() {
     lateinit var binding: FragmentLoginBinding
-    private val viewModel: UserViewModel by activityViewModels()
+    private val viewModel: UsersViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -25,32 +25,48 @@ class LoginFragment : Fragment() {
         binding.tvRegister.setOnClickListener(){
             findNavController().navigate(R.id.action_global_registerFragment)
         }
+
         binding.btnLogin1.setOnClickListener(){
             val email = binding.etEmailLogin.text.toString()
             val password = binding.etPasswordLogin.text.toString()
 
-            if (email == "" || password == ""){
-                Toast.makeText(context, "fields must be filled !", Toast.LENGTH_SHORT).show()
+            if (email.isEmpty() || password.isEmpty()){
+                Toast.makeText(context, "All fields must be filled!", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
-            viewModel.checkEmailExists(email) { exists ->
-                if (!exists) {
-                    Toast.makeText(context, "Email not registered", Toast.LENGTH_SHORT).show()
-                } else {
-                    viewModel.checkLogin(email, password) { success ->
-                        if (success) {
-                            viewModel.setActiveUser(email)
-                            Toast.makeText(context, "Login successful", Toast.LENGTH_SHORT).show()
+            if (!android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+                Toast.makeText(context, "Please enter a valid email address", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
+
+            viewModel.loginUser(email, password) { success, message, user ->
+                if (success && user != null) {
+                    Toast.makeText(context, "Welcome ${user.name}!", Toast.LENGTH_SHORT).show()
+
+                    when (user.role) {
+                        1 -> { // Customer
                             findNavController().navigate(R.id.action_loginFragment_to_homeFragment)
-                        } else {
-                            Toast.makeText(context, "Incorrect password", Toast.LENGTH_SHORT).show()
+                        }
+                        2 -> { // Employee
+                            Toast.makeText(context, "Employee Dashboard - Coming Soon!", Toast.LENGTH_SHORT).show()
+                            findNavController().navigate(R.id.action_loginFragment_to_homeFragment) // Temporary
+                        }
+                        3 -> { // Admin
+                            Toast.makeText(context, "Admin Dashboard - Coming Soon!", Toast.LENGTH_SHORT).show()
+                            // Navigate to admin dashboard when ready
+                            findNavController().navigate(R.id.action_loginFragment_to_homeFragment) // Temporary
+                        }
+                        else -> {
+                            Toast.makeText(context, "Unknown user role", Toast.LENGTH_SHORT).show()
                         }
                     }
+                } else {
+                    Toast.makeText(context, message, Toast.LENGTH_LONG).show()
                 }
             }
         }
         return binding.root
     }
-
 }

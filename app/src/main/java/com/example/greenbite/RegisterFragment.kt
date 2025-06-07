@@ -13,7 +13,7 @@ import com.example.greenbite.databinding.FragmentRegisterBinding
 
 class RegisterFragment : Fragment() {
     lateinit var binding: FragmentRegisterBinding
-    private val viewModel: UserViewModel by activityViewModels()
+    private val viewModel: UsersViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -32,22 +32,33 @@ class RegisterFragment : Fragment() {
             val password = binding.etPassword.text.toString()
             val phone = binding.etPhone.text.toString()
             val address = binding.etAddress.text.toString()
-            val postcode = binding.etPasscode.text.toString()
+            val postcode = binding.etPostcode.text.toString()
 
             if (email == "" || name == "" || password == "" || phone == "" || address == "" || postcode == ""){
                 Toast.makeText(context, "field should be filled !", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
-            viewModel.checkEmailExists(email) { exists ->
-                if (exists) {
-                    Toast.makeText(context, "Email already registered!", Toast.LENGTH_SHORT).show()
-                } else {
-                    val newUser = UserEntity(email, name, password, phone, address, postcode)
-                    viewModel.insertUser(newUser)
+            val newUser = User(
+                userID = null,
+                name = name,
+                email = email,
+                password = password,
+                phone = phone,
+                address = address,
+                postcode = postcode,
+                pfp_url = "-",
+                role = 1,
+                credit = 0.0,
+                deleted_at = null,
+            )
 
-                    Toast.makeText(context, "Registration successful!", Toast.LENGTH_SHORT).show()
-                    findNavController().navigate(R.id.action_global_loginFragment)
+            viewModel.registerUser(newUser) { success, message ->
+                activity?.runOnUiThread {
+                    Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
+                    if (success) {
+                        findNavController().navigate(R.id.action_global_loginFragment)
+                    }
                 }
             }
         }
