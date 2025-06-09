@@ -3,13 +3,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <data></data>
+    <data>
+    </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/frameLayout5"
+        android:id="@+id/frameLayout9"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".AdminEditEmployee">
+        tools:context=".AdminAddMenuFragment">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraintLayout3"
@@ -49,119 +50,123 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <ImageView
-            android:id="@+id/imageView10"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:layout_marginTop="20dp"
-            android:src="@drawable/profile"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/constraintLayout3" />
-
-        <TextView
-            android:id="@+id/txtNama_EditEmpFrg"
+            android:id="@+id/img_AddMenu"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="Nama Employee"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
+            android:layout_marginStart="140dp"
+            android:layout_marginTop="28dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView10" />
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout3"
+            tools:src="@tools:sample/avatars" />
+
+        <TextView
+            android:id="@+id/textView32"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="44dp"
+            android:layout_marginTop="16dp"
+            android:text="Product Name"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/img_AddMenu" />
 
         <EditText
-            android:id="@+id/editNama_EditEmpFrg"
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
+            android:id="@+id/txtName_AddProductFrag"
+            android:layout_width="318dp"
+            android:layout_height="41dp"
             android:layout_marginTop="4dp"
             android:ems="10"
             android:inputType="text"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintHorizontal_bias="0.473"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView38" />
+            app:layout_constraintTop_toBottomOf="@+id/textView32" />
 
         <TextView
-            android:id="@+id/textView38"
+            android:id="@+id/textView33"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="56dp"
-            android:layout_marginTop="16dp"
-            android:text="Change Username"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtNama_EditEmpFrg" />
-
-        <EditText
-            android:id="@+id/editEmail_EditEmpFrg"
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
+            android:layout_marginStart="44dp"
             android:layout_marginTop="88dp"
-            android:ems="10"
-            android:inputType="text"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.496"
+            android:text="Product Category"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView38" />
-
-        <TextView
-            android:id="@+id/textView39"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="56dp"
-            android:layout_marginTop="100dp"
-            android:text="Change Email"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtNama_EditEmpFrg" />
+            app:layout_constraintTop_toBottomOf="@+id/img_AddMenu" />
 
         <EditText
-            android:id="@+id/editStatus_EditEmpFrg"
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="168dp"
+            android:id="@+id/txtCategory_AddProductFrag"
+            android:layout_width="318dp"
+            android:layout_height="41dp"
+            android:layout_marginTop="76dp"
             android:ems="10"
             android:inputType="text"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintHorizontal_bias="0.473"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView38" />
+            app:layout_constraintTop_toBottomOf="@+id/textView32" />
 
         <TextView
-            android:id="@+id/textView40"
+            android:id="@+id/textView42"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="56dp"
-            android:layout_marginTop="184dp"
-            android:text="Change Status"
+            android:layout_marginStart="44dp"
+            android:layout_marginTop="8dp"
+            android:text="Product Price"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtNama_EditEmpFrg" />
+            app:layout_constraintTop_toBottomOf="@+id/txtCategory_AddProductFrag" />
+
+        <EditText
+            android:id="@+id/txtPrice_AddProductFrag"
+            android:layout_width="318dp"
+            android:layout_height="41dp"
+            android:layout_marginTop="4dp"
+            android:ems="10"
+            android:inputType="text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.473"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView42" />
+
+        <TextView
+            android:id="@+id/textView43"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="44dp"
+            android:layout_marginTop="8dp"
+            android:text="Product Description"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtPrice_AddProductFrag" />
+
+        <EditText
+            android:id="@+id/txtDescription_AddProductFrag"
+            android:layout_width="318dp"
+            android:layout_height="41dp"
+            android:layout_marginTop="4dp"
+            android:ems="10"
+            android:inputType="text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.473"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView43" />
 
         <Button
-            android:id="@+id/btnEdit_EditEmpFrg"
-            android:layout_width="wrap_content"
+            android:id="@+id/btnConfirm_AddProductFrag"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="20dp"
             android:backgroundTint="#33C98B"
-            android:text="Confirm Edit"
-            app:cornerRadius="10dp"
+            android:text="Confirm Add"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.502"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editStatus_EditEmpFrg" />
+            app:layout_constraintTop_toBottomOf="@+id/txtDescription_AddProductFrag" />
 
         <Button
-            android:id="@+id/btnCancelEdit_EditEmpFrg"
-            android:layout_width="wrap_content"
+            android:id="@+id/btnCancel_AddProductFrag"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="64dp"
             android:backgroundTint="#C93333"
-            android:text="Cancel Edit"
-            app:cornerRadius="10dp"
+            android:text="Cancel Add"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editStatus_EditEmpFrg" />
-
+            app:layout_constraintTop_toBottomOf="@+id/btnConfirm_AddProductFrag" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

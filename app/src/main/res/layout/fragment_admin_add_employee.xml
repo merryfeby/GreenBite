@@ -3,13 +3,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <data></data>
+    <data>
+    </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/frameLayout5"
+        android:id="@+id/frameLayout8"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".AdminEditEmployee">
+        tools:context=".AdminAddEmployeeFragment">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraintLayout3"
@@ -49,119 +50,106 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <ImageView
-            android:id="@+id/imageView10"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:layout_marginTop="20dp"
-            android:src="@drawable/profile"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/constraintLayout3" />
-
-        <TextView
-            android:id="@+id/txtNama_EditEmpFrg"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="Nama Employee"
-            android:textSize="24sp"
-            android:textStyle="bold"
+            android:id="@+id/img_AddEmployee"
+            android:layout_width="170dp"
+            android:layout_height="191dp"
+            android:layout_marginTop="24dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView10" />
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout3"
+            tools:src="@tools:sample/avatars" />
+
+        <TextView
+            android:id="@+id/textView48"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="48dp"
+            android:layout_marginTop="32dp"
+            android:text="Full Name"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/img_AddEmployee" />
 
         <EditText
-            android:id="@+id/editNama_EditEmpFrg"
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
+            android:id="@+id/txtName_AddEmpFrag"
+            android:layout_width="311dp"
+            android:layout_height="42dp"
             android:layout_marginTop="4dp"
             android:ems="10"
+            android:hint="ex: Ruri Sinaga"
             android:inputType="text"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintHorizontal_bias="0.48"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView38" />
+            app:layout_constraintTop_toBottomOf="@+id/textView48" />
 
         <TextView
-            android:id="@+id/textView38"
+            android:id="@+id/textView49"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="56dp"
-            android:layout_marginTop="16dp"
-            android:text="Change Username"
+            android:layout_marginStart="48dp"
+            android:layout_marginTop="8dp"
+            android:text="Email"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtNama_EditEmpFrg" />
+            app:layout_constraintTop_toBottomOf="@+id/txtName_AddEmpFrag" />
 
         <EditText
-            android:id="@+id/editEmail_EditEmpFrg"
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="88dp"
+            android:id="@+id/txtEmail_AddEmpFrag"
+            android:layout_width="311dp"
+            android:layout_height="42dp"
+            android:layout_marginTop="4dp"
             android:ems="10"
+            android:hint="ex: abc@gmail.com"
             android:inputType="text"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintHorizontal_bias="0.48"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView38" />
+            app:layout_constraintTop_toBottomOf="@+id/textView49" />
 
         <TextView
-            android:id="@+id/textView39"
+            android:id="@+id/textView51"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="56dp"
-            android:layout_marginTop="100dp"
-            android:text="Change Email"
+            android:layout_marginStart="48dp"
+            android:layout_marginTop="8dp"
+            android:text="Status"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtNama_EditEmpFrg" />
+            app:layout_constraintTop_toBottomOf="@+id/txtEmail_AddEmpFrag" />
 
         <EditText
-            android:id="@+id/editStatus_EditEmpFrg"
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="168dp"
+            android:id="@+id/txtStatus_AddEmpFrag"
+            android:layout_width="311dp"
+            android:layout_height="42dp"
+            android:layout_marginTop="4dp"
             android:ems="10"
+            android:hint="Active/Inactive"
             android:inputType="text"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintHorizontal_bias="0.48"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView38" />
-
-        <TextView
-            android:id="@+id/textView40"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="56dp"
-            android:layout_marginTop="184dp"
-            android:text="Change Status"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtNama_EditEmpFrg" />
+            app:layout_constraintTop_toBottomOf="@+id/textView51" />
 
         <Button
-            android:id="@+id/btnEdit_EditEmpFrg"
-            android:layout_width="wrap_content"
+            android:id="@+id/btnCancel_AddEmpFrag"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:backgroundTint="#33C98B"
-            android:text="Confirm Edit"
-            app:cornerRadius="10dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editStatus_EditEmpFrg" />
-
-        <Button
-            android:id="@+id/btnCancelEdit_EditEmpFrg"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="64dp"
             android:backgroundTint="#C93333"
-            android:text="Cancel Edit"
-            app:cornerRadius="10dp"
+            android:text="Cancel Add"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editStatus_EditEmpFrg" />
+            app:layout_constraintTop_toBottomOf="@+id/btnConfirm_AddEmpFrag" />
+
+        <Button
+            android:id="@+id/btnConfirm_AddEmpFrag"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:backgroundTint="#33C98B"
+            android:text="Confirm Add"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.502"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtStatus_AddEmpFrag" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
