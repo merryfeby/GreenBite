@@ -61,6 +61,9 @@ interface WebService {
     @POST("login")
     suspend fun loginUser(@Body loginRequest: LoginRequest): Response<LoginResponse>
 
+    @GET("postcode")
+    suspend fun getPostcodes(): List<Postcode>
+
     //EMPLOYEE
     //ADMIN
 }

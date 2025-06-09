@@ -16,8 +16,29 @@
         val users: LiveData<List<User>>
             get() = _users
 
-        fun init() {
+        private val _postcodes = MutableLiveData<List<Postcode>>()
+        val postcodes: LiveData<List<Postcode>> = _postcodes
 
+        private val _selectedPostcode = MutableLiveData<Postcode?>()
+        val selectedPostcode: LiveData<Postcode?> = _selectedPostcode
+
+        fun init(){
+
+        }
+
+        fun fetchPostcodes() {
+            viewModelScope.launch {
+                try {
+                    val response = App.retrofitService.getPostcodes()
+                    _postcodes.postValue(response)
+                } catch (e: Exception) {
+                    Log.e("UsersViewModel", "Error fetching postcodes: ${e.message}")
+                }
+            }
+        }
+
+        fun setSelectedPostcode(postcode: Postcode) {
+            _selectedPostcode.value = postcode
         }
 
         fun registerUser(user: User, onResult: (Boolean, String) -> Unit) {
