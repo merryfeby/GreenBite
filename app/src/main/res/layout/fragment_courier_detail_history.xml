@@ -4,20 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".checker.CheckerDetailHistoryFragment">
+    tools:context=".courier.CourierDetailHistoryFragment">
 
     <TextView
-        android:id="@+id/txtTimeDetailHistory_Checker"
+        android:id="@+id/txtTimeDetailHistory_courier"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="Placed 5 min ago"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/divider_3" />
+        app:layout_constraintTop_toBottomOf="@+id/divider_20" />
 
     <View
-        android:id="@+id/divider_3"
+        android:id="@+id/divider_20"
         android:layout_width="0dp"
         android:layout_height="5dp"
         android:layout_marginStart="16dp"
@@ -26,10 +26,10 @@
         android:background="#615E5E"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtCustDetailHistory_Checker" />
+        app:layout_constraintTop_toBottomOf="@+id/txtCustDetailHistory_courier" />
 
     <View
-        android:id="@+id/divider_4"
+        android:id="@+id/divider_21"
         android:layout_width="0dp"
         android:layout_height="5dp"
         android:layout_marginStart="16dp"
@@ -39,10 +39,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtStatusDetailHistory_Checker" />
+        app:layout_constraintTop_toBottomOf="@+id/txtStatusDetailHistory_courier" />
 
     <View
-        android:id="@+id/navbarDetailHistory_checker"
+        android:id="@+id/navbarDetailHistory_courier"
         android:layout_width="0dp"
         android:layout_height="100dp"
         android:background="#67F06D"
@@ -51,7 +51,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/txtTitleDetailHistory_Checker"
+        android:id="@+id/txtTitleDetailHistory_courier"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -64,16 +64,16 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/txtWelcomeDetailHistory_Checker"
+        android:id="@+id/txtWelcomeDetailHistory_courier"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Welcome, {user}"
         android:textColor="#FFFFFF"
-        app:layout_constraintStart_toStartOf="@+id/txtTitleDetailHistory_Checker"
-        app:layout_constraintTop_toBottomOf="@+id/txtTitleDetailHistory_Checker" />
+        app:layout_constraintStart_toStartOf="@+id/txtTitleDetailHistory_courier"
+        app:layout_constraintTop_toBottomOf="@+id/txtTitleDetailHistory_courier" />
 
     <TextView
-        android:id="@+id/txtCustDetailHistory_Checker"
+        android:id="@+id/txtCustDetailHistory_courier"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -82,10 +82,10 @@
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/navbarDetailHistory_checker" />
+        app:layout_constraintTop_toBottomOf="@+id/navbarDetailHistory_courier" />
 
     <TextView
-        android:id="@+id/txtIdDetailHistory_Checker"
+        android:id="@+id/txtIdDetailHistory_courier"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
@@ -95,10 +95,10 @@
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/txtCustDetailHistory_Checker" />
+        app:layout_constraintTop_toTopOf="@+id/txtCustDetailHistory_courier" />
 
     <TextView
-        android:id="@+id/txtStatusDetailHistory_Checker"
+        android:id="@+id/txtStatusDetailHistory_courier"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -107,10 +107,10 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtTimeDetailHistory_Checker" />
+        app:layout_constraintTop_toBottomOf="@+id/txtTimeDetailHistory_courier" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvDetailHistory_Checker"
+        android:id="@+id/rvDetailHistory_courier"
         android:layout_width="0dp"
         android:layout_height="150dp"
         android:layout_marginStart="16dp"
@@ -118,10 +118,10 @@
         android:layout_marginEnd="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/divider_4" />
+        app:layout_constraintTop_toBottomOf="@+id/divider_21" />
 
     <View
-        android:id="@+id/detailBackgroundDetailHistory_Checker"
+        android:id="@+id/detailBackgroundDetailHistory_courier"
         android:layout_width="0dp"
         android:layout_height="180dp"
         android:layout_marginStart="16dp"
@@ -130,10 +130,10 @@
         android:background="#B6B4B4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rvDetailHistory_Checker" />
+        app:layout_constraintTop_toBottomOf="@+id/rvDetailHistory_courier" />
 
     <TextView
-        android:id="@+id/textView52"
+        android:id="@+id/tvOrderDetail_courier"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -141,96 +141,95 @@
         android:text="Order details"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/detailBackgroundDetailHistory_Checker"
-        app:layout_constraintTop_toTopOf="@+id/detailBackgroundDetailHistory_Checker" />
+        app:layout_constraintStart_toStartOf="@+id/detailBackgroundDetailHistory_courier"
+        app:layout_constraintTop_toTopOf="@+id/detailBackgroundDetailHistory_courier" />
 
     <TextView
-        android:id="@+id/textView53"
+        android:id="@+id/tvPlacedDetail_courier"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="Placed"
-        app:layout_constraintStart_toStartOf="@+id/detailBackgroundDetailHistory_Checker"
-        app:layout_constraintTop_toBottomOf="@+id/textView52" />
+        app:layout_constraintStart_toStartOf="@+id/detailBackgroundDetailHistory_courier"
+        app:layout_constraintTop_toBottomOf="@+id/tvOrderDetail_courier" />
 
     <TextView
-        android:id="@+id/textView54"
+        android:id="@+id/tvCustNameDetail_courier"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="Customer name"
-        app:layout_constraintStart_toStartOf="@+id/detailBackgroundDetailHistory_Checker"
-        app:layout_constraintTop_toBottomOf="@+id/textView53" />
+        app:layout_constraintStart_toStartOf="@+id/detailBackgroundDetailHistory_courier"
+        app:layout_constraintTop_toBottomOf="@+id/tvPlacedDetail_courier" />
 
     <TextView
-        android:id="@+id/textView55"
+        android:id="@+id/tvCustPhoneDetail_courier"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="Customer phone"
-        app:layout_constraintStart_toStartOf="@+id/detailBackgroundDetailHistory_Checker"
-        app:layout_constraintTop_toBottomOf="@+id/textView54" />
+        app:layout_constraintStart_toStartOf="@+id/detailBackgroundDetailHistory_courier"
+        app:layout_constraintTop_toBottomOf="@+id/tvCustNameDetail_courier" />
 
     <View
-        android:id="@+id/view4"
+        android:id="@+id/divider_22"
         android:layout_width="0dp"
         android:layout_height="2dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:background="#474747"
-        app:layout_constraintEnd_toEndOf="@id/detailBackgroundDetailHistory_Checker"
-        app:layout_constraintStart_toStartOf="@+id/detailBackgroundDetailHistory_Checker"
-        app:layout_constraintTop_toBottomOf="@+id/textView55" />
+        app:layout_constraintEnd_toEndOf="@id/detailBackgroundDetailHistory_courier"
+        app:layout_constraintStart_toStartOf="@+id/detailBackgroundDetailHistory_courier"
+        app:layout_constraintTop_toBottomOf="@+id/tvCustPhoneDetail_courier" />
 
     <TextView
-        android:id="@+id/textView56"
+        android:id="@+id/tvSubtotal_courier"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="Subtotal"
-        app:layout_constraintStart_toStartOf="@+id/detailBackgroundDetailHistory_Checker"
-        app:layout_constraintTop_toBottomOf="@+id/view4" />
+        app:layout_constraintStart_toStartOf="@+id/detailBackgroundDetailHistory_courier"
+        app:layout_constraintTop_toBottomOf="@+id/divider_22" />
 
     <TextView
-        android:id="@+id/txtPlacedDateDetailHistory_Checker"
+        android:id="@+id/txtPlacedDateDetailHistory_courier"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:text="Thu, Apr 15th 2025 1.00pm"
         android:textAlignment="textEnd"
-        app:layout_constraintEnd_toEndOf="@+id/detailBackgroundDetailHistory_Checker"
-        app:layout_constraintTop_toTopOf="@+id/textView53" />
+        app:layout_constraintEnd_toEndOf="@+id/detailBackgroundDetailHistory_courier"
+        app:layout_constraintTop_toTopOf="@+id/tvPlacedDetail_courier" />
 
     <TextView
-        android:id="@+id/txtPhoneDetailHistory_Checker"
+        android:id="@+id/txtPhoneDetailHistory_courier"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:text="TextView"
-        app:layout_constraintEnd_toEndOf="@+id/detailBackgroundDetailHistory_Checker"
-        app:layout_constraintTop_toTopOf="@+id/textView55" />
+        app:layout_constraintEnd_toEndOf="@+id/detailBackgroundDetailHistory_courier"
+        app:layout_constraintTop_toTopOf="@+id/tvCustPhoneDetail_courier" />
 
     <TextView
-        android:id="@+id/txtNameDetailHistory_Checker"
+        android:id="@+id/txtNameDetailHistory_courier"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:text="TextView"
-        app:layout_constraintEnd_toEndOf="@+id/detailBackgroundDetailHistory_Checker"
-        app:layout_constraintTop_toTopOf="@+id/textView54" />
+        app:layout_constraintEnd_toEndOf="@+id/detailBackgroundDetailHistory_courier"
+        app:layout_constraintTop_toTopOf="@+id/tvCustNameDetail_courier" />
 
     <TextView
-        android:id="@+id/txtSubtotalDetailHistory_Checker"
+        android:id="@+id/txtSubtotalDetailHistory_courier"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:text="TextView"
-        app:layout_constraintEnd_toEndOf="@+id/detailBackgroundDetailHistory_Checker"
-        app:layout_constraintTop_toTopOf="@+id/textView56" />
-
+        app:layout_constraintEnd_toEndOf="@+id/detailBackgroundDetailHistory_courier"
+        app:layout_constraintTop_toTopOf="@+id/tvSubtotal_courier" />
 </androidx.constraintlayout.widget.ConstraintLayout>

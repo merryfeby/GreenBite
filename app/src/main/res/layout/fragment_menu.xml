@@ -12,6 +12,9 @@
         <variable
             name="cartViewModel"
             type="com.example.greenbite.CartViewModel" />
+        <variable
+            name="productViewModel"
+            type="com.example.greenbite.ProductViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
