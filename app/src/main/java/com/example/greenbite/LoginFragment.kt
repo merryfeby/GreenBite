@@ -1,5 +1,7 @@
 package com.example.greenbite
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -9,6 +11,7 @@ import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
+import com.example.greenbite.checker.CheckerActivity
 import com.example.greenbite.databinding.FragmentLoginBinding
 
 class LoginFragment : Fragment() {
@@ -49,13 +52,19 @@ class LoginFragment : Fragment() {
                         1 -> { // Customer
                             findNavController().navigate(R.id.action_loginFragment_to_homeFragment)
                         }
-                        2 -> { // Employee
+                        2 -> { // Checker
                             Toast.makeText(context, "Employee Dashboard - Coming Soon!", Toast.LENGTH_SHORT).show()
-                            findNavController().navigate(R.id.action_loginFragment_to_homeFragment) // Temporary
+                            val intent = Intent(requireContext(), CheckerActivity::class.java)
+                            startActivity(intent)
                         }
                         3 -> { // Admin
                             Toast.makeText(context, "Admin Dashboard - Coming Soon!", Toast.LENGTH_SHORT).show()
                             // Navigate to admin dashboard when ready
+                            findNavController().navigate(R.id.action_loginFragment_to_homeFragment) // Temporary
+                        }
+                        4 -> {
+                            Toast.makeText(context, "Admin Dashboard - Coming Soon!", Toast.LENGTH_SHORT).show()
+                            // Navigate to courier dashboard when ready
                             findNavController().navigate(R.id.action_loginFragment_to_homeFragment) // Temporary
                         }
                         else -> {
