@@ -55,6 +55,7 @@ class LoginFragment : Fragment() {
                         2 -> { // Checker
                             Toast.makeText(context, "Employee Dashboard - Coming Soon!", Toast.LENGTH_SHORT).show()
                             val intent = Intent(requireContext(), CheckerActivity::class.java)
+                            intent.putExtra("userEmail", user.email)
                             startActivity(intent)
                         }
                         3 -> { // Admin

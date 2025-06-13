@@ -1,5 +1,6 @@
 package com.example.greenbite
 
+import com.example.greenbite.checker.Order
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 import retrofit2.Response
@@ -65,5 +66,8 @@ interface WebService {
     suspend fun getPostcodes(): List<Postcode>
 
     //EMPLOYEE
+    @GET("orders")
+    suspend fun getAllOrders(): List<Order>
+
     //ADMIN
 }
