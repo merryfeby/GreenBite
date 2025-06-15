@@ -14,7 +14,7 @@ import com.example.greenbite.databinding.FragmentAdminAddMenuBinding
 
 class AdminAddMenuFragment : Fragment() {
     lateinit var binding: FragmentAdminAddMenuBinding
-    private val viewModel: UserViewModel by activityViewModels()
+//    private val viewModel: UserViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -23,10 +23,10 @@ class AdminAddMenuFragment : Fragment() {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_admin_add_menu, container, false)
 
         binding.btnConfirmAddProductFrag.setOnClickListener(){
-            findNavController().navigate(R.id.action_adminAddMenuFragment_pop)
+            findNavController().navigate(R.id.action_global_adminMenuFragment2)
         }
         binding.btnCancelAddProductFrag.setOnClickListener(){
-            findNavController().navigate(R.id.action_adminAddMenuFragment_pop)
+            findNavController().navigate(R.id.action_global_adminMenuFragment2)
         }
 
         return binding.root

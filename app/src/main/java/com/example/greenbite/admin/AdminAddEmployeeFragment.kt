@@ -15,7 +15,7 @@ import com.example.greenbite.databinding.FragmentAdminAddEmployeeBinding
 
 class AdminAddEmployeeFragment : Fragment() {
     lateinit var binding: FragmentAdminAddEmployeeBinding
-    private val viewModel: UserViewModel by activityViewModels()
+//    private val viewModel: UserViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -24,10 +24,10 @@ class AdminAddEmployeeFragment : Fragment() {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_admin_add_employee, container, false)
 
         binding.btnConfirmAddEmpFrag.setOnClickListener(){
-            findNavController().navigate(R.id.action_adminAddEmployeeFragment_pop)
+            findNavController().navigate(R.id.action_global_adminEmployeeFragment2)
         }
         binding.btnCancelAddEmpFrag.setOnClickListener(){
-            findNavController().navigate(R.id.action_adminAddEmployeeFragment_pop)
+            findNavController().navigate(R.id.action_global_adminEmployeeFragment2)
 
         }
 

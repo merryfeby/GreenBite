@@ -54,7 +54,7 @@ class MainActivity : AppCompatActivity() {
 
         navController.addOnDestinationChangedListener { _, destination, _ ->
             binding.bottomNav.visibility = when (destination.id) {
-                R.id.loginFragment, R.id.registerFragment -> View.GONE
+                R.id.loginFragment, R.id.registerFragment, R.id.adminFragment3, R.id.adminEmployeeFragment2 -> View.GONE
                 else -> View.VISIBLE
             }
         }
