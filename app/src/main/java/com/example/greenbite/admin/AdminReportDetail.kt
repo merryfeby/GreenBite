@@ -1,17 +1,18 @@
-package com.example.greenbite
+package com.example.greenbite.admin
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import com.example.greenbite.R
 
-class AdminReportFragment : Fragment() {
+class AdminReportDetail : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_admin_report, container, false)
+        return inflater.inflate(R.layout.fragment_admin_report_detail, container, false)
     }
 }
