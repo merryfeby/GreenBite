@@ -27,21 +27,20 @@
             android:id="@+id/textView7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:layout_marginEnd="168dp"
+            android:layout_marginTop="36dp"
+            android:layout_marginEnd="120dp"
             android:fontFamily="sans-serif-black"
-            android:text="Menu"
+            android:text="Foods &amp; Beverage"
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvAllMenu"
-            android:layout_width="392dp"
-            android:layout_height="629dp"
-            android:layout_marginTop="12dp"
+            android:layout_width="371dp"
+            android:layout_height="510dp"
+            android:layout_marginTop="40dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.444"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/categoryLayout" />
 
@@ -137,6 +136,21 @@
                         app:strokeColor="#32C98B"
                         app:strokeWidth="1dp" />
 
+                    <TextView
+                        android:id="@+id/btnWraps"
+                        android:layout_width="95dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/button_inactive"
+                        android:fontFamily="sans-serif-medium"
+                        android:gravity="center"
+                        android:paddingStart="4dp"
+                        android:paddingEnd="4dp"
+                        android:text="Wraps"
+                        android:textColor="#32C98B"
+                        android:textSize="14sp"
+                        app:cornerRadius="10dp"
+                        app:strokeColor="#32C98B"
+                        app:strokeWidth="1dp" />
                 </LinearLayout>
             </HorizontalScrollView>
         </androidx.constraintlayout.widget.ConstraintLayout>

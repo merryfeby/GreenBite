@@ -1,0 +1,38 @@
+package com.example.greenbite.checker
+
+import android.util.Log
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import com.example.greenbite.App
+import com.example.greenbite.User
+import kotlinx.coroutines.launch
+
+class CheckerViewModel: ViewModel(){
+    private val _activeUser = MutableLiveData<User>()
+    val activeUser: LiveData<User>
+        get() = _activeUser
+
+    private val _orders = MutableLiveData<List<Order>>()
+    val orders: LiveData<List<Order>>
+        get() = _orders
+
+    fun init(userEmail: String){
+        viewModelScope.launch {
+            var response = App.retrofitService.getUserByEmail(userEmail)
+            if (response.isSuccessful) {
+                val user = response.body()
+                if (user != null) {
+                    _activeUser.value = user!!
+                    Log.d("Login", "Active user set: ${user.email}")
+                }
+            }
+            var orders = App.retrofitService.getAllOrders()
+            for (order in orders) {
+                Log.d("Orders", order.toString())
+            }
+            _orders.value = orders
+        }
+    }
+}

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/checker_nav"
+    app:startDestination="@id/checkerDashboardFragment">
+
+    <fragment
+        android:id="@+id/checkerDetailFragment"
+        android:name="com.example.greenbite.checker.CheckerDetailFragment"
+        android:label="fragment_checker_detail"
+        tools:layout="@layout/fragment_checker_detail" />
+    <fragment
+        android:id="@+id/checkerDashboardFragment"
+        android:name="com.example.greenbite.checker.CheckerDashboardFragment"
+        android:label="fragment_checker_dashboard"
+        tools:layout="@layout/fragment_checker_dashboard" />
+    <fragment
+        android:id="@+id/checkerDetailHistoryFragment"
+        android:name="com.example.greenbite.checker.CheckerDetailHistoryFragment"
+        android:label="fragment_checker_detail_history"
+        tools:layout="@layout/fragment_checker_detail_history" />
+    <fragment
+        android:id="@+id/checkerHistoryFragment"
+        android:name="com.example.greenbite.checker.CheckerHistoryFragment"
+        android:label="fragment_checker_history"
+        tools:layout="@layout/fragment_checker_history" />
+    <action
+        android:id="@+id/action_global_checkerDashboardFragment"
+        app:destination="@id/checkerDashboardFragment" />
+    <action
+        android:id="@+id/action_global_checkerDetailFragment"
+        app:destination="@id/checkerDetailFragment" />
+    <action
+        android:id="@+id/action_global_checkerDetailHistoryFragment"
+        app:destination="@id/checkerDetailHistoryFragment" />
+    <action
+        android:id="@+id/action_global_checkerHistoryFragment"
+        app:destination="@id/checkerHistoryFragment" />
+</navigation>

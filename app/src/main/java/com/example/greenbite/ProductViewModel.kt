@@ -36,8 +36,8 @@ class ProductViewModel : ViewModel() {
             }
             val sorted = fetchedProducts.sortedBy { it.name }
             _currentCategoryMenu.value = sorted
-            }
         }
+    }
 }
 
 

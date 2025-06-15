@@ -8,21 +8,25 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
-import com.example.greenbite.databinding.FragmentAdminEmployeeBinding
+import com.example.greenbite.databinding.FragmentAdminAddMenuBinding
 
-class AdminEmployeeFragment : Fragment() {
-    lateinit var binding: FragmentAdminEmployeeBinding
+class AdminAddMenuFragment : Fragment() {
+    lateinit var binding: FragmentAdminAddMenuBinding
     private val viewModel: UserViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_admin_employee, container, false)
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_admin_add_menu, container, false)
 
-        binding.btnAddEmployeeFrag.setOnClickListener(){
-            findNavController().navigate(R.id.action_adminEmployeeFragment_to_adminAddEmployeeFragment)
+        binding.btnConfirmAddProductFrag.setOnClickListener(){
+            findNavController().navigate(R.id.action_adminAddMenuFragment_pop)
         }
+        binding.btnCancelAddProductFrag.setOnClickListener(){
+            findNavController().navigate(R.id.action_adminAddMenuFragment_pop)
+        }
+
         return binding.root
     }
 }
