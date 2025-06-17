@@ -77,4 +77,11 @@
         android:name="com.example.greenbite.Customer.CartFragment"
         android:label="fragment_cart"
         tools:layout="@layout/fragment_cart" />
+    <fragment
+        android:id="@+id/adminFragment3"
+        android:name="com.example.greenbite.admin.AdminFragment"
+        android:label="AdminFragment" />
+    <action
+        android:id="@+id/action_global_adminFragment3"
+        app:destination="@id/adminFragment3" />
 </navigation>

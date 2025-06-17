@@ -61,7 +61,7 @@ class LoginFragment : Fragment() {
                         3 -> { // Admin
                             Toast.makeText(context, "Admin Dashboard - Coming Soon!", Toast.LENGTH_SHORT).show()
                             // Navigate to admin dashboard when ready
-                            findNavController().navigate(R.id.action_loginFragment_to_homeFragment) // Temporary
+                            findNavController().navigate(R.id.action_global_adminFragment3) // Temporary
                         }
                         4 -> {
                             Toast.makeText(context, "Admin Dashboard - Coming Soon!", Toast.LENGTH_SHORT).show()
