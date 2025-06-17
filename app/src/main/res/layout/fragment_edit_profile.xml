@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools">
     <data>
         <variable
-            name="userViewModel"
-            type="com.example.greenbite.UserViewModel" />
+        name="usersViewModel"
+        type="com.example.greenbite.UsersViewModel" />
     </data>
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/btnSaveEdit"
@@ -54,13 +54,13 @@
             android:id="@+id/btnEditSave"
             android:layout_width="332dp"
             android:layout_height="45dp"
-            android:layout_marginTop="28dp"
+            android:layout_marginTop="41dp"
             android:backgroundTint="#33C98B"
             android:text="Save Changes"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.518"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/etEditPosscode" />
+            app:layout_constraintTop_toBottomOf="@+id/editProfilespinner" />
 
         <EditText
             android:id="@+id/etEditName"
@@ -170,21 +170,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView26" />
 
-        <EditText
-            android:id="@+id/etEditPosscode"
-            android:layout_width="331dp"
-            android:layout_height="45dp"
-            android:layout_marginTop="24dp"
-            android:background="#e0f7e9"
-            android:ems="10"
-            android:inputType="text"
-            android:padding="12dp"
-            android:textColor="#3E3A3A"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.512"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView27" />
-
         <TextView
             android:id="@+id/textView27"
             android:layout_width="wrap_content"
@@ -206,6 +191,15 @@
             android:text="Name"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <Spinner
+            android:id="@+id/editProfilespinner"
+            android:layout_width="331dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="19dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView27" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

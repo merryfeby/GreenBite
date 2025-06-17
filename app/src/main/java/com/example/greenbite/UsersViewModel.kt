@@ -164,7 +164,7 @@
                     if (response.isSuccessful) {
                         val user = response.body()
                         if (user != null) {
-                            _activeUser.value = user
+                            _activeUser.value = user!!
                             Log.d("Login", "Active user set: ${user.email}")
                         }
                     }
@@ -192,10 +192,20 @@
         }
 
         fun isLoggedIn(): Boolean {
-            return _activeUser.value != null
+            return _activeUser.value != null!!
         }
 
         fun logout() {
-            _activeUser.value = null
+            _activeUser.value = null!!
+        }
+
+        fun updateUser(user: User) {
+            viewModelScope.launch {
+                val currentUser = _activeUser.value ?: return@launch
+                val response = App.retrofitService.updateUser(currentUser.userID!!, user)
+                if (response.isSuccessful) {
+                    _activeUser.value = user.copy(userID = currentUser.userID, role = currentUser.role)
+                }
+            }
         }
     }

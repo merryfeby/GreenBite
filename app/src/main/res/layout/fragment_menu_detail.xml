@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="usersViewModel"
+            type="com.example.greenbite.User" />
+    </data>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFFFFF"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:context=".Customer.MenuDetailFragment">
+
+            <ImageButton
+                android:id="@+id/menuDetailBackBtn"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="24dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:padding="12dp"
+                android:src="@drawable/back_svgrepo_com"
+                android:contentDescription="Back"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvDetailTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Detail"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                app:layout_constraintTop_toTopOf="@+id/menuDetailBackBtn"
+                app:layout_constraintBottom_toBottomOf="@+id/menuDetailBackBtn"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <ImageView
+                android:id="@+id/imageView12"
+                android:layout_width="0dp"
+                android:layout_height="160dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginTop="16dp"
+                android:scaleType="centerCrop"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/menuDetailBackBtn"
+                tools:src="@tools:sample/avatars" />
+
+            <TextView
+                android:id="@+id/tvMenuName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="16dp"
+                android:fontFamily="sans-serif-black"
+                android:text="Strawberry Crush Smoothie"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView12" />
+
+            <TextView
+                android:id="@+id/tvCategoryMenu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="4dp"
+                android:fontFamily="sans-serif-medium"
+                android:text="Smoothies"
+                android:textColor="#9B9B9B"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvMenuName" />
+
+            <ImageView
+                android:id="@+id/imageView17"
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="6dp"
+                android:src="@drawable/star"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvCategoryMenu" />
+
+            <TextView
+                android:id="@+id/tvRatingDetailMenu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:fontFamily="sans-serif-bold"
+                android:text="4.9"
+                android:textSize="12sp"
+                android:textColor="#000000"
+                app:layout_constraintStart_toEndOf="@+id/imageView17"
+                app:layout_constraintTop_toTopOf="@+id/imageView17"
+                app:layout_constraintBottom_toBottomOf="@+id/imageView17" />
+
+            <View
+                android:id="@+id/divider1"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginTop="16dp"
+                android:background="#E0E0E0"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView17" />
+
+            <TextView
+                android:id="@+id/textView59"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="16dp"
+                android:fontFamily="sans-serif-black"
+                android:text="Description"
+                android:textSize="16sp"
+                android:textColor="#000000"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/divider1" />
+
+            <TextView
+                android:id="@+id/tvMenuDesc"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginTop="6dp"
+                android:fontFamily="sans-serif"
+                android:text="A Strawberry Crush Smoothie is a refreshing and vibrant drink made with fresh or frozen strawberries blended with a combination..."
+                android:textColor="#666666"
+                android:textSize="12sp"
+                android:lineSpacingExtra="1dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView59" />
+
+            <TextView
+                android:id="@+id/textView57"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="20dp"
+                android:fontFamily="sans-serif-black"
+                android:text="Size"
+                android:textSize="16sp"
+                android:textColor="#000000"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvMenuDesc" />
+
+            <Button
+                android:id="@+id/btnSizeS"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="6dp"
+                android:text="S"
+                android:textColor="#9B9B9B"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toStartOf="@+id/btnSizeM"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView57" />
+
+            <Button
+                android:id="@+id/btnSizeM"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="6dp"
+                android:layout_marginEnd="6dp"
+                android:text="M"
+                android:textColor="#00C896"
+                android:strokeColor="#00C896"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toStartOf="@+id/btnSizeL"
+                app:layout_constraintStart_toEndOf="@+id/btnSizeS"
+                app:layout_constraintTop_toTopOf="@+id/btnSizeS" />
+
+            <Button
+                android:id="@+id/btnSizeL"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="6dp"
+                android:layout_marginEnd="24dp"
+                android:text="L"
+                android:textColor="#9B9B9B"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/btnSizeM"
+                app:layout_constraintTop_toTopOf="@+id/btnSizeS" />
+
+            <TextView
+                android:id="@+id/tvSugar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="16dp"
+                android:fontFamily="sans-serif-black"
+                android:text="Sugar"
+                android:textSize="16sp"
+                android:textColor="#000000"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnSizeS" />
+
+            <Button
+                android:id="@+id/btnNormalSugar"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="6dp"
+                android:text="Normal"
+                android:textColor="#9B9B9B"
+                android:textSize="11sp"
+                app:layout_constraintEnd_toStartOf="@+id/btnLessSugar"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvSugar" />
+
+            <Button
+                android:id="@+id/btnLessSugar"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="6dp"
+                android:layout_marginEnd="6dp"
+                android:strokeColor="#00C896"
+                android:text="Less Sugar"
+                android:textColor="#00C896"
+                android:textSize="11sp"
+                app:layout_constraintEnd_toStartOf="@+id/btnNoSugar"
+                app:layout_constraintStart_toEndOf="@+id/btnNormalSugar"
+                app:layout_constraintTop_toTopOf="@+id/btnNormalSugar" />
+
+            <Button
+                android:id="@+id/btnNoSugar"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="6dp"
+                android:layout_marginEnd="24dp"
+                android:text="No Sugar"
+                android:textColor="#9B9B9B"
+                android:textSize="11sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/btnLessSugar"
+                app:layout_constraintTop_toTopOf="@+id/btnNormalSugar" />
+
+            <TextView
+                android:id="@+id/tvPriceLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="20dp"
+                android:text="Price"
+                android:textSize="10sp"
+                android:textColor="#9B9B9B"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnNormalSugar" />
+
+            <TextView
+                android:id="@+id/tvPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="2dp"
+                android:text="Rp30.000"
+                android:textColor="#33C98B"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvPriceLabel" />
+
+            <View
+                android:id="@+id/bottomSpacer"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:layout_marginTop="20dp"
+                app:layout_constraintTop_toBottomOf="@+id/tvPrice" />
+
+            <Button
+                android:id="@+id/detailMenuAddBtn"
+                android:layout_width="190dp"
+                android:layout_height="52dp"
+                android:layout_marginTop="19dp"
+                android:layout_marginBottom="6dp"
+                android:backgroundTint="#33C98B"
+                android:text="Add To Cart"
+                app:layout_constraintBottom_toTopOf="@+id/bottomSpacer"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.811"
+                app:layout_constraintStart_toEndOf="@+id/tvPrice"
+                app:layout_constraintTop_toBottomOf="@+id/btnLessSugar"
+                app:layout_constraintVertical_bias="1.0" />
+
+            <TextView
+                android:id="@+id/tvCalorie"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28dp"
+                android:layout_marginEnd="8dp"
+                android:fontFamily="sans-serif-medium"
+                android:text="Calorie : "
+                android:textColor="#525050"
+                android:textSize="10sp"
+                app:layout_constraintEnd_toStartOf="@+id/tvFat"
+                app:layout_constraintTop_toBottomOf="@+id/tvMenuName" />
+
+            <TextView
+                android:id="@+id/tvFat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28dp"
+                android:fontFamily="sans-serif-medium"
+                android:text="Fat :"
+                android:textColor="#525050"
+                android:textSize="10sp"
+                app:layout_constraintTop_toBottomOf="@+id/tvMenuName"
+                tools:layout_editor_absoluteX="311dp" />
+
+            <TextView
+                android:id="@+id/tvProtein"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28dp"
+                android:fontFamily="sans-serif-medium"
+                android:text="Protein :"
+                android:textColor="#525050"
+                android:textSize="10sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.159"
+                app:layout_constraintStart_toEndOf="@+id/tvFat"
+                app:layout_constraintTop_toBottomOf="@+id/tvMenuName" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+</layout>

@@ -7,6 +7,7 @@ import retrofit2.Response
 import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.POST
+import retrofit2.http.PUT
 import retrofit2.http.Path
 
 data class TopMenu(
@@ -55,6 +56,9 @@ interface WebService {
 
     @POST("users")
     suspend fun createUser(@Body user: User): Response<UserRegistrationResponse>
+
+    @PUT("users/{id}")
+    suspend fun updateUser(@Path("id") id: Int, @Body user: User): Response<User>
 
     @GET("users/email/{email}")
     suspend fun getUserByEmail(@Path("email") email: String): Response<User>
