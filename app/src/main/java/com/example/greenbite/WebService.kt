@@ -20,7 +20,6 @@ data class TopMenu(
     val totalrating_menu:Int,
 )
 
-
 @JsonClass(generateAdapter = true)
 data class UserRegistrationResponse(
     @Json(name = "message")
@@ -58,7 +57,7 @@ interface WebService {
     suspend fun createUser(@Body user: User): Response<UserRegistrationResponse>
 
     @PUT("users/{id}")
-    suspend fun updateUser(@Path("id") id: Int, @Body user: User): Response<User>
+    suspend fun updateUser(@Path("id") id: Int, @Body user: User): User
 
     @GET("users/email/{email}")
     suspend fun getUserByEmail(@Path("email") email: String): Response<User>

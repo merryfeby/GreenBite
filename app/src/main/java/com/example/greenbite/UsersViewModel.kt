@@ -202,10 +202,8 @@
         fun updateUser(user: User) {
             viewModelScope.launch {
                 val currentUser = _activeUser.value ?: return@launch
-                val response = App.retrofitService.updateUser(currentUser.userID!!, user)
-                if (response.isSuccessful) {
-                    _activeUser.value = user.copy(userID = currentUser.userID, role = currentUser.role)
-                }
+                val updatedUser = App.retrofitService.updateUser(currentUser.userID!!, user)
+                _activeUser.value = updatedUser.copy(userID = currentUser.userID, role = currentUser.role)
             }
         }
     }
