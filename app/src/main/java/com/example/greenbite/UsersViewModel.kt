@@ -198,4 +198,9 @@
         fun logout() {
             _activeUser.value = null
         }
+        fun deleteUser(userID: Int){
+            viewModelScope.launch {
+                App.retrofitService.deleteUser(userID)
+            }
+        }
     }

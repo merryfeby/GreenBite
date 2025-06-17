@@ -1,5 +1,6 @@
 package com.example.greenbite
 
+import com.example.greenbite.admin.Employee
 import com.example.greenbite.checker.Order
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
@@ -7,6 +8,8 @@ import retrofit2.Response
 import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.POST
+import retrofit2.http.DELETE
+import retrofit2.http.PUT
 import retrofit2.http.Path
 
 data class TopMenu(
@@ -65,9 +68,20 @@ interface WebService {
     @GET("postcode")
     suspend fun getPostcodes(): List<Postcode>
 
+    @DELETE("users/{userID}")
+    suspend fun deleteUser(@Path("userID") userID: Int): Response<Unit>
+
+    @PUT("users/{userID}")
+    suspend fun updateUser(@Path("userID") userID: Int, @Body updatedData: Map<String, Any>): Response<Unit>
+
     //EMPLOYEE
     @GET("orders")
     suspend fun getAllOrders(): List<Order>
 
     //ADMIN
+    @GET("employees")
+    suspend fun getEmployees(): List<Employee>
+    @PUT("employees/{userID}")
+    suspend fun updateEmployees(@Path("userID") userID: Int, @Body user: User)
+
 }
