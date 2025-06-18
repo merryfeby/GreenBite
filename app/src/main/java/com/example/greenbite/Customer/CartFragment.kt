@@ -1,6 +1,7 @@
 package com.example.greenbite.Customer
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -13,6 +14,7 @@ import com.example.greenbite.CartAdapter
 import com.example.greenbite.CartViewModel
 import com.example.greenbite.R
 import com.example.greenbite.UserViewModel
+import com.example.greenbite.UsersViewModel
 import com.example.greenbite.databinding.FragmentCartBinding
 import java.text.NumberFormat
 import java.util.Locale
@@ -20,7 +22,7 @@ import java.util.Locale
 class CartFragment : Fragment() {
     private lateinit var binding: FragmentCartBinding
     private val cartViewModel: CartViewModel by activityViewModels()
-    private val userViewModel: UserViewModel by activityViewModels()
+    private val usersViewModel: UsersViewModel by activityViewModels()
     private lateinit var cartAdapter: CartAdapter
 
     override fun onCreateView(
@@ -32,7 +34,7 @@ class CartFragment : Fragment() {
 
         binding.lifecycleOwner = viewLifecycleOwner
         binding.cartViewModel = cartViewModel
-
+        binding.usersViewModel = usersViewModel
 
         binding.btnCartBack.setOnClickListener(){
             findNavController().navigate(R.id.action_global_homeFragment)
@@ -58,7 +60,7 @@ class CartFragment : Fragment() {
     }
 
     private fun observeCartItems() {
-        val userEmail = userViewModel.activeUser.value?.email ?: "guest"
+        val userEmail = usersViewModel.activeUser .value?.email ?: "guest"
         val formatter = NumberFormat.getCurrencyInstance(Locale("in", "ID"))
 
         cartViewModel.getCartByUser(userEmail).observe(viewLifecycleOwner) { cartItems ->
@@ -69,6 +71,8 @@ class CartFragment : Fragment() {
                 cartViewModel.calculateCartTotal(cartItems)
                 formatter.maximumFractionDigits = 0
                 binding.tvTotal.text = formatter.format(cartViewModel.cartTotal.value ?: 0.0)
+                binding.tvCartTitle.visibility = View.GONE
+                binding.rvCart.visibility = View.VISIBLE
 
             } else {
                 binding.tvCartEmpty.visibility = View.VISIBLE

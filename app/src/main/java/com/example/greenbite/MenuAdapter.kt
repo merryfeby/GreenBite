@@ -1,8 +1,10 @@
 package com.example.greenbite
 
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -47,16 +49,11 @@ class MenuAdapter(
         holder.binding.tvCategoryNameMenu.text = menu.category.name
         holder.binding.tvTotalRating.text = "${menu.total_rating} Ratings"
 
-        holder.binding.btnAddMenu.setOnClickListener {
-            val cartItem = CartEntity(
-                user_email = userEmail,
-                id_menu = menu.productID,
-                nama_menu = menu.name,
-                harga = menu.price.toDouble(),
-                jumlah = 1
-            )
-            cartViewModel.addToCart(cartItem)
-            Toast.makeText(holder.itemView.context, "Menu added to cart", Toast.LENGTH_SHORT).show()
+        holder.binding.btnDetail.setOnClickListener {
+            val bundle = Bundle().apply {
+                putInt("productID", menu.productID)
+            }
+            it.findNavController().navigate(R.id.action_global_menuDetailFragment, bundle)
         }
     }
 }

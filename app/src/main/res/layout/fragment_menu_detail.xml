@@ -5,7 +5,10 @@
     <data>
         <variable
             name="usersViewModel"
-            type="com.example.greenbite.User" />
+            type="com.example.greenbite.UsersViewModel" />
+        <variable
+            name="productViewModel"
+            type="com.example.greenbite.ProductViewModel" />
     </data>
     <ScrollView
         android:layout_width="match_parent"
@@ -106,6 +109,44 @@
                 app:layout_constraintTop_toTopOf="@+id/imageView17"
                 app:layout_constraintBottom_toBottomOf="@+id/imageView17" />
 
+            <!-- Nutrition info row below star rating -->
+            <TextView
+                android:id="@+id/tvCalorie"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="sans-serif-medium"
+                android:text="Cal : "
+                android:textColor="#525050"
+                android:textSize="10sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView17" />
+
+            <TextView
+                android:id="@+id/tvFat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:fontFamily="sans-serif-medium"
+                android:text="Fat :"
+                android:textColor="#525050"
+                android:textSize="10sp"
+                app:layout_constraintStart_toEndOf="@+id/tvCalorie"
+                app:layout_constraintTop_toTopOf="@+id/tvCalorie" />
+
+            <TextView
+                android:id="@+id/tvProtein"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:fontFamily="sans-serif-medium"
+                android:text="Protein :"
+                android:textColor="#525050"
+                android:textSize="10sp"
+                app:layout_constraintStart_toEndOf="@+id/tvFat"
+                app:layout_constraintTop_toTopOf="@+id/tvCalorie" />
+
             <View
                 android:id="@+id/divider1"
                 android:layout_width="0dp"
@@ -116,7 +157,7 @@
                 android:background="#E0E0E0"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageView17" />
+                app:layout_constraintTop_toBottomOf="@+id/tvCalorie" />
 
             <TextView
                 android:id="@+id/textView59"
@@ -148,7 +189,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/textView59" />
 
             <TextView
-                android:id="@+id/textView57"
+                android:id="@+id/tvSize"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
@@ -173,7 +214,7 @@
                 android:textSize="14sp"
                 app:layout_constraintEnd_toStartOf="@+id/btnSizeM"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView57" />
+                app:layout_constraintTop_toBottomOf="@+id/tvSize" />
 
             <Button
                 android:id="@+id/btnSizeM"
@@ -307,45 +348,6 @@
                 app:layout_constraintStart_toEndOf="@+id/tvPrice"
                 app:layout_constraintTop_toBottomOf="@+id/btnLessSugar"
                 app:layout_constraintVertical_bias="1.0" />
-
-            <TextView
-                android:id="@+id/tvCalorie"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="28dp"
-                android:layout_marginEnd="8dp"
-                android:fontFamily="sans-serif-medium"
-                android:text="Calorie : "
-                android:textColor="#525050"
-                android:textSize="10sp"
-                app:layout_constraintEnd_toStartOf="@+id/tvFat"
-                app:layout_constraintTop_toBottomOf="@+id/tvMenuName" />
-
-            <TextView
-                android:id="@+id/tvFat"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="28dp"
-                android:fontFamily="sans-serif-medium"
-                android:text="Fat :"
-                android:textColor="#525050"
-                android:textSize="10sp"
-                app:layout_constraintTop_toBottomOf="@+id/tvMenuName"
-                tools:layout_editor_absoluteX="311dp" />
-
-            <TextView
-                android:id="@+id/tvProtein"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="28dp"
-                android:fontFamily="sans-serif-medium"
-                android:text="Protein :"
-                android:textColor="#525050"
-                android:textSize="10sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.159"
-                app:layout_constraintStart_toEndOf="@+id/tvFat"
-                app:layout_constraintTop_toBottomOf="@+id/tvMenuName" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
