@@ -41,5 +41,4 @@ class DashboardAdapter(
             Toast.makeText(holder.itemView.context, "Menu added to cart", Toast.LENGTH_SHORT).show()
         }
     }
-
 }

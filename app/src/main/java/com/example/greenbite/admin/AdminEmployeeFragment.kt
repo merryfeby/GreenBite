@@ -35,7 +35,7 @@ class AdminEmployeeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         lifecycleScope.launch {
             viewModel.getEmployees()
-            employeeAdapter.notifyDataSetChanged()
+//            employeeAdapter.notifyDataSetChanged()
         }
         employeeAdapter = EmployeeAdapter(usersViewModel,viewModel)
         binding.rvEmployeeAdminFrag.layoutManager = LinearLayoutManager(requireContext())

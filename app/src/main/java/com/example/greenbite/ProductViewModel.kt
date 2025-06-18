@@ -11,14 +11,26 @@ import kotlinx.coroutines.launch
 import kotlin.Int
 
 class ProductViewModel : ViewModel() {
+    private val _activeProduct = MutableLiveData<Product>()
+    val activeProduct: LiveData<Product>
+        get() = _activeProduct
+    private val _products = MutableLiveData<List<Product>>()
+    val products: LiveData<List<Product>>
+        get() = _products
+
+
     private val _currentCategory = MutableLiveData<String>("All")
     val currentCategory: LiveData<String> = _currentCategory
 
     private val _currentCategoryMenu = MutableLiveData<List<Product>>()
     val currentCategoryMenu: LiveData<List<Product>> = _currentCategoryMenu
 
+
     init {
         fetchProducts("All")
+    }
+    fun setActiveProduct(product: Product) {
+        _activeProduct.value = product
     }
 
     fun setCategory(category: String) {
@@ -26,6 +38,10 @@ class ProductViewModel : ViewModel() {
             _currentCategory.value = category
             fetchProducts(category)
         }
+    }
+
+    suspend fun getProducts() {
+        _products.value = App.retrofitService.getAllProducts()
     }
 
     private fun fetchProducts(category: String) {
@@ -42,28 +58,50 @@ class ProductViewModel : ViewModel() {
 
     //BUAT ADMIN
     //ambil data buat admin edit
-    private val _activeProduct = MutableLiveData<Product>()
-    val activeProduct: LiveData<Product>
-        get() = _activeProduct
-    fun setActiveProduct(product: Product) {
-        _activeProduct.value = product
-    }
-
     fun deleteProduct(productID: Int){
         viewModelScope.launch {
             App.retrofitService.deleteProduct(productID)
         }
     }
-    fun updateProduct(productID: Int, name: String, desc: String, price: Int) {
+    fun addProduct(name: String, desc: String, price: String, categoryId: Int, fat: Int, protein: Int, calorie: Int) {
+        viewModelScope.launch {
+            val newProduct = Product(
+                productID = 0,
+                name = name,
+                description = desc,
+                price = price,
+                categoryID = categoryId,
+                rating = 0.0,
+                img_url = null,
+                fat = fat,
+                protein = protein,
+                calorie = calorie,
+                deleted_at = null,
+                created_at = "",
+                updated_at = "",
+                category = Category(
+                    categoryID = 99,
+                    name = "none",
+                    description = "none"
+                ),
+                total_rating = 0
+            )
+            App.retrofitService.addProduct(newProduct)
+        }
+    }
+    fun updateProduct(productID: Int, name: String, desc: String, price: String) {
         viewModelScope.launch {
             val newProduct = Product(
                 productID = productID,
                 name = name,
                 description = desc,
-                price = price.toString(),
+                price = price,
                 categoryID = 1,
                 rating = 0.0,
                 img_url = null,
+                fat = 0,
+                protein = 0,
+                calorie = 0,
                 deleted_at = null,
                 created_at = "",
                 updated_at = "",

@@ -54,8 +54,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
-            android:text="Find by Category"
-            android:textSize="16sp"
+            android:text="Menu List"
+            android:textSize="24sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.055"
@@ -81,6 +81,16 @@
             android:text="Add Menu"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView35" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="12dp"
+            android:backgroundTint="#33C98B"
+            android:text="Refresh"
+            app:layout_constraintEnd_toStartOf="@+id/btnAdd_MenuFrag"
+            app:layout_constraintTop_toTopOf="@+id/btnAdd_MenuFrag" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

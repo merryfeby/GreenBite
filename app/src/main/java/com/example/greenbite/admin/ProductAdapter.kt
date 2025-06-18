@@ -24,11 +24,11 @@ class ProductDiffUtil: DiffUtil.ItemCallback<Product>(){
         return oldItem == newItem
     }
 }
+
 val productDiffUtil = ProductDiffUtil()
 
 class ProductAdapter(
-//    private val usersViewModel: UsersViewModel
-    private val productViewModel: ProductViewModel
+    private val vm: ProductViewModel
 ) : ListAdapter<Product, ProductAdapter.ProductViewHolder>(productDiffUtil) {
 
     class ProductViewHolder(val binding: ListMenuAdminBinding) : RecyclerView.ViewHolder(binding.root)
@@ -44,10 +44,10 @@ class ProductAdapter(
         holder.binding.rvHargaMenu.text = product.price.toString()
         holder.binding.rvRatingMenu.text = product.rating.toString()
         holder.binding.rvRatingMenu3.text = "0"
+
         holder.binding.btnEditRvMenuAdmin.setOnClickListener {
-            productViewModel.setActiveProduct(product)
+            vm.setActiveProduct(product)
             holder.itemView.findNavController().navigate(R.id.action_global_adminEditMenuFragment2)
         }
-
     }
 }

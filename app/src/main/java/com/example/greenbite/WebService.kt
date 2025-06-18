@@ -84,10 +84,11 @@ interface WebService {
     suspend fun getEmployees(): List<Employee>
     @PUT("employees/{userID}")
     suspend fun updateEmployees(@Path("userID") userID: Int, @Body user: User)
+
     @DELETE("products/{productID}")
-    //crud menu
     suspend fun deleteProduct(@Path("productID") productID: Int)
     @PUT("products/{productID}")
     suspend fun updateProduct(@Path("productID") productID: Int, @Body product: Product)
-
+    @POST("products")
+    suspend fun addProduct(@Body product: Product)
 }
