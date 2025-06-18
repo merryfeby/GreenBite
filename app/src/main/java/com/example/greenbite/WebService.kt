@@ -68,6 +68,9 @@ interface WebService {
     @GET("postcode")
     suspend fun getPostcodes(): List<Postcode>
 
+    @GET("products/{id}")
+    suspend fun getProductById(@Path("id") id: Int): Product
+
     //EMPLOYEE
     @GET("orders")
     suspend fun getAllOrders(): List<Order>

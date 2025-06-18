@@ -49,6 +49,20 @@
             app:layout_constraintStart_toEndOf="@+id/imageCardView"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <!-- New TextView below itemName -->
+        <TextView
+            android:id="@+id/tvAddOn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="2dp"
+            android:fontFamily="sans-serif-medium"
+            android:text="Add On Desc"
+            android:textColor="#A09B9B"
+            android:textSize="14sp"
+            app:layout_constraintStart_toEndOf="@+id/imageCardView"
+            app:layout_constraintTop_toBottomOf="@id/itemName" />
+
         <TextView
             android:id="@+id/itemPrice"
             android:layout_width="wrap_content"
@@ -60,7 +74,7 @@
             android:textSize="16sp"
             android:textStyle="bold"
             app:layout_constraintStart_toEndOf="@+id/imageCardView"
-            app:layout_constraintTop_toBottomOf="@+id/itemName" />
+            app:layout_constraintTop_toBottomOf="@+id/tvAddOn" />
 
         <LinearLayout
             android:id="@+id/quantityLayout"
@@ -129,4 +143,3 @@
             app:srcCompat="@drawable/trash_svgrepo_com" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
-

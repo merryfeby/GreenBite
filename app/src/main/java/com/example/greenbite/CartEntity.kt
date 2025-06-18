@@ -13,4 +13,5 @@ data class CartEntity(
     @ColumnInfo(name = "nama_menu") val nama_menu:String,
     @ColumnInfo(name = "harga_menu") val harga:Double,
     @ColumnInfo(name = "jumlah_menu") val jumlah:Int,
+    @ColumnInfo(name = "add_on") val add_on:String,
 )

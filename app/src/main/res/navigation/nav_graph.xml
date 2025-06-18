@@ -87,4 +87,11 @@
         android:name="com.example.greenbite.Customer.CustomerTopUpFragment"
         android:label="fragment_customer_top_up"
         tools:layout="@layout/fragment_customer_top_up" />
+    <fragment
+        android:id="@+id/menuDetailFragment"
+        android:name="com.example.greenbite.Customer.MenuDetailFragment"
+        android:label="MenuDetailFragment" />
+    <action
+        android:id="@+id/action_global_menuDetailFragment"
+        app:destination="@id/menuDetailFragment" />
 </navigation>
