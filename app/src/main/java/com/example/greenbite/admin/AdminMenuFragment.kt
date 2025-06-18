@@ -28,7 +28,7 @@ class AdminMenuFragment : Fragment() {
     ): View? {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_admin_menu, container, false)
 
-        productAdapter = ProductAdapter()
+        productAdapter = ProductAdapter(viewModel)
         val spanCount = 2
         binding.rvMenuAdminFrag.layoutManager = GridLayoutManager(requireContext(), spanCount)
         binding.rvMenuAdminFrag.adapter = productAdapter

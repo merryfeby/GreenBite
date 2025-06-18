@@ -2,13 +2,17 @@ package com.example.greenbite.admin
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.greenbite.Product
+import com.example.greenbite.ProductViewModel
 import com.example.greenbite.UsersViewModel
 import com.example.greenbite.databinding.ListEmployeeBinding
 import com.example.greenbite.databinding.ListMenuAdminBinding
+import com.example.greenbite.R
+
 
 class ProductDiffUtil: DiffUtil.ItemCallback<Product>(){
 
@@ -24,6 +28,7 @@ val productDiffUtil = ProductDiffUtil()
 
 class ProductAdapter(
 //    private val usersViewModel: UsersViewModel
+    private val productViewModel: ProductViewModel
 ) : ListAdapter<Product, ProductAdapter.ProductViewHolder>(productDiffUtil) {
 
     class ProductViewHolder(val binding: ListMenuAdminBinding) : RecyclerView.ViewHolder(binding.root)
@@ -40,7 +45,9 @@ class ProductAdapter(
         holder.binding.rvRatingMenu.text = product.rating.toString()
         holder.binding.rvRatingMenu3.text = "0"
         holder.binding.btnEditRvMenuAdmin.setOnClickListener {
-            // Handle edit button click
+            productViewModel.setActiveProduct(product)
+            holder.itemView.findNavController().navigate(R.id.action_global_adminEditMenuFragment2)
         }
+
     }
 }
