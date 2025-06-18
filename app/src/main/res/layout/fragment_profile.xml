@@ -7,10 +7,12 @@
             name="usersViewModel"
             type="com.example.greenbite.UsersViewModel" />
     </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ProfileFragment">
+        android:background="#F9F8F8"
+        tools:context=".Customer.ProfileFragment">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraintLayout2"
@@ -77,7 +79,7 @@
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:layout_marginStart="28dp"
-            android:src="@drawable/profile2"
+            android:src="@drawable/user_solid"
             app:layout_constraintBottom_toBottomOf="@+id/btnEditProfile"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/btnEditProfile" />
@@ -99,7 +101,7 @@
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:layout_marginEnd="28dp"
-            android:src="@drawable/right_arrow_backup_2_svgrepo_com"
+            android:src="@drawable/angle_right_solid"
             app:layout_constraintBottom_toBottomOf="@+id/btnEditProfile"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@+id/btnEditProfile" />
@@ -118,7 +120,7 @@
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:layout_marginStart="28dp"
-            android:src="@drawable/wallet_svgrepo_com"
+            android:src="@drawable/wallet_solid"
             app:layout_constraintBottom_toBottomOf="@+id/btnMyBalance"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/btnMyBalance" />
@@ -140,7 +142,7 @@
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:layout_marginEnd="28dp"
-            android:src="@drawable/right_arrow_backup_2_svgrepo_com"
+            android:src="@drawable/angle_right_solid"
             app:layout_constraintBottom_toBottomOf="@+id/btnMyBalance"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@+id/btnMyBalance" />
@@ -163,7 +165,7 @@
                 android:id="@+id/btnLogoutProfile"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#FFFFFF"
+                android:background="#FFEAEA"
                 android:padding="16dp">
 
                 <ImageView

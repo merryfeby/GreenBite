@@ -1,4 +1,4 @@
-package com.example.greenbite
+package com.example.greenbite.Customer
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -9,6 +9,8 @@ import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
+import com.example.greenbite.R
+import com.example.greenbite.UsersViewModel
 import com.example.greenbite.databinding.FragmentProfileBinding
 
 class ProfileFragment : Fragment() {
@@ -31,6 +33,10 @@ class ProfileFragment : Fragment() {
         }
         binding.btnEditProfile.setOnClickListener {
             findNavController().navigate(R.id.action_profileFragment_to_editProfileFragment)
+        }
+
+        binding.btnMyBalance.setOnClickListener {
+            findNavController().navigate(R.id.action_profileFragment_to_customerTopUpFragment)
         }
         binding.btnLogoutProfile.setOnClickListener(){
             Toast.makeText(requireContext(), "Signing out...", Toast.LENGTH_SHORT).show()
