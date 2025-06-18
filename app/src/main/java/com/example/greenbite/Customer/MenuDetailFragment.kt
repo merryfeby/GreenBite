@@ -64,6 +64,9 @@ class MenuDetailFragment : Fragment() {
                 binding.tvCategoryMenu.text = it.category.name
                 binding.tvRatingDetailMenu.text = it.rating.toString()
                 binding.tvMenuDesc.text = it.description
+                binding.tvProtein.text = "Protein : " + it.protein
+                binding.tvCalorie.text = "Calorie : " + it.calories
+                binding.tvFat.text = "Fat : " + it.fat
 
                 val formattedPrice = NumberFormat.getNumberInstance(Locale("in", "ID")).format(it.price.toDouble())
                 binding.tvPrice.text = "Rp$formattedPrice"
