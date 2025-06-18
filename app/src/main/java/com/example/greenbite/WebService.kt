@@ -73,4 +73,6 @@ interface WebService {
     suspend fun getAllOrders(): List<Order>
 
     //ADMIN
+    @GET("orders/{id}")
+    suspend fun getOrderById(@Path("id") id: String): Order
 }

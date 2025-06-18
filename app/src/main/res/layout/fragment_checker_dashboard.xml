@@ -1,17 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
-    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="#F9F8F8"
         tools:context=".checker.CheckerDashboardFragment">
 
         <View
             android:id="@+id/navbar_dashbaord_checker"
             android:layout_width="0dp"
             android:layout_height="100dp"
-            android:background="#67F06D"
+            android:background="@color/green"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -21,13 +23,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
             android:text="GreenBite"
             android:textColor="#FFFFFF"
             android:textSize="24sp"
             android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/txtWelcomeDashboard_Checker"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/navbar_dashbaord_checker"
+            app:layout_constraintVertical_chainStyle="packed" />
 
         <TextView
             android:id="@+id/txtWelcomeDashboard_Checker"
@@ -35,6 +38,7 @@
             android:layout_height="wrap_content"
             android:text="Welcome, {user}"
             android:textColor="#FFFFFF"
+            app:layout_constraintBottom_toTopOf="@+id/navbar_dashbaord_checker"
             app:layout_constraintStart_toStartOf="@+id/txtTitleDashboard_Checker"
             app:layout_constraintTop_toBottomOf="@+id/txtTitleDashboard_Checker" />
 
@@ -43,11 +47,47 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView45" />
+
+        <TextView
+            android:id="@+id/textView45"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="Incoming Order"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/navbar_dashbaord_checker" />
+
+        <Button
+            android:id="@+id/btnAsc_dashboard_checker"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginEnd="16dp"
+            android:backgroundTint="@color/green"
+            android:text="Ascending"
+            android:textSize="10sp"
+            app:layout_constraintBottom_toBottomOf="@+id/textView45"
+            app:layout_constraintEnd_toStartOf="@+id/btnDesc_dashboard_checker"
+            app:layout_constraintTop_toTopOf="@+id/textView45" />
+
+        <Button
+            android:id="@+id/btnDesc_dashboard_checker"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginEnd="16dp"
+            android:backgroundTint="@color/green"
+            android:text="Descending"
+            android:textSize="10sp"
+            app:layout_constraintBottom_toBottomOf="@+id/btnAsc_dashboard_checker"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/btnAsc_dashboard_checker" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
