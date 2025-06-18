@@ -206,4 +206,20 @@
                 _activeUser.value = updatedUser.copy(userID = currentUser.userID, role = currentUser.role)
             }
         }
+
+        fun refreshActiveUser() {
+            val currentUser = _activeUser.value ?: return
+            viewModelScope.launch {
+                try {
+                    val response = App.retrofitService.getUserByEmail(currentUser.email)
+                    if (response.isSuccessful) {
+                        response.body()?.let { user ->
+                            _activeUser.value = user
+                        }
+                    }
+                } catch (e: Exception) {
+                    Log.e("UserRefresh", "Error refreshing user: ${e.message}", e)
+                }
+            }
+        }
     }
