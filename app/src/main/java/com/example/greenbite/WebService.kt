@@ -104,10 +104,30 @@ interface WebService {
     @GET("ratings/user/{userID}")
     suspend fun getUserRatings(@Path("userID") userID: Int): List<Rating>
 
+    @GET("/orders/{userid}")
+    suspend fun getOrderByUserId(@Path("userid") userId: Int): List<Order>
+
+    @GET("postcode-location")
+    suspend fun getCoordinates(@Query("postcode") postcode: String): Postcode
+
+    @POST("order")
+    suspend fun createOrder(@Body order: Order)
+
     //EMPLOYEE
     @GET("orders")
     suspend fun getAllOrders(): List<Order>
 
+    @PUT("orders/{id}/accept")
+    suspend fun acceptOrder(@Path("id") id: Int, @Body body: Map<String, Int>)
+
+    @PUT("orders/{id}/reject")
+    suspend fun rejectOrder(@Path("id") id: Int)
+
+    @GET("orders/status/pending")
+    suspend fun getAllPendingOrder(): List<Order>
+
+    @GET("orders/status/active")
+    suspend fun getActiveOrders(): List<Order>
 
     //ADMIN
     //crud employee

@@ -65,7 +65,7 @@ class ProductViewModel : ViewModel() {
             App.retrofitService.deleteProduct(productID)
         }
     }
-    fun addProduct(name: String, desc: String, price: String, categoryId: Int, fat: Int, protein: Int, calorie: Int) {
+    fun addProduct(name: String, desc: String, price: String, categoryId: Int, fat: Int, protein: Int, calories: Int) {
         viewModelScope.launch {
             val newProduct = Product(
                 productID = 0,
@@ -77,7 +77,7 @@ class ProductViewModel : ViewModel() {
                 img_url = null,
                 fat = fat,
                 protein = protein,
-                calorie = calorie,
+                calories = calories,
                 deleted_at = null,
                 created_at = "",
                 updated_at = "",
@@ -103,7 +103,7 @@ class ProductViewModel : ViewModel() {
                 img_url = null,
                 fat = 0,
                 protein = 0,
-                calorie = 0,
+                calories = 0,
                 deleted_at = null,
                 created_at = "",
                 updated_at = "",

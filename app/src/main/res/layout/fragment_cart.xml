@@ -13,9 +13,11 @@
             name="cartViewModel"
             type="com.example.greenbite.CartViewModel" />
     </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="#F9F8F8"
         tools:context=".Customer.CartFragment">
 
         <ImageButton
@@ -42,8 +44,8 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvCart"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
+            android:layout_width="408dp"
+            android:layout_height="433dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
@@ -53,6 +55,7 @@
             app:layout_constraintHeight_default="spread"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvCartTitle"
+            app:layout_constraintVertical_bias="0.72"
             app:layout_constraintVertical_weight="1" />
 
         <androidx.cardview.widget.CardView
