@@ -45,7 +45,6 @@ class DeliveryAdapter(
         holder.binding.tvOrderDate.text = delivery.created_at
         holder.binding.tvItemCount.text = "${delivery.order_details.size} items"
         holder.binding.tvStatus.text = "${delivery.status} - ${delivery.prep_time + 20} Minutes"
-
     }
 }
 
