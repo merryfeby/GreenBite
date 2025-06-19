@@ -2,7 +2,6 @@ package com.example.greenbite
 
 import com.example.greenbite.admin.Employee
 import com.example.greenbite.checker.Order
-import com.midtrans.sdk.corekit.internal.network.model.response.SnapTokenResponse
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 import retrofit2.Response
@@ -22,6 +21,7 @@ data class TopMenu(
     val rating_menu:Int,
     val totalrating_menu:Int,
 )
+
 
 @JsonClass(generateAdapter = true)
 data class UserRegistrationResponse(
@@ -105,11 +105,14 @@ interface WebService {
     suspend fun getEmployees(): List<Employee>
     @PUT("employees/{userID}")
     suspend fun updateEmployees(@Path("userID") userID: Int, @Body user: User)
+
     @DELETE("products/{productID}")
     //crud menu
     suspend fun deleteProduct(@Path("productID") productID: Int)
     @PUT("products/{productID}")
     suspend fun updateProduct(@Path("productID") productID: Int, @Body product: Product)
+    @POST("products")
+    suspend fun addProduct(@Body product: Product)
 
     @GET("orders/{id}")
     suspend fun getOrderById(@Path("id") id: String): Order
