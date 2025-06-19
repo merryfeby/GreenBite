@@ -196,7 +196,7 @@
         }
 
         fun logout() {
-            _activeUser.value = null!!
+            _activeUser.value = null
         }
 
         fun updateUser(user: User) {

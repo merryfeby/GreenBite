@@ -12,7 +12,7 @@ class App: Application() {
         val moshi = Moshi.Builder().add(KotlinJsonAdapterFactory()).build()
         val retrofit = Retrofit.Builder().addConverterFactory(
             MoshiConverterFactory.create(moshi)
-        ).baseUrl("http://192.168.0.170:8000/api/").build()
+        ).baseUrl("http://192.168.1.19:8000/api/").build()
 
         val retrofitService = retrofit.create(WebService::class.java)
     }
