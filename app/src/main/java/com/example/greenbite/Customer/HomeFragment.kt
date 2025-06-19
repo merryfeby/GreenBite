@@ -35,6 +35,7 @@ class HomeFragment : Fragment() {
         binding.lifecycleOwner = viewLifecycleOwner
         binding.usersViewModel = userViewModel
 
+
         Log.d("HomeFragment", "onCreateView called")
 
         userViewModel.activeUser.observe(viewLifecycleOwner) { user ->
@@ -65,6 +66,11 @@ class HomeFragment : Fragment() {
 
         val currentUser = userViewModel.activeUser.value
         Log.d("HomeFragment", "Current user in onViewCreated: $currentUser")
+
+        productViewModel.topMenus.observe(viewLifecycleOwner) { topMenus: List<Product>? ->
+            Log.d("HomeFragment", "Top menus observed: $topMenus")
+            menuAdapter.submitList(topMenus?.toList() ?: emptyList())
+        }
     }
 
     private fun setupRecyclerView() {
@@ -73,5 +79,7 @@ class HomeFragment : Fragment() {
         menuAdapter = MenuAdapter(cartViewModel, userEmail)
         binding.rvMenu.layoutManager = GridLayoutManager(requireContext(), 2)
         binding.rvMenu.adapter = menuAdapter
+
+
     }
 }

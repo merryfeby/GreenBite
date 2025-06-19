@@ -184,7 +184,7 @@ class MenuDetailFragment : Fragment() {
         val addOn = if (product.category.name.equals("Beverages", ignoreCase = true)) {
             "Size: $selectedSize, Sugar: $selectedSugar"
         } else {
-            ""
+            "-"
         }
 
         val cartItem = CartEntity(
