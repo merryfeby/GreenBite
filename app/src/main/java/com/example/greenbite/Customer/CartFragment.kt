@@ -38,13 +38,17 @@ class CartFragment : Fragment() {
         binding.cartViewModel = cartViewModel
         binding.usersViewModel = usersViewModel
 
+        val userID = usersViewModel.activeUser.value?.userID ?: 0
+        val userEmail = usersViewModel.activeUser.value?.email ?: ""
+
         binding.btnCartBack.setOnClickListener(){
             findNavController().navigate(R.id.action_global_homeFragment)
         }
 
         binding.btnOrder.setOnClickListener(){
-
+            cartViewModel.createOrder(userID, userEmail)
         }
+
         setupRecyclerView()
         observeCartItems()
 

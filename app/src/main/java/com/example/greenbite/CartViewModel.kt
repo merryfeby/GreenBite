@@ -1,9 +1,14 @@
 package com.example.greenbite
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.map
 import androidx.lifecycle.viewModelScope
+import com.example.greenbite.checker.Order
+import com.example.greenbite.checker.OrderAddon
+import com.example.greenbite.checker.OrderDetail
 import kotlinx.coroutines.launch
 
 class CartViewModel : ViewModel() {
@@ -14,6 +19,12 @@ class CartViewModel : ViewModel() {
 
     private val cartDao = App.db.cartDao()
 
+    private val _deliveryTimeEstimate = MutableLiveData<Int>()
+    val deliveryTimeEstimate: LiveData<Int> = _deliveryTimeEstimate
+
+    private val AVERAGE_DELIVERY_SPEED_KMH = 30.0
+    private val PREPARATION_TIME_MINUTES = 15
+
     private val _cartTotal = MutableLiveData<Double>()
     val cartTotal: LiveData<Double> = _cartTotal
 
@@ -23,8 +34,20 @@ class CartViewModel : ViewModel() {
     private val _grandTotal = MutableLiveData<Double>()
     val grandTotal: LiveData<Double> = _grandTotal
 
+
+
     suspend fun getCartItemByMenuIdAndUser(userEmail: String, menuId: Int): CartEntity? {
         return cartDao.getCartItemByMenuIdAndUser(userEmail, menuId)
+    }
+
+    fun calculateDeliveryTime(distanceKm: Double) {
+        viewModelScope.launch {
+            val travelTimeMinutes = (distanceKm / AVERAGE_DELIVERY_SPEED_KMH) * 60
+            val totalEstimateMinutes = PREPARATION_TIME_MINUTES + travelTimeMinutes
+            val roundedTotalEstimateMinutes = Math.ceil(totalEstimateMinutes).toInt()
+            val estimate = roundedTotalEstimateMinutes
+            _deliveryTimeEstimate.value = estimate
+        }
     }
 
 
@@ -39,6 +62,7 @@ class CartViewModel : ViewModel() {
             val c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a))
             val distance = EARTH_RADIUS_KM * c
             _deliveryFee.value = distance * delivery_rate
+            calculateDeliveryTime(distance)
         }
     }
 
@@ -108,4 +132,42 @@ class CartViewModel : ViewModel() {
 
 
     }
+
+//    fun createOrder(userID: Int, emailUser: String) {
+//        viewModelScope.launch {
+////            Log.e("order", "ini grand total: ${_deliveryFee.value}")
+//            val cartItems = cartDao.getListCartbyUser(emailUser)
+////            val CartItems: LiveData<List<CartEntity>> = cartDao.getCartByUser(emailUser)
+//            val order =  Order(
+//                orderID = 0,
+//                userID = userID,
+//                customer_name = "",
+//                customer_phone = "",
+//                subtotal = _cartTotal.value!!,
+//                prep_time = 0,
+//                shipping_fee = _deliveryFee.value!!,
+//                total = _grandTotal.value!!,
+//                status = "",
+//                created_at = "",
+//                updated_at = "",
+//                order_details = cartItems.map { item ->
+//                    val orderDetail = OrderDetail(
+//                        orderDetailID = 0,
+//                        productID = item.id_menu,
+//                        product_name = item.id_menu,
+//                        quantity = "",
+//                        price = 0,
+//                        total = "",
+//                        addons = OrderAddon(
+//                            orderAddonID = 0,
+//                            addon_name = ""
+//                        ),
+//                }
+//                ),
+//            )
+//
+//        }
+//    }
+
+
 }

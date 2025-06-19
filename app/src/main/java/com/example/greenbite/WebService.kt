@@ -102,6 +102,9 @@ interface WebService {
     @GET("postcode-location")
     suspend fun getCoordinates(@Query("postcode") postcode: String): Postcode
 
+    @POST("order")
+    suspend fun createOrder(@Body order: Order)
+
     //EMPLOYEE
     @GET("orders")
     suspend fun getAllOrders(): List<Order>

@@ -16,7 +16,6 @@ import com.example.greenbite.databinding.FragmentAdminAddMenuBinding
 class AdminAddMenuFragment : Fragment() {
     lateinit var binding: FragmentAdminAddMenuBinding
     private val vm: ProductViewModel by activityViewModels()
-//    private val viewModel: UserViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
