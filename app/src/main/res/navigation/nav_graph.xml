@@ -82,6 +82,7 @@
     <action
         android:id="@+id/action_global_adminFragment3"
         app:destination="@id/adminFragment3" />
+
     <fragment
         android:id="@+id/adminEmployeeFragment2"
         android:name="com.example.greenbite.admin.AdminEmployeeFragment"
@@ -138,7 +139,7 @@
     <action
         android:id="@+id/action_global_adminReportDetail"
         app:destination="@id/adminReportDetail" />
-        android:id="@+id/customerTopUpFragment"
+    <fragment android:id="@+id/customerTopUpFragment"
         android:name="com.example.greenbite.Customer.CustomerTopUpFragment"
         android:label="fragment_customer_top_up"
         tools:layout="@layout/fragment_customer_top_up" />
