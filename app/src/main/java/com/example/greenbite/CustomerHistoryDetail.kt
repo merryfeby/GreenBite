@@ -2,17 +2,15 @@ package com.example.greenbite
 
 import com.example.greenbite.databinding.ListHistorydetailBinding
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.example.greenbite.checker.OrderDetail  // Import OrderDetail, not Order
+import com.example.greenbite.checker.OrderDetail
 import java.text.NumberFormat
 import java.util.Locale
-import kotlin.math.log
 
 class CustomerHistoryDiffUtil: DiffUtil.ItemCallback<OrderDetail>(){
     override fun areItemsTheSame(oldItem: OrderDetail, newItem: OrderDetail): Boolean {
