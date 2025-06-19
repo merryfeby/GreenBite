@@ -53,4 +53,9 @@ class CheckerDashboardFragment : Fragment() {
             checkerViewModel.sortOrderDesc()
         }
     }
+
+    override fun onResume() {
+        super.onResume()
+        checkerViewModel.getPendingOrders()
+    }
 }

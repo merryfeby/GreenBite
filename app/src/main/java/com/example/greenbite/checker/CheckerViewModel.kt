@@ -32,11 +32,7 @@ class CheckerViewModel: ViewModel(){
                     Log.d("Login", "Active user set: ${user.email}")
                 }
             }
-            var orders = App.retrofitService.getAllOrders()
-            for (order in orders) {
-                Log.d("Orders", order.toString())
-            }
-            _orders.value = orders
+            getPendingOrders()
         }
     }
     fun setActiveOrder(id: Int){
@@ -51,5 +47,36 @@ class CheckerViewModel: ViewModel(){
 
     fun sortOrderDesc(){
         _orders.value = _orders.value?.sortedByDescending { it.orderID }
+    }
+
+    fun acceptOrder(time: Int){
+        val body = mapOf("prep_time" to time)
+        viewModelScope.launch {
+            App.retrofitService.acceptOrder(_activeOrder.value!!.orderID, body)
+            var orders = App.retrofitService.getAllPendingOrder()
+            _orders.value = orders
+        }
+    }
+
+    fun rejectOrder(){
+        viewModelScope.launch {
+            App.retrofitService.rejectOrder(_activeOrder.value!!.orderID)
+            var orders = App.retrofitService.getAllPendingOrder()
+            _orders.value = orders
+        }
+    }
+
+    fun getActiveOrders(){
+        viewModelScope.launch {
+            var orders = App.retrofitService.getActiveOrders()
+            _orders.value = orders
+        }
+    }
+
+    fun getPendingOrders(){
+        viewModelScope.launch {
+            var orders = App.retrofitService.getAllPendingOrder()
+            _orders.value = orders
+        }
     }
 }

@@ -23,13 +23,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
             android:text="GreenBite"
             android:textColor="#FFFFFF"
             android:textSize="24sp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/txtWelcomeDashboard_Checker"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/navbar_dashbaord_checker"
+            app:layout_constraintStart_toStartOf="@+id/navbar_dashbaord_checker"
+            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_chainStyle="packed" />
 
         <TextView
@@ -38,7 +38,6 @@
             android:layout_height="wrap_content"
             android:text="Welcome, {user}"
             android:textColor="#FFFFFF"
-            app:layout_constraintBottom_toTopOf="@+id/navbar_dashbaord_checker"
             app:layout_constraintStart_toStartOf="@+id/txtTitleDashboard_Checker"
             app:layout_constraintTop_toBottomOf="@+id/txtTitleDashboard_Checker" />
 
