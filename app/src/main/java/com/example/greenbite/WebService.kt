@@ -109,6 +109,17 @@ interface WebService {
     @GET("orders")
     suspend fun getAllOrders(): List<Order>
 
+    @PUT("orders/{id}/accept")
+    suspend fun acceptOrder(@Path("id") id: Int, @Body body: Map<String, Int>)
+
+    @PUT("orders/{id}/reject")
+    suspend fun rejectOrder(@Path("id") id: Int)
+
+    @GET("orders/status/pending")
+    suspend fun getAllPendingOrder(): List<Order>
+
+    @GET("orders/status/active")
+    suspend fun getActiveOrders(): List<Order>
 
     //ADMIN
     //crud employee
