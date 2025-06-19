@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/btnHome_NavAdmin"
+        android:icon="@drawable/home_svgrepo_com"
+        android:title="Home" />
+    <item
+        android:id="@+id/btnEmployees_NavAdmin"
+        android:icon="@drawable/employee"
+        android:title="Employees" />
+    <item
+        android:id="@+id/btnProducts_NavAdmin"
+        android:icon="@drawable/fast_food"
+        android:title="Products" />
+    <item
+        android:id="@+id/btnReport_NavAdmin"
+        android:icon="@drawable/report"
+        android:title="Report" />
+    <item
+        android:id="@+id/btnLogout_NavAdmin"
+        android:icon="@drawable/logout_svgrepo_com"
+        android:title="Log Out" />
+</menu>

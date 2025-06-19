@@ -24,6 +24,15 @@
             app:navGraph="@navigation/nav_graph" />
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottomNav_Admin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#86E0BD"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:menu="@menu/nav_admin_menu"
+            tools:layout_editor_absoluteX="0dp" />
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/bottomNav"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -35,7 +44,9 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="1.0"
-            app:menu="@menu/nav_menu" />
+            app:menu="@menu/nav_menu">
+
+        </com.google.android.material.bottomnavigation.BottomNavigationView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
