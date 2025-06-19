@@ -83,6 +83,61 @@
         android:id="@+id/action_global_adminFragment3"
         app:destination="@id/adminFragment3" />
     <fragment
+        android:id="@+id/adminEmployeeFragment2"
+        android:name="com.example.greenbite.admin.AdminEmployeeFragment"
+        android:label="AdminEmployeeFragment" />
+    <action
+        android:id="@+id/action_global_adminEmployeeFragment2"
+        app:destination="@id/adminEmployeeFragment2" />
+    <fragment
+        android:id="@+id/adminAddEmployeeFragment2"
+        android:name="com.example.greenbite.admin.AdminAddEmployeeFragment"
+        android:label="AdminAddEmployeeFragment" />
+    <action
+        android:id="@+id/action_global_adminAddEmployeeFragment2"
+        app:destination="@id/adminAddEmployeeFragment2" />
+    <fragment
+        android:id="@+id/adminAddMenuFragment2"
+        android:name="com.example.greenbite.admin.AdminAddMenuFragment"
+        android:label="AdminAddMenuFragment" />
+    <action
+        android:id="@+id/action_global_adminAddMenuFragment2"
+        app:destination="@id/adminAddMenuFragment2" />
+    <fragment
+        android:id="@+id/adminEditEmployee2"
+        android:name="com.example.greenbite.admin.AdminEditEmployee"
+        android:label="AdminEditEmployee" />
+    <action
+        android:id="@+id/action_global_adminEditEmployee2"
+        app:destination="@id/adminEditEmployee2" />
+    <fragment
+        android:id="@+id/adminEditMenuFragment2"
+        android:name="com.example.greenbite.admin.AdminEditMenuFragment"
+        android:label="AdminEditMenuFragment" />
+    <action
+        android:id="@+id/action_global_adminEditMenuFragment2"
+        app:destination="@id/adminEditMenuFragment2" />
+    <fragment
+        android:id="@+id/adminMenuFragment2"
+        android:name="com.example.greenbite.admin.AdminMenuFragment"
+        android:label="AdminMenuFragment" />
+    <action
+        android:id="@+id/action_global_adminMenuFragment2"
+        app:destination="@id/adminMenuFragment2" />
+    <fragment
+        android:id="@+id/adminReportFragment2"
+        android:name="com.example.greenbite.admin.AdminReportFragment"
+        android:label="AdminReportFragment" />
+    <action
+        android:id="@+id/action_global_adminReportFragment2"
+        app:destination="@id/adminReportFragment2" />
+    <fragment
+        android:id="@+id/adminReportDetail"
+        android:name="com.example.greenbite.admin.AdminReportDetail"
+        android:label="AdminReportDetail" />
+    <action
+        android:id="@+id/action_global_adminReportDetail"
+        app:destination="@id/adminReportDetail" />
         android:id="@+id/customerTopUpFragment"
         android:name="com.example.greenbite.Customer.CustomerTopUpFragment"
         android:label="fragment_customer_top_up"

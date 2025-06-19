@@ -44,14 +44,50 @@ class ProductViewModel : ViewModel() {
         }
     }
 
-//    fun fetchProductDetail(productID: Int) {
-//        viewModelScope.launch {
-//            _isLoading.value = true
-//            val product = App.retrofitService.getProductById(productID)
-//            _selectedProduct.value = product
-//            _isLoading.value = false
-//        }
-//    }
+    //BUAT ADMIN
+    //ambil data buat admin edit
+    private val _activeProduct = MutableLiveData<Product>()
+    val activeProduct: LiveData<Product>
+        get() = _activeProduct
+    fun setActiveProduct(product: Product) {
+        _activeProduct.value = product
+    }
+
+    fun deleteProduct(productID: Int){
+        viewModelScope.launch {
+            App.retrofitService.deleteProduct(productID)
+        }
+    }
+    fun updateProduct(productID: Int, name: String, desc: String, price: Int) {
+        viewModelScope.launch {
+            val newProduct = Product(
+                productID = productID,
+                name = name,
+                description = desc,
+                price = price.toString(),
+                categoryID = 1,
+                rating = 0.0,
+                img_url = null,
+                deleted_at = null,
+                created_at = "",
+                updated_at = "",
+                category = Category(
+                    categoryID = 99,
+                    name = "none",
+                    description = "none"
+                ),
+                fat = 0,
+                calories = 0,
+                protein = 0,
+                total_rating = 0
+            )
+            viewModelScope.launch {
+                App.retrofitService.updateProduct(productID, newProduct)
+            }
+        }
+    }
+
+
     fun fetchProductDetail(productID: Int) {
         viewModelScope.launch {
             _isLoading.value = true
@@ -59,11 +95,8 @@ class ProductViewModel : ViewModel() {
                 val product = App.retrofitService.getProductById(productID)
                 _selectedProduct.value = product
             } catch (e: Exception) {
-                // Log the error
                 Log.e("ProductViewModel", "Error fetching product: ${e.message}", e)
 
-                // You can also set an error state to display to the user
-                // _errorMessage.value = "Product not found or connection error"
             } finally {
                 _isLoading.value = false
             }

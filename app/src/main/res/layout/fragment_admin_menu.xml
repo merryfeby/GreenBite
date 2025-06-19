@@ -64,8 +64,8 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvMenu_AdminFrag"
-            android:layout_width="314dp"
-            android:layout_height="432dp"
+            android:layout_width="403dp"
+            android:layout_height="430dp"
             android:layout_marginTop="20dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
