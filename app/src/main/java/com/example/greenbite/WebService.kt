@@ -45,6 +45,18 @@ data class LoginResponse(
     val user: User
 )
 
+@JsonClass(generateAdapter = true)
+data class AmountRequest(
+    @Json(name = "amount")
+    val amount: Int
+)
+
+@JsonClass(generateAdapter = true)
+data class SnapTokenResponse(
+    @Json(name = "token") val token: String,
+    @Json(name = "orderId") val orderId: Int
+)
+
 interface WebService {
     //CUSTOMER
     @GET("topmenus")
@@ -58,6 +70,9 @@ interface WebService {
 
     @POST("users")
     suspend fun createUser(@Body user: User): Response<UserRegistrationResponse>
+
+    @PUT("users/{id}")
+    suspend fun updateUser(@Path("id") id: Int, @Body user: User): User
 
     @GET("users/email/{email}")
     suspend fun getUserByEmail(@Path("email") email: String): Response<User>
@@ -73,10 +88,16 @@ interface WebService {
 
     @PUT("users/{userID}")
     suspend fun updateUser(@Path("userID") userID: Int, @Body updatedData: Map<String, Any>): Response<Unit>
+//    @POST("topup/token/{id}")
+//    suspend fun getSnapToken(@Path("id") id: Int, @Body amountRequest: AmountRequest)
+
+    @POST("topup/token/{id}")
+    suspend fun getSnapToken(@Path("id") id: Int, @Body amountRequest: AmountRequest): Response<com.example.greenbite.SnapTokenResponse>
 
     //EMPLOYEE
     @GET("orders")
     suspend fun getAllOrders(): List<Order>
+
 
     //ADMIN
     //crud employee
@@ -85,10 +106,14 @@ interface WebService {
     @PUT("employees/{userID}")
     suspend fun updateEmployees(@Path("userID") userID: Int, @Body user: User)
 
+    //crud menu
     @DELETE("products/{productID}")
     suspend fun deleteProduct(@Path("productID") productID: Int)
     @PUT("products/{productID}")
     suspend fun updateProduct(@Path("productID") productID: Int, @Body product: Product)
     @POST("products")
     suspend fun addProduct(@Body product: Product)
+
+    @GET("orders/{id}")
+    suspend fun getOrderById(@Path("id") id: String): Order
 }
