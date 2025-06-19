@@ -1,279 +1,308 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".checker.CheckerDetailFragment">
+    xmlns:tools="http://schemas.android.com/tools">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".checker.CheckerDetailFragment">
 
-    <View
-        android:id="@+id/navbar_detail_checker"
-        android:layout_width="0dp"
-        android:layout_height="100dp"
-        android:background="#67F06D"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <View
+            android:id="@+id/navbar_detail_checker"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:background="@color/green"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/txtTitleDetail_Checker"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:text="GreenBite"
-        android:textColor="#FFFFFF"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/txtTitleDetail_Checker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="GreenBite"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/txtWelcomeDetail_Checker"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Welcome, {user}"
-        android:textColor="#FFFFFF"
-        app:layout_constraintStart_toStartOf="@+id/txtTitleDetail_Checker"
-        app:layout_constraintTop_toBottomOf="@+id/txtTitleDetail_Checker" />
+        <TextView
+            android:id="@+id/txtWelcomeDetail_Checker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Welcome, {user}"
+            android:textColor="#FFFFFF"
+            app:layout_constraintStart_toStartOf="@+id/txtTitleDetail_Checker"
+            app:layout_constraintTop_toBottomOf="@+id/txtTitleDetail_Checker" />
 
-    <TextView
-        android:id="@+id/txtCustDetail_Checker"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:text="Merry"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/navbar_detail_checker" />
+        <TextView
+            android:id="@+id/txtCustDetail_Checker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="Merry"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/navbar_detail_checker" />
 
-    <TextView
-        android:id="@+id/txtIdDetail_Checker"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:text="TextView"
-        android:textAlignment="textEnd"
-        android:textColor="#66EE6C"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/txtCustDetail_Checker" />
+        <TextView
+            android:id="@+id/txtIdDetail_Checker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:text="TextView"
+            android:textAlignment="textEnd"
+            android:textColor="@color/green"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/txtCustDetail_Checker" />
 
-    <View
-        android:id="@+id/divider_1"
-        android:layout_width="0dp"
-        android:layout_height="5dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="16dp"
-        android:background="#615E5E"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtCustDetail_Checker" />
+        <View
+            android:id="@+id/divider_1"
+            android:layout_width="0dp"
+            android:layout_height="2dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:background="#000000"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtCustDetail_Checker" />
 
-    <View
-        android:id="@+id/divider_2"
-        android:layout_width="0dp"
-        android:layout_height="5dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="16dp"
-        android:background="#615E5E"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnAcceptDetail_Checker" />
+        <View
+            android:id="@+id/divider_2"
+            android:layout_width="0dp"
+            android:layout_height="2dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:background="#000000"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnAcceptDetail_Checker" />
 
-    <TextView
-        android:id="@+id/txtTimeDetail_Checker"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="Placed 5 min ago"
-        app:layout_constraintEnd_toEndOf="@+id/divider_1"
-        app:layout_constraintStart_toStartOf="@+id/divider_1"
-        app:layout_constraintTop_toBottomOf="@+id/divider_1" />
+        <TextView
+            android:id="@+id/txtTimeDetail_Checker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Placed 5 min ago"
+            app:layout_constraintEnd_toEndOf="@+id/divider_1"
+            app:layout_constraintStart_toStartOf="@+id/divider_1"
+            app:layout_constraintTop_toBottomOf="@+id/divider_1" />
 
-    <EditText
-        android:id="@+id/etTimeDetail_Checker"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:ems="10"
-        android:inputType="number"
-        app:layout_constraintEnd_toStartOf="@+id/btnPlusDetail_Checker"
-        app:layout_constraintStart_toEndOf="@+id/btnMinusDetail_Checker"
-        app:layout_constraintTop_toBottomOf="@+id/txtTimeDetail_Checker" />
+        <EditText
+            android:id="@+id/etTimeDetail_Checker"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:ems="10"
+            android:inputType="number"
+            android:text="0"
+            app:layout_constraintEnd_toStartOf="@+id/btnPlusDetail_Checker"
+            app:layout_constraintStart_toEndOf="@+id/btnMinusDetail_Checker"
+            app:layout_constraintTop_toBottomOf="@+id/txtTimeDetail_Checker" />
 
-    <Button
-        android:id="@+id/btnPlusDetail_Checker"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:text="+"
-        app:layout_constraintBottom_toBottomOf="@+id/etTimeDetail_Checker"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/etTimeDetail_Checker" />
+        <Button
+            android:id="@+id/btnPlusDetail_Checker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:backgroundTint="@color/green"
+            android:text="+"
+            app:layout_constraintBottom_toBottomOf="@+id/etTimeDetail_Checker"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/etTimeDetail_Checker" />
 
-    <Button
-        android:id="@+id/btnMinusDetail_Checker"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:text="-"
-        app:layout_constraintBottom_toBottomOf="@+id/etTimeDetail_Checker"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/etTimeDetail_Checker" />
+        <Button
+            android:id="@+id/btnMinusDetail_Checker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:backgroundTint="@color/green"
+            android:text="-"
+            app:layout_constraintBottom_toBottomOf="@+id/etTimeDetail_Checker"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/etTimeDetail_Checker" />
 
-    <Button
-        android:id="@+id/btnAcceptDetail_Checker"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="16dp"
-        android:text="Accept"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etTimeDetail_Checker" />
+        <Button
+            android:id="@+id/btnAcceptDetail_Checker"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:backgroundTint="@color/green"
+            android:text="Accept"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etTimeDetail_Checker" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvOrderDetail_Checker"
-        android:layout_width="0dp"
-        android:layout_height="150dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/divider_2" />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvOrderDetail_Checker"
+            android:layout_width="0dp"
+            android:layout_height="150dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/divider_2" />
 
-    <Button
-        android:id="@+id/btnRejectDetail_Checker"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="16dp"
-        android:text="Reject"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rvOrderDetail_Checker" />
+        <Button
+            android:id="@+id/btnRejectDetail_Checker"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:backgroundTint="#F41414"
+            android:text="Reject"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rvOrderDetail_Checker" />
 
-    <View
-        android:id="@+id/detailBackgroundDetail_Checker"
-        android:layout_width="0dp"
-        android:layout_height="180dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="16dp"
-        android:background="#B6B4B4"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnRejectDetail_Checker" />
+        <View
+            android:id="@+id/detailBackgroundDetail_Checker"
+            android:layout_width="0dp"
+            android:layout_height="180dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:background="#D7D6D6"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnRejectDetail_Checker" />
 
-    <TextView
-        android:id="@+id/textView52"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
-        android:text="Order details"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/detailBackgroundDetail_Checker"
-        app:layout_constraintTop_toTopOf="@+id/detailBackgroundDetail_Checker" />
+        <TextView
+            android:id="@+id/textView52"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="Order details"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/detailBackgroundDetail_Checker"
+            app:layout_constraintTop_toTopOf="@+id/detailBackgroundDetail_Checker" />
 
-    <TextView
-        android:id="@+id/textView53"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:text="Placed"
-        app:layout_constraintStart_toStartOf="@+id/detailBackgroundDetail_Checker"
-        app:layout_constraintTop_toBottomOf="@+id/textView52" />
+        <TextView
+            android:id="@+id/textView53"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="Placed"
+            app:layout_constraintStart_toStartOf="@+id/detailBackgroundDetail_Checker"
+            app:layout_constraintTop_toBottomOf="@+id/textView52" />
 
-    <TextView
-        android:id="@+id/textView54"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:text="Customer name"
-        app:layout_constraintStart_toStartOf="@+id/detailBackgroundDetail_Checker"
-        app:layout_constraintTop_toBottomOf="@+id/textView53" />
+        <TextView
+            android:id="@+id/textView54"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="Customer name"
+            app:layout_constraintStart_toStartOf="@+id/detailBackgroundDetail_Checker"
+            app:layout_constraintTop_toBottomOf="@+id/textView53" />
 
-    <TextView
-        android:id="@+id/textView55"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:text="Customer phone"
-        app:layout_constraintStart_toStartOf="@+id/detailBackgroundDetail_Checker"
-        app:layout_constraintTop_toBottomOf="@+id/textView54" />
+        <TextView
+            android:id="@+id/textView55"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="Customer phone"
+            app:layout_constraintStart_toStartOf="@+id/detailBackgroundDetail_Checker"
+            app:layout_constraintTop_toBottomOf="@+id/textView54" />
 
-    <View
-        android:id="@+id/view4"
-        android:layout_width="0dp"
-        android:layout_height="2dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:background="#474747"
-        app:layout_constraintEnd_toEndOf="@id/detailBackgroundDetail_Checker"
-        app:layout_constraintStart_toStartOf="@+id/detailBackgroundDetail_Checker"
-        app:layout_constraintTop_toBottomOf="@+id/textView55" />
+        <View
+            android:id="@+id/view4"
+            android:layout_width="0dp"
+            android:layout_height="2dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="#000000"
+            app:layout_constraintEnd_toEndOf="@id/detailBackgroundDetail_Checker"
+            app:layout_constraintStart_toStartOf="@+id/detailBackgroundDetail_Checker"
+            app:layout_constraintTop_toBottomOf="@+id/textView55" />
 
-    <TextView
-        android:id="@+id/textView56"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:text="Subtotal"
-        app:layout_constraintStart_toStartOf="@+id/detailBackgroundDetail_Checker"
-        app:layout_constraintTop_toBottomOf="@+id/view4" />
+        <TextView
+            android:id="@+id/textView56"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="Subtotal"
+            app:layout_constraintStart_toStartOf="@+id/detailBackgroundDetail_Checker"
+            app:layout_constraintTop_toBottomOf="@+id/view4" />
 
-    <TextView
-        android:id="@+id/txtPlacedDateDetail_Checker"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:text="Thu, Apr 15th 2025 1.00pm"
-        android:textAlignment="textEnd"
-        app:layout_constraintEnd_toEndOf="@+id/detailBackgroundDetail_Checker"
-        app:layout_constraintTop_toTopOf="@+id/textView53" />
+        <TextView
+            android:id="@+id/textView46"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="Grandtotal"
+            app:layout_constraintStart_toStartOf="@+id/detailBackgroundDetail_Checker"
+            app:layout_constraintTop_toBottomOf="@+id/textView56" />
 
-    <TextView
-        android:id="@+id/txtPhoneDetail_Checker"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:text="TextView"
-        app:layout_constraintEnd_toEndOf="@+id/detailBackgroundDetail_Checker"
-        app:layout_constraintTop_toTopOf="@+id/textView55" />
+        <TextView
+            android:id="@+id/txtPlacedDateDetail_Checker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:text="Thu, Apr 15th 2025 1.00pm"
+            android:textAlignment="textEnd"
+            app:layout_constraintEnd_toEndOf="@+id/detailBackgroundDetail_Checker"
+            app:layout_constraintTop_toTopOf="@+id/textView53" />
 
-    <TextView
-        android:id="@+id/txtNameDetail_Checker"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:text="TextView"
-        app:layout_constraintEnd_toEndOf="@+id/detailBackgroundDetail_Checker"
-        app:layout_constraintTop_toTopOf="@+id/textView54" />
+        <TextView
+            android:id="@+id/txtPhoneDetail_Checker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:text="TextView"
+            android:textAlignment="textEnd"
+            app:layout_constraintEnd_toEndOf="@+id/detailBackgroundDetail_Checker"
+            app:layout_constraintTop_toTopOf="@+id/textView55" />
 
-    <TextView
-        android:id="@+id/txtSubtotalDetail_Checker"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:text="TextView"
-        app:layout_constraintEnd_toEndOf="@+id/detailBackgroundDetail_Checker"
-        app:layout_constraintTop_toTopOf="@+id/textView56" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/txtNameDetail_Checker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:text="TextView"
+            android:textAlignment="textEnd"
+            app:layout_constraintEnd_toEndOf="@+id/detailBackgroundDetail_Checker"
+            app:layout_constraintTop_toTopOf="@+id/textView54" />
+
+        <TextView
+            android:id="@+id/txtSubtotalDetail_Checker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:text="TextView"
+            android:textAlignment="textEnd"
+            app:layout_constraintEnd_toEndOf="@+id/detailBackgroundDetail_Checker"
+            app:layout_constraintTop_toTopOf="@+id/textView56" />
+
+        <TextView
+            android:id="@+id/txtGrandtotalDetail_Checker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:text="TextView"
+            android:textAlignment="textEnd"
+            app:layout_constraintEnd_toEndOf="@+id/detailBackgroundDetail_Checker"
+            app:layout_constraintTop_toBottomOf="@+id/txtSubtotalDetail_Checker" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

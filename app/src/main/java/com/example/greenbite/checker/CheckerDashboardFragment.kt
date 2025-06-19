@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.greenbite.MenuAdapter
@@ -34,12 +35,22 @@ class CheckerDashboardFragment : Fragment() {
             }
         }
         dashboardAdapter = DashboardAdapter()
+        dashboardAdapter.onDetailClickListener = { it ->
+            checkerViewModel.setActiveOrder(it)
+            findNavController().navigate(R.id.action_global_checkerDetailFragment)
+        }
         binding.rvDashboardChecker.layoutManager = LinearLayoutManager(requireContext())
         binding.rvDashboardChecker.adapter = dashboardAdapter
         checkerViewModel.orders.observe(viewLifecycleOwner) { orders ->
             if (orders != null) {
                 dashboardAdapter.submitList(orders)
             }
+        }
+        binding.btnAscDashboardChecker.setOnClickListener{
+            checkerViewModel.sortOrderAsc()
+        }
+        binding.btnDescDashboardChecker.setOnClickListener{
+            checkerViewModel.sortOrderDesc()
         }
     }
 }
