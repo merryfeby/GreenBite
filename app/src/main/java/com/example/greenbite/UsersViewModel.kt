@@ -164,7 +164,7 @@
                     if (response.isSuccessful) {
                         val user = response.body()
                         if (user != null) {
-                            _activeUser.value = user
+                            _activeUser.value = user!!
                             Log.d("Login", "Active user set: ${user.email}")
                         }
                     }
@@ -192,11 +192,35 @@
         }
 
         fun isLoggedIn(): Boolean {
-            return _activeUser.value != null
+            return _activeUser.value != null!!
         }
 
         fun logout() {
-            _activeUser.value = null
+            _activeUser.value = null!!
+        }
+
+        fun updateUser(user: User) {
+            viewModelScope.launch {
+                val currentUser = _activeUser.value ?: return@launch
+                val updatedUser = App.retrofitService.updateUser(currentUser.userID!!, user)
+                _activeUser.value = updatedUser.copy(userID = currentUser.userID, role = currentUser.role)
+            }
+        }
+
+        fun refreshActiveUser() {
+            val currentUser = _activeUser.value ?: return
+            viewModelScope.launch {
+                try {
+                    val response = App.retrofitService.getUserByEmail(currentUser.email)
+                    if (response.isSuccessful) {
+                        response.body()?.let { user ->
+                            _activeUser.value = user
+                        }
+                    }
+                } catch (e: Exception) {
+                    Log.e("UserRefresh", "Error refreshing user: ${e.message}", e)
+                }
+            }
         }
         fun deleteUser(userID: Int){
             viewModelScope.launch {

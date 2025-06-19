@@ -15,6 +15,7 @@ android {
         targetSdk = 35
         versionCode = 1
         versionName = "1.0"
+        multiDexEnabled = true
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -38,39 +39,11 @@ android {
     buildFeatures {
         dataBinding = true
     }
+
+
 }
 
 dependencies {
-//
-//    implementation(libs.androidx.core.ktx)
-//    implementation(libs.androidx.appcompat)
-//    implementation(libs.material)
-//    implementation(libs.androidx.activity)
-//    implementation(libs.androidx.constraintlayout)
-//    implementation(libs.androidx.navigation.fragment.ktx)
-//    implementation(libs.androidx.navigation.ui.ktx)
-//    implementation(libs.androidx.databinding.runtime)
-//    testImplementation(libs.junit)
-//    androidTestImplementation(libs.androidx.junit)
-//    androidTestImplementation(libs.androidx.espresso.core)
-//
-//    implementation(libs.androidx.room.runtime)
-//    kapt(libs.androidx.room.compiler)
-//    implementation(libs.androidx.room.ktx)
-//
-//    implementation (libs.retrofit)
-//    implementation (libs.okhttp)
-//    implementation (libs.moshi)
-//    implementation (libs.moshi.kotlin)
-//    kapt(libs.moshi.kotlin.codegen)
-//    implementation (libs.picasso)
-//
-//    implementation("com.squareup.retrofit2:retrofit:2.11.0")
-//    implementation("com.squareup.retrofit2:converter-moshi:2.11.0")
-//
-//    implementation("com.squareup.moshi:moshi:1.15.2")
-//    implementation("com.squareup.moshi:moshi-kotlin:1.15.2")
-//    kapt("com.squareup.moshi:moshi-kotlin-codegen:1.15.2")
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
@@ -123,4 +96,8 @@ dependencies {
     implementation("com.squareup.moshi:moshi:1.15.2")
     implementation("com.squareup.moshi:moshi-kotlin:1.15.2")
     kapt("com.squareup.moshi:moshi-kotlin-codegen:1.15.2")
+    implementation("com.midtrans:uikit:2.0.0-SANDBOX")
+    implementation("androidx.multidex:multidex:2.0.1")
+
 }
+

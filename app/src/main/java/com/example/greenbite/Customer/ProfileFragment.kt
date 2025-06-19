@@ -1,4 +1,4 @@
-package com.example.greenbite
+package com.example.greenbite.Customer
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -9,11 +9,13 @@ import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
+import com.example.greenbite.R
+import com.example.greenbite.UsersViewModel
 import com.example.greenbite.databinding.FragmentProfileBinding
 
 class ProfileFragment : Fragment() {
     private lateinit var binding: FragmentProfileBinding
-    private val userViewModel: UserViewModel by activityViewModels()
+    private val usersViewModel: UsersViewModel by activityViewModels()
 
 
     override fun onCreateView(
@@ -23,19 +25,23 @@ class ProfileFragment : Fragment() {
         // Inflate the layout for this fragment
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_profile, container, false)
         binding.lifecycleOwner = viewLifecycleOwner
-        binding.userViewModel = userViewModel
+        binding.usersViewModel = usersViewModel
 
-        userViewModel.activeUser.observe(viewLifecycleOwner) { user ->
+        usersViewModel.activeUser.observe(viewLifecycleOwner) { user ->
             binding.tvNameUser.text = "${user?.name ?: "Guest"}"
             binding.tvUserEmail.text = "${user?.email ?: "Guest"}"
         }
         binding.btnEditProfile.setOnClickListener {
             findNavController().navigate(R.id.action_profileFragment_to_editProfileFragment)
         }
+
+        binding.btnMyBalance.setOnClickListener {
+            findNavController().navigate(R.id.action_profileFragment_to_customerTopUpFragment)
+        }
         binding.btnLogoutProfile.setOnClickListener(){
             Toast.makeText(requireContext(), "Signing out...", Toast.LENGTH_SHORT).show()
 
-            userViewModel.logout()
+            usersViewModel.logout()
 
             findNavController().navigate(R.id.loginFragment)
 

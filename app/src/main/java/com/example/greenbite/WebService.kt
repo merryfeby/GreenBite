@@ -108,6 +108,7 @@ interface WebService {
 
     //crud menu
     @DELETE("products/{productID}")
+    //crud menu
     suspend fun deleteProduct(@Path("productID") productID: Int)
     @PUT("products/{productID}")
     suspend fun updateProduct(@Path("productID") productID: Int, @Body product: Product)

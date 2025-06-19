@@ -18,6 +18,10 @@ class CheckerViewModel: ViewModel(){
     val orders: LiveData<List<Order>>
         get() = _orders
 
+    private val _activeOrder = MutableLiveData<Order>()
+    val activeOrder: LiveData<Order>
+        get() = _activeOrder
+
     fun init(userEmail: String){
         viewModelScope.launch {
             var response = App.retrofitService.getUserByEmail(userEmail)
@@ -34,5 +38,18 @@ class CheckerViewModel: ViewModel(){
             }
             _orders.value = orders
         }
+    }
+    fun setActiveOrder(id: Int){
+        viewModelScope.launch {
+            var response = App.retrofitService.getOrderById(id.toString())
+            _activeOrder.value = response
+        }
+    }
+    fun sortOrderAsc(){
+        _orders.value = _orders.value?.sortedBy { it.orderID }
+    }
+
+    fun sortOrderDesc(){
+        _orders.value = _orders.value?.sortedByDescending { it.orderID }
     }
 }

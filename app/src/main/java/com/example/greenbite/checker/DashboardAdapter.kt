@@ -7,6 +7,8 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.greenbite.databinding.RvDashboardCheckerBinding
+import java.text.NumberFormat
+import java.util.Locale
 
 class OrderDiffUtil: DiffUtil.ItemCallback<Order>(){
 
@@ -22,6 +24,7 @@ class OrderDiffUtil: DiffUtil.ItemCallback<Order>(){
 val orderDiffUtil = OrderDiffUtil()
 class DashboardAdapter(
 ): ListAdapter<Order, DashboardAdapter.ViewHolder>(orderDiffUtil) {
+    var onDetailClickListener: ((Int)->Unit)? = null
     class ViewHolder(val binding: RvDashboardCheckerBinding) : RecyclerView.ViewHolder(binding.root)
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DashboardAdapter.ViewHolder {
         val binding = RvDashboardCheckerBinding.inflate(
@@ -33,12 +36,13 @@ class DashboardAdapter(
 
     override fun onBindViewHolder(holder: DashboardAdapter.ViewHolder, position: Int) {
         val order = getItem(position)
-        holder.binding.tvCustnameRvdashboardChecker.text = order.userID.toString()
+        val formattedAmount = NumberFormat.getNumberInstance(Locale("in", "ID")).format(order.total)
+        holder.binding.tvCustnameRvdashboardChecker.text = order.customer_name
         holder.binding.tvDateRvdashboardChecker.text = order.created_at
-        holder.binding.tvIdRvdashboardChecker.text = order.orderID.toString()
-        holder.binding.tvSubAmountRvdashboardChecker.text = order.subtotal.toString()
+        holder.binding.tvIdRvdashboardChecker.text = "# " + order.orderID.toString()
+        holder.binding.tvSubAmountRvdashboardChecker.text = "Rp."+formattedAmount+",00"
         holder.binding.btnDetailRvdashboardChecker.setOnClickListener{
-            Toast.makeText(holder.itemView.context, "Menu added to cart", Toast.LENGTH_SHORT).show()
+            onDetailClickListener?.invoke(order.orderID)
         }
     }
 }
