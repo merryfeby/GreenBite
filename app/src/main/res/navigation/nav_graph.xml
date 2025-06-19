@@ -152,9 +152,16 @@
         app:destination="@id/menuDetailFragment" />
     <fragment
         android:id="@+id/customerDetailHistoryFragment"
-        android:name="com.example.greenbite.CustomerDetailHistoryFragment"
+        android:name="com.example.greenbite.Customer.CustomerDetailHistoryFragment"
         android:label="CustomerDetailHistoryFragment" />
     <action
         android:id="@+id/action_global_customerDetailHistoryFragment"
         app:destination="@id/customerDetailHistoryFragment" />
+    <fragment
+        android:id="@+id/customerRatingFragment"
+        android:name="com.example.greenbite.Customer.CustomerRatingFragment"
+        android:label="CustomerRatingFragment" />
+    <action
+        android:id="@+id/action_global_customerRatingFragment"
+        app:destination="@id/customerRatingFragment" />
 </navigation>

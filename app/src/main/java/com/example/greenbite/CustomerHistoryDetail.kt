@@ -4,10 +4,11 @@ import com.example.greenbite.databinding.ListHistorydetailBinding
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.example.greenbite.checker.OrderDetail  // Import OrderDetail, not Order
+import com.example.greenbite.checker.OrderDetail
 import java.text.NumberFormat
 import java.util.Locale
 
@@ -23,7 +24,8 @@ class CustomerHistoryDiffUtil: DiffUtil.ItemCallback<OrderDetail>(){
 
 val customerhistoryDiffUtil = CustomerHistoryDiffUtil()
 
-class CustomerHistoryAdapter : ListAdapter<OrderDetail, CustomerHistoryAdapter.ViewHolder>(customerhistoryDiffUtil) {  // Change to OrderDetail
+class CustomerHistoryAdapter
+: ListAdapter<OrderDetail, CustomerHistoryAdapter.ViewHolder>(customerhistoryDiffUtil) {
 
     class ViewHolder(val binding: ListHistorydetailBinding) : RecyclerView.ViewHolder(binding.root)
 
@@ -42,5 +44,13 @@ class CustomerHistoryAdapter : ListAdapter<OrderDetail, CustomerHistoryAdapter.V
         holder.binding.tvPrice.text = "Rp $formattedPrice"
         holder.binding.tvTitle.text = historyDetail.product_name
         holder.binding.tvItemCount.text = "${historyDetail.quantity} items"
+        holder.binding.tvDetailHistAddOn.text = "${historyDetail.addons}"
+        holder.binding.btnRate.setOnClickListener(){
+            val bundle = Bundle().apply {
+                putInt("productID", historyDetail.productID)
+                putInt("orderDetailID", historyDetail.orderDetailID)
+            }
+            it.findNavController().navigate(R.id.action_global_customerRatingFragment, bundle)
+        }
     }
 }
