@@ -1,238 +1,257 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".courier.CourierDetailFragment">
+    xmlns:tools="http://schemas.android.com/tools">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".courier.CourierDetailFragment">
 
-    <View
-        android:id="@+id/navbar_detail_courier"
-        android:layout_width="0dp"
-        android:layout_height="100dp"
-        android:background="#67F06D"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <View
+            android:id="@+id/navbar_detail_courier"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:background="@color/green"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/txtTitleDetail_courier"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:text="GreenBite"
-        android:textColor="#FFFFFF"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/txtTitleDetail_courier"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="GreenBite"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/txtWelcomeDetail_courier"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Welcome, {user}"
-        android:textColor="#FFFFFF"
-        app:layout_constraintStart_toStartOf="@+id/txtTitleDetail_courier"
-        app:layout_constraintTop_toBottomOf="@+id/txtTitleDetail_courier" />
+        <TextView
+            android:id="@+id/txtWelcomeDetail_courier"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Welcome, {user}"
+            android:textColor="#FFFFFF"
+            app:layout_constraintStart_toStartOf="@+id/txtTitleDetail_courier"
+            app:layout_constraintTop_toBottomOf="@+id/txtTitleDetail_courier" />
 
-    <TextView
-        android:id="@+id/txtCustDetail_courier"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:text="Merry"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/navbar_detail_courier" />
+        <TextView
+            android:id="@+id/txtCustDetail_courier"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="Merry"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/navbar_detail_courier" />
 
-    <TextView
-        android:id="@+id/txtIdDetail_courier"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:text="TextView"
-        android:textAlignment="textEnd"
-        android:textColor="#66EE6C"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/txtCustDetail_courier" />
+        <TextView
+            android:id="@+id/txtIdDetail_courier"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:text="TextView"
+            android:textAlignment="textEnd"
+            android:textColor="@color/green"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/txtCustDetail_courier" />
 
-    <View
-        android:id="@+id/divider_10"
-        android:layout_width="0dp"
-        android:layout_height="5dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="16dp"
-        android:background="#615E5E"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtTimeDetail_courier" />
+        <View
+            android:id="@+id/divider_10"
+            android:layout_width="0dp"
+            android:layout_height="2dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:background="#000000"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtTimeDetail_courier" />
 
-    <TextView
-        android:id="@+id/txtTimeDetail_courier"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="Placed 5 min ago"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtCustDetail_courier" />
+        <TextView
+            android:id="@+id/txtTimeDetail_courier"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Placed 5 min ago"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtCustDetail_courier" />
 
-    <TextView
-        android:id="@+id/txtAdressDetail_courier"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="Jln. Ngagel Jaya Tengah"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/divider_10" />
+        <TextView
+            android:id="@+id/txtAdressDetail_courier"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Jln. Ngagel Jaya Tengah"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/divider_10" />
 
-    <Button
-        android:id="@+id/btnFinishDetail_courier"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="16dp"
-        android:text="Button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtAdressDetail_courier" />
+        <Button
+            android:id="@+id/btnFinishDetail_courier"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="16dp"
+            android:backgroundTint="@color/green"
+            android:text="Finish"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtAdressDetail_courier" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvDetail_courier"
-        android:layout_width="0dp"
-        android:layout_height="150dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnFinishDetail_courier" />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvDetail_courier"
+            android:layout_width="0dp"
+            android:layout_height="150dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnFinishDetail_courier" />
 
-    <View
-        android:id="@+id/detailBackgroundDetail_courier"
-        android:layout_width="0dp"
-        android:layout_height="180dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="16dp"
-        android:background="#B6B4B4"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rvDetail_courier" />
+        <View
+            android:id="@+id/detailBackgroundDetail_courier"
+            android:layout_width="0dp"
+            android:layout_height="180dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:background="#D7D6D6"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rvDetail_courier" />
 
-    <TextView
-        android:id="@+id/textView100"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
-        android:text="Order details"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/detailBackgroundDetail_courier"
-        app:layout_constraintTop_toTopOf="@+id/detailBackgroundDetail_courier" />
+        <TextView
+            android:id="@+id/textView100"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="Order details"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/detailBackgroundDetail_courier"
+            app:layout_constraintTop_toTopOf="@+id/detailBackgroundDetail_courier" />
 
-    <TextView
-        android:id="@+id/textView101"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:text="Placed"
-        app:layout_constraintStart_toStartOf="@+id/detailBackgroundDetail_courier"
-        app:layout_constraintTop_toBottomOf="@+id/textView100" />
+        <TextView
+            android:id="@+id/textView101"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="Placed"
+            app:layout_constraintStart_toStartOf="@+id/detailBackgroundDetail_courier"
+            app:layout_constraintTop_toBottomOf="@+id/textView100" />
 
-    <TextView
-        android:id="@+id/textView102"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:text="Customer name"
-        app:layout_constraintStart_toStartOf="@+id/detailBackgroundDetail_courier"
-        app:layout_constraintTop_toBottomOf="@+id/textView101" />
+        <TextView
+            android:id="@+id/textView102"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="Customer name"
+            app:layout_constraintStart_toStartOf="@+id/detailBackgroundDetail_courier"
+            app:layout_constraintTop_toBottomOf="@+id/textView101" />
 
-    <TextView
-        android:id="@+id/textView103"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:text="Customer phone"
-        app:layout_constraintStart_toStartOf="@+id/detailBackgroundDetail_courier"
-        app:layout_constraintTop_toBottomOf="@+id/textView102" />
+        <TextView
+            android:id="@+id/textView103"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="Customer phone"
+            app:layout_constraintStart_toStartOf="@+id/detailBackgroundDetail_courier"
+            app:layout_constraintTop_toBottomOf="@+id/textView102" />
 
-    <View
-        android:id="@+id/view100"
-        android:layout_width="0dp"
-        android:layout_height="2dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:background="#474747"
-        app:layout_constraintEnd_toEndOf="@+id/detailBackgroundDetail_courier"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/detailBackgroundDetail_courier"
-        app:layout_constraintTop_toBottomOf="@+id/textView103" />
+        <View
+            android:id="@+id/view100"
+            android:layout_width="0dp"
+            android:layout_height="2dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="#474747"
+            app:layout_constraintEnd_toEndOf="@+id/detailBackgroundDetail_courier"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/detailBackgroundDetail_courier"
+            app:layout_constraintTop_toBottomOf="@+id/textView103" />
 
-    <TextView
-        android:id="@+id/textView104"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:text="Subtotal"
-        app:layout_constraintStart_toStartOf="@+id/detailBackgroundDetail_courier"
-        app:layout_constraintTop_toBottomOf="@+id/view100" />
+        <TextView
+            android:id="@+id/textView104"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="Subtotal"
+            app:layout_constraintStart_toStartOf="@+id/detailBackgroundDetail_courier"
+            app:layout_constraintTop_toBottomOf="@+id/view100" />
 
-    <TextView
-        android:id="@+id/txtPlacedDateDetail_courier"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:text="Thu, Apr 15th 2025 1.00pm"
-        android:textAlignment="textEnd"
-        app:layout_constraintEnd_toEndOf="@+id/detailBackgroundDetail_courier"
-        app:layout_constraintTop_toTopOf="@+id/textView101" />
+        <TextView
+            android:id="@+id/textView61"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="Grandtotal"
+            app:layout_constraintStart_toStartOf="@+id/detailBackgroundDetail_courier"
+            app:layout_constraintTop_toBottomOf="@+id/textView104" />
 
-    <TextView
-        android:id="@+id/txtPhoneDetail_courier"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:text="TextView"
-        app:layout_constraintEnd_toEndOf="@+id/detailBackgroundDetail_courier"
-        app:layout_constraintTop_toTopOf="@+id/textView103" />
+        <TextView
+            android:id="@+id/txtPlacedDateDetail_courier"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:text="Thu, Apr 15th 2025 1.00pm"
+            android:textAlignment="textEnd"
+            app:layout_constraintEnd_toEndOf="@+id/detailBackgroundDetail_courier"
+            app:layout_constraintTop_toTopOf="@+id/textView101" />
 
-    <TextView
-        android:id="@+id/txtNameDetailHistory_courier"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:text="TextView"
-        app:layout_constraintEnd_toEndOf="@+id/detailBackgroundDetail_courier"
-        app:layout_constraintTop_toTopOf="@+id/textView102" />
+        <TextView
+            android:id="@+id/txtPhoneDetail_courier"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:text="TextView"
+            app:layout_constraintEnd_toEndOf="@+id/detailBackgroundDetail_courier"
+            app:layout_constraintTop_toTopOf="@+id/textView103" />
 
-    <TextView
-        android:id="@+id/txtSubtotalDetail_courier"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:text="TextView"
-        app:layout_constraintEnd_toEndOf="@+id/detailBackgroundDetail_courier"
-        app:layout_constraintTop_toTopOf="@+id/textView104" />
+        <TextView
+            android:id="@+id/txtNameDetailHistory_courier"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:text="TextView"
+            app:layout_constraintEnd_toEndOf="@+id/detailBackgroundDetail_courier"
+            app:layout_constraintTop_toTopOf="@+id/textView102" />
 
+        <TextView
+            android:id="@+id/txtSubtotalDetail_courier"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:text="TextView"
+            app:layout_constraintEnd_toEndOf="@+id/detailBackgroundDetail_courier"
+            app:layout_constraintTop_toTopOf="@+id/textView104" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/txtGrandtotalDetail_courier"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:text="TextView"
+            app:layout_constraintEnd_toEndOf="@+id/detailBackgroundDetail_courier"
+            app:layout_constraintTop_toBottomOf="@+id/txtSubtotalDetail_courier" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
