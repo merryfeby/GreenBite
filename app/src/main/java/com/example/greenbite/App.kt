@@ -5,6 +5,7 @@ import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
+import com.midtrans.sdk.uikit.external.UiKitApi
 
 class App: Application() {
     companion object {
@@ -22,5 +23,11 @@ class App: Application() {
     override fun onCreate() {
         super.onCreate()
         db = AppDatabase.getInstance(applicationContext)
+        UiKitApi.Builder()
+            .withMerchantClientKey("SB-Mid-client-VuELTZ1_OZATDAnJ")
+            .withContext(this)
+            .withMerchantUrl("http://10.0.2.2:8000/api/midtrans/callback/")
+            .enableLog(true)
+            .build()
     }
 }

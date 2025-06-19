@@ -20,12 +20,10 @@ import com.example.greenbite.R
 import com.example.greenbite.UserViewModel
 import com.example.greenbite.databinding.FragmentMenuBinding
 
-
 class MenuFragment : Fragment() {
     private lateinit var binding: FragmentMenuBinding
     private val userViewModel: UserViewModel by activityViewModels()
     private lateinit var menuAdapter: MenuAdapter
-    private val menuViewModel: MenuViewModel by activityViewModels()
     private val productViewModel: ProductViewModel by activityViewModels()
     private val cartViewModel: CartViewModel by activityViewModels()
 
@@ -34,37 +32,16 @@ class MenuFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_menu, container, false)
-        binding.lifecycleOwner = viewLifecycleOwner
-        binding.userViewModel = userViewModel
-        binding.menuViewModel = menuViewModel
-        binding.productViewModel = productViewModel
-
-        categoryButton()
-
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        setupRecyclerView()
-        observeMenuItems()
-    }
 
-    private fun setupRecyclerView() {
-        val userEmail = userViewModel.activeUser.value?.email ?: "guest"
-        menuAdapter = MenuAdapter(cartViewModel, userEmail)
-        binding.rvAllMenu.layoutManager = GridLayoutManager(requireContext(), 2)
-        binding.rvAllMenu.adapter = menuAdapter
-    }
+        binding.lifecycleOwner = viewLifecycleOwner
+        binding.userViewModel = userViewModel
+        binding.productViewModel = productViewModel
 
-    private fun observeMenuItems() {
-        productViewModel.currentCategoryMenu.observe(viewLifecycleOwner) { filteredItems: List<Product>? ->
-            Log.d("MenuFragment", "Filtered items: $filteredItems")
-            menuAdapter.submitList(filteredItems?.toList() ?: emptyList())
-        }
-    }
-
-    private fun categoryButton() {
         val buttons = listOf(
             binding.btnAll,
             binding.btnFoods,
@@ -84,6 +61,8 @@ class MenuFragment : Fragment() {
             }
         }
 
+        setActive(binding.btnAll)
+
         binding.btnAll.setOnClickListener {
             productViewModel.setCategory("All")
             setActive(binding.btnAll)
@@ -101,7 +80,16 @@ class MenuFragment : Fragment() {
             setActive(binding.btnSnacks)
         }
 
-        setActive(binding.btnAll)
+        val userEmail = userViewModel.activeUser.value?.email ?: "guest"
+        menuAdapter = MenuAdapter(cartViewModel, userEmail)
+        binding.rvAllMenu.layoutManager = GridLayoutManager(requireContext(), 2)
+        binding.rvAllMenu.adapter = menuAdapter
+
+        productViewModel.currentCategoryMenu.observe(viewLifecycleOwner) { filteredItems: List<Product>? ->
+            Log.d("MenuFragment", "Filtered items: $filteredItems")
+            menuAdapter.submitList(filteredItems?.toList() ?: emptyList())
+        }
+
     }
 
 }
