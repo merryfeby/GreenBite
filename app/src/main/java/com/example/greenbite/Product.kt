@@ -21,5 +21,5 @@ data class Product(
     val total_rating :Int?,
     val fat : Int?,
     val calories : Int?,
-    val protein : Int?
+    val protein : Int?,
 )

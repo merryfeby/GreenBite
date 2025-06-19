@@ -29,9 +29,11 @@ class CartFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_cart, container, false)
-
+        return binding.root
+    }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
         binding.lifecycleOwner = viewLifecycleOwner
         binding.cartViewModel = cartViewModel
         binding.usersViewModel = usersViewModel
@@ -43,14 +45,9 @@ class CartFragment : Fragment() {
         binding.btnOrder.setOnClickListener(){
 
         }
-
-
-        return binding.root
-    }
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
         setupRecyclerView()
         observeCartItems()
+
     }
 
     private fun setupRecyclerView() {
@@ -60,8 +57,22 @@ class CartFragment : Fragment() {
     }
 
     private fun observeCartItems() {
-        val userEmail = usersViewModel.activeUser .value?.email ?: "guest"
+        val userEmail = usersViewModel.activeUser.value?.email ?: "guest"
         val formatter = NumberFormat.getCurrencyInstance(Locale("in", "ID"))
+
+        val postcode = usersViewModel.activeUser.value?.postcode ?: ""
+
+        usersViewModel.activeUser.observe(viewLifecycleOwner) { user ->
+            user?.postcode?.let { postcode ->
+                cartViewModel.calculateDeliveryFee(postcode)
+            }
+        }
+
+        cartViewModel.deliveryFee.observe(viewLifecycleOwner) { fee ->
+            formatter.maximumFractionDigits = 0
+            binding.tvDeliveryFee.text = formatter.format(fee)
+        }
+
 
         cartViewModel.getCartByUser(userEmail).observe(viewLifecycleOwner) { cartItems ->
             if (cartItems.isNotEmpty()) {
@@ -69,9 +80,8 @@ class CartFragment : Fragment() {
                 binding.rvCart.visibility = View.VISIBLE
                 cartAdapter.submitList(cartItems)
                 cartViewModel.calculateCartTotal(cartItems)
+                cartViewModel.calculateGrandTotal(cartItems, postcode)
                 formatter.maximumFractionDigits = 0
-                binding.tvTotal.text = formatter.format(cartViewModel.cartTotal.value ?: 0.0)
-                binding.tvCartTitle.visibility = View.GONE
                 binding.rvCart.visibility = View.VISIBLE
 
             } else {
@@ -80,9 +90,14 @@ class CartFragment : Fragment() {
             }
         }
 
-        cartViewModel.cartTotal.observe(viewLifecycleOwner) { total ->
+        cartViewModel.cartTotal.observe(viewLifecycleOwner) { subtotal ->
             formatter.maximumFractionDigits = 0
-            binding.tvSubtotal.text = formatter.format(total)
+            binding.tvSubtotal.text = formatter.format(subtotal)
+        }
+
+        cartViewModel.grandTotal.observe(viewLifecycleOwner) { total ->
+            formatter.maximumFractionDigits = 0
+            binding.tvTotal.text = formatter.format(total)
         }
     }
 }

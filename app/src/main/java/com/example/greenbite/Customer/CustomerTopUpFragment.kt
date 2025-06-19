@@ -13,6 +13,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
 import com.example.greenbite.AmountRequest
 import com.example.greenbite.App
 import com.example.greenbite.R
@@ -43,7 +44,7 @@ class CustomerTopUpFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View { // Ganti View? menjadi View
+    ): View {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_customer_top_up, container, false)
         return binding.root
     }
@@ -56,6 +57,10 @@ class CustomerTopUpFragment : Fragment() {
 
         usersViewModel.activeUser.observe(viewLifecycleOwner) { user ->
             binding.tvMybalanceCredit.text = "Rp ${user?.credit ?: "0"}"
+        }
+
+        binding.btnMybalanceBack.setOnClickListener {
+            findNavController().navigateUp()
         }
 
         binding.btnMybalanceTopup.setOnClickListener {

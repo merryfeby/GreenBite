@@ -30,11 +30,11 @@
                 android:textSize="20sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toEndOf="@+id/imgProfileBackBtn2"
+                app:layout_constraintStart_toEndOf="@+id/btn_mybalance_back"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageButton
-                android:id="@+id/imgProfileBackBtn2"
+                android:id="@+id/btn_mybalance_back"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
                 android:layout_marginStart="40dp"
