@@ -46,7 +46,7 @@ class CartFragment : Fragment() {
         }
 
         binding.btnOrder.setOnClickListener(){
-            cartViewModel.createOrder(userID, userEmail)
+//            cartViewModel.createOrder(userID, userEmail)
         }
 
         setupRecyclerView()
