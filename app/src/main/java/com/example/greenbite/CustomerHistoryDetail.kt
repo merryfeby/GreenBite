@@ -11,7 +11,7 @@ import com.example.greenbite.checker.OrderDetail  // Import OrderDetail, not Ord
 import java.text.NumberFormat
 import java.util.Locale
 
-class CustomerHistoryDiffUtil: DiffUtil.ItemCallback<OrderDetail>(){  // Change to OrderDetail
+class CustomerHistoryDiffUtil: DiffUtil.ItemCallback<OrderDetail>(){
     override fun areItemsTheSame(oldItem: OrderDetail, newItem: OrderDetail): Boolean {
         return oldItem.orderDetailID == newItem.orderDetailID
     }
