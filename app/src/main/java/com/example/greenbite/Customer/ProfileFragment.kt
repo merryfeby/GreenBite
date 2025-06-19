@@ -43,9 +43,8 @@ class ProfileFragment : Fragment() {
 
             usersViewModel.logout()
 
-            findNavController().navigate(R.id.loginFragment)
+            findNavController().navigate(R.id.action_global_loginFragment)
 
-            findNavController().popBackStack(R.id.loginFragment, false)
         }
 
 

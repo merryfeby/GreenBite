@@ -4,4 +4,10 @@
     <color name="white">#FFFFFFFF</color>
     <color name="green">#33C98B</color>
     <color name="white2">#F8F6F6</color>
+    <color name="green2">#4CAF50</color>
+    <color name="yellow">#FFC107</color>
+    <color name="grey">#9E9E9E</color>
+    <color name="red">#F44336</color>
+    <color name="blue">#2196F3</color>
+    <color name="Lightgreen">#00AB64</color>
 </resources>

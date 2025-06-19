@@ -45,5 +45,4 @@ class DashboardAdapter(
             onDetailClickListener?.invoke(order.orderID)
         }
     }
-
 }

@@ -51,10 +51,10 @@
 
         <ImageView
             android:id="@+id/img_AddMenu"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="140dp"
-            android:layout_marginTop="28dp"
+            android:layout_width="156dp"
+            android:layout_height="43dp"
+            android:layout_marginStart="128dp"
+            android:layout_marginTop="24dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/constraintLayout3"
             tools:src="@tools:sample/avatars" />
@@ -64,7 +64,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="44dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="8dp"
             android:text="Product Name"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/img_AddMenu" />
@@ -72,21 +72,22 @@
         <EditText
             android:id="@+id/txtName_AddProductFrag"
             android:layout_width="318dp"
-            android:layout_height="41dp"
-            android:layout_marginTop="4dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="28dp"
             android:ems="10"
             android:inputType="text"
+            android:textSize="12sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.473"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView32" />
+            app:layout_constraintTop_toBottomOf="@+id/img_AddMenu" />
 
         <TextView
             android:id="@+id/textView33"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="44dp"
-            android:layout_marginTop="88dp"
+            android:layout_marginTop="64dp"
             android:text="Product Category"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/img_AddMenu" />
@@ -94,70 +95,72 @@
         <EditText
             android:id="@+id/txtCategory_AddProductFrag"
             android:layout_width="318dp"
-            android:layout_height="41dp"
-            android:layout_marginTop="76dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="84dp"
             android:ems="10"
             android:inputType="text"
+            android:textSize="12sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.473"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView32" />
+            app:layout_constraintTop_toBottomOf="@+id/img_AddMenu" />
 
         <TextView
             android:id="@+id/textView42"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="44dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="120dp"
             android:text="Product Price"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtCategory_AddProductFrag" />
+            app:layout_constraintTop_toBottomOf="@+id/img_AddMenu" />
 
         <EditText
             android:id="@+id/txtPrice_AddProductFrag"
             android:layout_width="318dp"
-            android:layout_height="41dp"
-            android:layout_marginTop="4dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="140dp"
             android:ems="10"
             android:inputType="text"
+            android:textSize="12sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.473"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView42" />
+            app:layout_constraintTop_toBottomOf="@+id/img_AddMenu" />
 
         <TextView
             android:id="@+id/textView43"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="44dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="176dp"
             android:text="Product Description"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtPrice_AddProductFrag" />
+            app:layout_constraintTop_toBottomOf="@+id/img_AddMenu" />
 
         <EditText
             android:id="@+id/txtDescription_AddProductFrag"
             android:layout_width="318dp"
-            android:layout_height="41dp"
-            android:layout_marginTop="4dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="196dp"
             android:ems="10"
             android:inputType="text"
+            android:textSize="12sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.473"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView43" />
+            app:layout_constraintTop_toBottomOf="@+id/img_AddMenu" />
 
         <Button
             android:id="@+id/btnConfirm_AddProductFrag"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="48dp"
             android:backgroundTint="#33C98B"
             android:text="Confirm Add"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.502"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtDescription_AddProductFrag" />
+            app:layout_constraintTop_toBottomOf="@+id/txtCalorie_AddProductFrag" />
 
         <Button
             android:id="@+id/btnCancel_AddProductFrag"
@@ -168,5 +171,77 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/btnConfirm_AddProductFrag" />
+
+        <TextView
+            android:id="@+id/textView45"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="44dp"
+            android:layout_marginTop="232dp"
+            android:text="Fat"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/img_AddMenu" />
+
+        <EditText
+            android:id="@+id/txtFat_AddProductFrag"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:layout_marginTop="252dp"
+            android:width="318dp"
+            android:ems="10"
+            android:inputType="text"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.473"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/img_AddMenu" />
+
+        <TextView
+            android:id="@+id/textView46"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="44dp"
+            android:layout_marginTop="288dp"
+            android:text="Protein"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/img_AddMenu" />
+
+        <EditText
+            android:id="@+id/txtProtein_AddProductFrag"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:layout_marginTop="308dp"
+            android:width="318dp"
+            android:ems="10"
+            android:inputType="text"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.473"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/img_AddMenu" />
+
+        <TextView
+            android:id="@+id/textView47"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="44dp"
+            android:layout_marginTop="344dp"
+            android:text="Calorie"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/img_AddMenu" />
+
+        <EditText
+            android:id="@+id/txtCalorie_AddProductFrag"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:layout_marginTop="364dp"
+            android:width="318dp"
+            android:ems="10"
+            android:inputType="text"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.473"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/img_AddMenu" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

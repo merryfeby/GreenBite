@@ -42,7 +42,7 @@ class CartAdapter(private val cartViewModel: CartViewModel) : ListAdapter<CartEn
             itemName.text = cart.nama_menu
             itemPrice.text = "Rp $formattedTotalPrice"
             quantityText.text = cart.jumlah.toString()
-
+            tvAddOn.text = cart.add_on
             btnTambahStok.setOnClickListener {
                 cartViewModel.updateCartItemQuantity(cart, cart.jumlah + 1)
             }

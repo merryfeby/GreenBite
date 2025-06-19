@@ -196,7 +196,7 @@
         }
 
         fun logout() {
-            _activeUser.value = null!!
+            _activeUser.value = null
         }
 
         fun updateUser(user: User) {
@@ -204,6 +204,27 @@
                 val currentUser = _activeUser.value ?: return@launch
                 val updatedUser = App.retrofitService.updateUser(currentUser.userID!!, user)
                 _activeUser.value = updatedUser.copy(userID = currentUser.userID, role = currentUser.role)
+            }
+        }
+
+        fun refreshActiveUser() {
+            val currentUser = _activeUser.value ?: return
+            viewModelScope.launch {
+                try {
+                    val response = App.retrofitService.getUserByEmail(currentUser.email)
+                    if (response.isSuccessful) {
+                        response.body()?.let { user ->
+                            _activeUser.value = user
+                        }
+                    }
+                } catch (e: Exception) {
+                    Log.e("UserRefresh", "Error refreshing user: ${e.message}", e)
+                }
+            }
+        }
+        fun deleteUser(userID: Int){
+            viewModelScope.launch {
+                App.retrofitService.deleteUser(userID)
             }
         }
     }
