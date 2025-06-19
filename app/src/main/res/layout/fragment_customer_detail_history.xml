@@ -15,7 +15,7 @@
         android:layout_height="match_parent"
         android:background="#F5F5F5"
         android:paddingBottom="32dp"
-        tools:context=".CustomerDetailHistoryFragment">
+        tools:context=".Customer.CustomerDetailHistoryFragment">
 
         <!-- Header Section -->
         <ImageButton

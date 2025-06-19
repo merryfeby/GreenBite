@@ -16,7 +16,6 @@ class ProductViewModel : ViewModel() {
     val products: LiveData<List<Product>>
         get() = _products
 
-
     private val _currentCategory = MutableLiveData<String>("All")
     val currentCategory: LiveData<String> = _currentCategory
 
@@ -139,6 +138,12 @@ class ProductViewModel : ViewModel() {
 
     fun clearSelectedProduct() {
         _selectedProduct.value = null
+    }
+
+    fun addRating(rating: Rating){
+        viewModelScope.launch {
+            App.retrofitService.addRating(rating)
+        }
     }
 }
 

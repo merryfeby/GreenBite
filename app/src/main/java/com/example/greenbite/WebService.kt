@@ -58,6 +58,7 @@ data class SnapTokenResponse(
     @Json(name = "orderId") val orderId: Int
 )
 
+
 interface WebService {
     //CUSTOMER
     @GET("topmenus")
@@ -95,6 +96,13 @@ interface WebService {
 
     @GET("products/{id}")
     suspend fun getProductById(@Path("id") id: Int): Product
+
+    //rating
+    @POST("ratings")
+    suspend fun addRating(@Body rating: Rating)
+
+    @GET("ratings/user/{userID}")
+    suspend fun getUserRatings(@Path("userID") userID: Int): List<Rating>
 
     //EMPLOYEE
     @GET("orders")
