@@ -10,6 +10,7 @@ import com.example.greenbite.checker.Order
 import java.text.NumberFormat
 import java.util.Locale
 
+
 class DeliveryDiffUtil: DiffUtil.ItemCallback<Order>(){
     override fun areItemsTheSame(oldItem: Order, newItem: Order): Boolean {
         return oldItem.orderID == newItem.orderID
@@ -43,7 +44,8 @@ class DeliveryAdapter(
         holder.binding.tvOrderNumber.text = "Order #" + delivery.orderID.toString()
         holder.binding.tvOrderDate.text = delivery.created_at
         holder.binding.tvItemCount.text = "${delivery.order_details.size} items"
-        holder.binding.tvStatus.text = "${delivery.status} - ${delivery.prep_time} Minutes"
+        holder.binding.tvStatus.text = "${delivery.status} - ${delivery.prep_time + 20} Minutes"
+
     }
 }
 

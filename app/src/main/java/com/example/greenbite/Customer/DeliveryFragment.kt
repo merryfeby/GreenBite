@@ -35,7 +35,6 @@ class DeliveryFragment : Fragment() {
             orderViewModel.getAllOrders()
         }
 
-        deliveryAdapter = DeliveryAdapter()
         binding.RvDelivery.layoutManager = LinearLayoutManager(requireContext())
         binding.RvDelivery.adapter = deliveryAdapter
 

@@ -26,7 +26,8 @@ class CustomerHistoryDiffUtil: DiffUtil.ItemCallback<OrderDetail>(){
 
 val customerhistoryDiffUtil = CustomerHistoryDiffUtil()
 
-class CustomerHistoryAdapter : ListAdapter<OrderDetail, CustomerHistoryAdapter.ViewHolder>(customerhistoryDiffUtil) {  // Change to OrderDetail
+class CustomerHistoryAdapter
+: ListAdapter<OrderDetail, CustomerHistoryAdapter.ViewHolder>(customerhistoryDiffUtil) {
 
     class ViewHolder(val binding: ListHistorydetailBinding) : RecyclerView.ViewHolder(binding.root)
 
@@ -45,6 +46,7 @@ class CustomerHistoryAdapter : ListAdapter<OrderDetail, CustomerHistoryAdapter.V
         holder.binding.tvPrice.text = "Rp $formattedPrice"
         holder.binding.tvTitle.text = historyDetail.product_name
         holder.binding.tvItemCount.text = "${historyDetail.quantity} items"
+        holder.binding.tvDetailHistAddOn.text = "${historyDetail.addons}"
         holder.binding.btnRate.setOnClickListener(){
             val bundle = Bundle().apply {
                 putInt("productID", historyDetail.productID)

@@ -9,6 +9,9 @@
         <variable
             name="orderViewModel"
             type="com.example.greenbite.OrderViewModel" />
+        <variable
+            name="productViewModel"
+            type="com.example.greenbite.ProductViewModel" />
     </data>
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"

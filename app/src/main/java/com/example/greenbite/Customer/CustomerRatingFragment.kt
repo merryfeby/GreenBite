@@ -47,7 +47,9 @@ class CustomerRatingFragment : Fragment() {
             productID = it.getInt("productID", 0)
             orderDetailID = it.getInt("orderDetailID", 0)
         }
+
         userID = usersViewModel.activeUser.value?.userID ?: 0
+
         if (userID == 0) {
             Toast.makeText(requireContext(), "User not logged in.", Toast.LENGTH_SHORT).show()
             findNavController().popBackStack()

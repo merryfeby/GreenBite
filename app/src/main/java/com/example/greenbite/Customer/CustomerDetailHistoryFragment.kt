@@ -11,6 +11,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.greenbite.CustomerHistoryAdapter
 import com.example.greenbite.OrderViewModel
+import com.example.greenbite.ProductViewModel
 import com.example.greenbite.R
 import com.example.greenbite.UsersViewModel
 import com.example.greenbite.checker.Order
@@ -22,6 +23,8 @@ class CustomerDetailHistoryFragment : Fragment() {
     lateinit var binding: FragmentCustomerDetailHistoryBinding
     private val usersViewModel: UsersViewModel by activityViewModels()
     private val orderViewModel: OrderViewModel by activityViewModels()
+    private val productViewModel: ProductViewModel by activityViewModels()
+
     private lateinit var adapter: CustomerHistoryAdapter
 
     override fun onCreateView(
