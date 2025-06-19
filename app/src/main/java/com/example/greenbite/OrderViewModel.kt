@@ -10,6 +10,4 @@ import kotlinx.coroutines.launch
 
 class OrderViewModel : ViewModel() {
 
-
-
 }
