@@ -6,9 +6,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.switchMap
 import androidx.lifecycle.viewModelScope
-import com.example.greenbite.admin.Employee
 import kotlinx.coroutines.launch
-import kotlin.Int
 
 class ProductViewModel : ViewModel() {
     private val _currentCategory = MutableLiveData<String>("All")
@@ -16,6 +14,12 @@ class ProductViewModel : ViewModel() {
 
     private val _currentCategoryMenu = MutableLiveData<List<Product>>()
     val currentCategoryMenu: LiveData<List<Product>> = _currentCategoryMenu
+
+    private val _selectedProduct = MutableLiveData<Product?>()
+    val selectedProduct: LiveData<Product?> = _selectedProduct
+
+    private val _isLoading = MutableLiveData<Boolean>()
+    val isLoading: LiveData<Boolean> = _isLoading
 
     init {
         fetchProducts("All")
@@ -72,6 +76,9 @@ class ProductViewModel : ViewModel() {
                     name = "none",
                     description = "none"
                 ),
+                fat = 0,
+                calories = 0,
+                protein = 0,
                 total_rating = 0
             )
             viewModelScope.launch {
@@ -80,6 +87,25 @@ class ProductViewModel : ViewModel() {
         }
     }
 
+
+    fun fetchProductDetail(productID: Int) {
+        viewModelScope.launch {
+            _isLoading.value = true
+            try {
+                val product = App.retrofitService.getProductById(productID)
+                _selectedProduct.value = product
+            } catch (e: Exception) {
+                Log.e("ProductViewModel", "Error fetching product: ${e.message}", e)
+
+            } finally {
+                _isLoading.value = false
+            }
+        }
+    }
+
+    fun clearSelectedProduct() {
+        _selectedProduct.value = null
+    }
 }
 
 

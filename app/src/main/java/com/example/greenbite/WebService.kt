@@ -2,7 +2,6 @@ package com.example.greenbite
 
 import com.example.greenbite.admin.Employee
 import com.example.greenbite.checker.Order
-import com.midtrans.sdk.corekit.internal.network.model.response.SnapTokenResponse
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 import retrofit2.Response
@@ -12,6 +11,7 @@ import retrofit2.http.POST
 import retrofit2.http.DELETE
 import retrofit2.http.PUT
 import retrofit2.http.Path
+import retrofit2.http.Query
 
 data class TopMenu(
     val id_menu:Int,
@@ -88,11 +88,15 @@ interface WebService {
 
     @PUT("users/{userID}")
     suspend fun updateUser(@Path("userID") userID: Int, @Body updatedData: Map<String, Any>): Response<Unit>
-//    @POST("topup/token/{id}")
-//    suspend fun getSnapToken(@Path("id") id: Int, @Body amountRequest: AmountRequest)
 
     @POST("topup/token/{id}")
     suspend fun getSnapToken(@Path("id") id: Int, @Body amountRequest: AmountRequest): Response<com.example.greenbite.SnapTokenResponse>
+
+    @GET("products/{id}")
+    suspend fun getProductById(@Path("id") id: Int): Product
+
+    @GET("/orders/{userid}")
+    suspend fun getOrderByUserId(@Path("userid") userId: Int): List<Order>
 
     //EMPLOYEE
     @GET("orders")

@@ -35,7 +35,6 @@ class HomeFragment : Fragment() {
         binding.lifecycleOwner = viewLifecycleOwner
         binding.usersViewModel = userViewModel
 
-        // Add debug logging
         Log.d("HomeFragment", "onCreateView called")
 
         userViewModel.activeUser.observe(viewLifecycleOwner) { user ->
