@@ -21,5 +21,8 @@ data class Product(
     var created_at: String,
     var updated_at: String,
     val category: Category,
-    val total_rating :Int?
+    val total_rating :Int?,
+    val fat : Int?,
+    val calories : Int?,
+    val protein : Int?
 )
