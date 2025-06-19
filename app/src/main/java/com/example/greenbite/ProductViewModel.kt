@@ -113,9 +113,6 @@ class ProductViewModel : ViewModel() {
                     name = "none",
                     description = "none"
                 ),
-                fat = 0,
-                calories = 0,
-                protein = 0,
                 total_rating = 0
             )
             viewModelScope.launch {

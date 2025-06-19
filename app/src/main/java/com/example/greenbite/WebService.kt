@@ -96,9 +96,6 @@ interface WebService {
     @GET("products/{id}")
     suspend fun getProductById(@Path("id") id: Int): Product
 
-    @GET("/orders/{userid}")
-    suspend fun getOrderByUserId(@Path("userid") userId: Int): List<Order>
-
     //EMPLOYEE
     @GET("orders")
     suspend fun getAllOrders(): List<Order>

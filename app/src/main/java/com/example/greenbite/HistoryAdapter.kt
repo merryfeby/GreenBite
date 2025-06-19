@@ -47,13 +47,13 @@ class HistoryAdapter(
         holder.binding.tvHistoryGrandtotal.text = "Rp $formattedPrice"
         holder.binding.tvHistoryItems.text = "${history.order_details.size} items"
         holder.binding.tvHistoryDatetime.text = history.created_at
-        holder.binding.btnHistoryId.text = history.orderID.toString()
-//        holder.binding.btnHistoryDetails.setOnClickListener(){
-//            val bundle = Bundle().apply {
-//                putInt("orderID", history.orderID)
-//            }
-//            it.findNavController().navigate(R.id.action_global_historyDetailFragment, bundle)
-//        }
+        holder.binding.btnHistoryId.text = "Order #" + history.orderID.toString()
+        holder.binding.btnHistoryDetails.setOnClickListener(){
+            val bundle = Bundle().apply {
+                putInt("orderID", history.orderID)
+            }
+            it.findNavController().navigate(R.id.action_global_customerDetailHistoryFragment, bundle)
+        }
     }
 }
 

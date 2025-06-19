@@ -138,7 +138,7 @@
     <action
         android:id="@+id/action_global_adminReportDetail"
         app:destination="@id/adminReportDetail" />
-        android:id="@+id/customerTopUpFragment"
+    <fragment android:id="@+id/customerTopUpFragment"
         android:name="com.example.greenbite.Customer.CustomerTopUpFragment"
         android:label="fragment_customer_top_up"
         tools:layout="@layout/fragment_customer_top_up" />
@@ -149,4 +149,11 @@
     <action
         android:id="@+id/action_global_menuDetailFragment"
         app:destination="@id/menuDetailFragment" />
+    <fragment
+        android:id="@+id/customerDetailHistoryFragment"
+        android:name="com.example.greenbite.CustomerDetailHistoryFragment"
+        android:label="CustomerDetailHistoryFragment" />
+    <action
+        android:id="@+id/action_global_customerDetailHistoryFragment"
+        app:destination="@id/customerDetailHistoryFragment" />
 </navigation>
