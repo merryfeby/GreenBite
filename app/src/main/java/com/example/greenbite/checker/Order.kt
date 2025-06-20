@@ -10,6 +10,7 @@ data class Order(
     val userID: Int,
     val customer_name: String,
     val customer_phone: String,
+    val address: String,
     val subtotal: Double,
     val shipping_fee: Double,
     val total: Double,
