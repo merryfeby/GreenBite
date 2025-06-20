@@ -57,6 +57,7 @@ class CustomerTopUpFragment : Fragment() {
 
         usersViewModel.activeUser.observe(viewLifecycleOwner) { user ->
             binding.tvMybalanceCredit.text = "Rp ${user?.credit ?: "0"}"
+            Log.d("MenuFragment", " user credit: ${user.credit}")
         }
 
         binding.btnMybalanceBack.setOnClickListener {
@@ -172,5 +173,12 @@ class CustomerTopUpFragment : Fragment() {
         super.onDestroyView()
         paymentScope.cancel()
         binding.webView.destroy()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        if (usersViewModel.activeUser.value != null) {
+            usersViewModel.refreshActiveUser()
+        }
     }
 }
