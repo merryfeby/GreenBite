@@ -2,6 +2,7 @@ package com.example.greenbite
 
 import com.example.greenbite.admin.Employee
 import com.example.greenbite.checker.Order
+import com.example.greenbite.checker.OrderReq
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 import retrofit2.Response
@@ -13,15 +14,15 @@ import retrofit2.http.PUT
 import retrofit2.http.Path
 import retrofit2.http.Query
 
-data class TopMenu(
-    val id_menu:Int,
-    val name_menu: String,
-    val price_menu:Int,
-    val image_menu:String,
-    val category_menu:String,
-    val rating_menu:Int,
-    val totalrating_menu:Int,
-)
+//data class TopMenu(
+//    val id_menu:Int,
+//    val name_menu: String,
+//    val price_menu:Int,
+//    val image_menu:String,
+//    val category_menu:String,
+//    val rating_menu:Int,
+//    val totalrating_menu:Int,
+//)
 
 
 @JsonClass(generateAdapter = true)
@@ -62,7 +63,7 @@ data class SnapTokenResponse(
 interface WebService {
     //CUSTOMER
     @GET("topmenus")
-    suspend fun getTopMenus(): List<TopMenu>
+    suspend fun getTopMenus(): List<Product>
 
     @GET("products")
     suspend fun getAllProducts(): List<Product>
@@ -110,8 +111,8 @@ interface WebService {
     @GET("postcode-location")
     suspend fun getCoordinates(@Query("postcode") postcode: String): Postcode
 
-    @POST("order")
-    suspend fun createOrder(@Body order: Order)
+    @POST("orders")
+    suspend fun createOrder(@Body order: OrderReq)
 
     //EMPLOYEE
     @GET("orders")

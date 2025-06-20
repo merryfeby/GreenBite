@@ -16,6 +16,7 @@ class ProductViewModel : ViewModel() {
     val products: LiveData<List<Product>>
         get() = _products
 
+
     private val _currentCategory = MutableLiveData<String>("All")
     val currentCategory: LiveData<String> = _currentCategory
 
@@ -28,11 +29,29 @@ class ProductViewModel : ViewModel() {
     private val _isLoading = MutableLiveData<Boolean>()
     val isLoading: LiveData<Boolean> = _isLoading
 
+    private val _topMenus = MutableLiveData<List<Product>>()
+    val topMenus: LiveData<List<Product>> = _topMenus
+
     init {
         fetchProducts("All")
+        fetchTopMenus()
     }
+
     fun setActiveProduct(product: Product) {
         _activeProduct.value = product
+    }
+
+    fun fetchTopMenus() {
+        viewModelScope.launch {
+            try {
+                val fetchedTopMenus = App.retrofitService.getTopMenus()
+                _topMenus.value = fetchedTopMenus
+                Log.d("ProductViewModel", "Fetched ${fetchedTopMenus.size} top menus.")
+            } catch (e: Exception) {
+                Log.e("ProductViewModel", "Error fetching top menus: ${e.message}", e)
+                _topMenus.value = emptyList()
+            }
+        }
     }
 
     fun setCategory(category: String) {
@@ -44,6 +63,10 @@ class ProductViewModel : ViewModel() {
 
     suspend fun getProducts() {
         _products.value = App.retrofitService.getAllProducts()
+    }
+
+    suspend fun getTopMenus(): List<Product> {
+        return App.retrofitService.getTopMenus()
     }
 
     private fun fetchProducts(category: String) {
@@ -58,13 +81,13 @@ class ProductViewModel : ViewModel() {
         }
     }
 
-    //BUAT ADMIN
-    //ambil data buat admin edit
-    fun deleteProduct(productID: Int){
+    // BUAT ADMIN
+    fun deleteProduct(productID: Int) {
         viewModelScope.launch {
             App.retrofitService.deleteProduct(productID)
         }
     }
+
     fun addProduct(name: String, desc: String, price: String, categoryId: Int, fat: Int, protein: Int, calories: Int) {
         viewModelScope.launch {
             val newProduct = Product(
@@ -81,16 +104,13 @@ class ProductViewModel : ViewModel() {
                 deleted_at = null,
                 created_at = "",
                 updated_at = "",
-                category = Category(
-                    categoryID = 99,
-                    name = "none",
-                    description = "none"
-                ),
+                category = Category(categoryID = 99, name = "none", description = "none"),
                 total_rating = 0
             )
             App.retrofitService.addProduct(newProduct)
         }
     }
+
     fun updateProduct(productID: Int, name: String, desc: String, price: String) {
         viewModelScope.launch {
             val newProduct = Product(

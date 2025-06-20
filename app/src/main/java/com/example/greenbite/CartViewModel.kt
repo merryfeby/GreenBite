@@ -9,6 +9,8 @@ import androidx.lifecycle.viewModelScope
 import com.example.greenbite.checker.Order
 import com.example.greenbite.checker.OrderAddon
 import com.example.greenbite.checker.OrderDetail
+import com.example.greenbite.checker.OrderDetailReq
+import com.example.greenbite.checker.OrderReq
 import kotlinx.coroutines.launch
 
 class CartViewModel : ViewModel() {
@@ -133,41 +135,46 @@ class CartViewModel : ViewModel() {
 
     }
 
-//    fun createOrder(userID: Int, emailUser: String) {
-//        viewModelScope.launch {
-////            Log.e("order", "ini grand total: ${_deliveryFee.value}")
-//            val cartItems = cartDao.getListCartbyUser(emailUser)
-////            val CartItems: LiveData<List<CartEntity>> = cartDao.getCartByUser(emailUser)
-//            val order =  Order(
-//                orderID = 0,
-//                userID = userID,
-//                customer_name = "",
-//                customer_phone = "",
-//                subtotal = _cartTotal.value!!,
-//                prep_time = 0,
-//                shipping_fee = _deliveryFee.value!!,
-//                total = _grandTotal.value!!,
-//                status = "",
-//                created_at = "",
-//                updated_at = "",
-//                order_details = cartItems.map { item ->
-//                    val orderDetail = OrderDetail(
-//                        orderDetailID = 0,
-//                        productID = item.id_menu,
-//                        product_name = item.id_menu,
-//                        quantity = "",
-//                        price = 0,
-//                        total = "",
-//                        addons = OrderAddon(
-//                            orderAddonID = 0,
-//                            addon_name = ""
-//                        ),
-//                }
-//                ),
-//            )
-//
-//        }
-//    }
+    fun createOrder(userID: Int, emailUser: String) {
+        viewModelScope.launch {
+            Log.e("order", "ini grand total: ${_deliveryFee.value}")
+            val cartItems = cartDao.getListCart(emailUser)
+            Log.e("order", "ini grand total: ${_deliveryFee.value}")
+            val order = OrderReq(
+                orderID = 0,
+                userID = userID,
+                customer_name = "",
+                customer_phone = "",
+                subtotal = _cartTotal.value!!,
+                prep_time = 0,
+                shipping_fee = _deliveryFee.value!!,
+                total = _grandTotal.value!!,
+                status = "pending",
+                created_at = "",
+                updated_at = "",
+                order_details = cartItems.map { item ->
+                    OrderDetailReq(
+                        orderDetailID = 0,
+                        productID = item.id_menu,
+                        product_name = "",
+                        quantity = item.jumlah,
+                        price = item.harga,
+                        total = 0,
+                        addons = OrderAddon(
+                            orderAddonID = 0,
+                            addon_name = item.add_on
+                        )
+                    )
+                }
+            )
+            Log.e("order", "yey berhasil1")
+            viewModelScope.launch {
+                val response = App.retrofitService.createOrder(order)
+                Log.e("order", "yey berhasil")
+            }
+            cartDao.deleteCart(emailUser)
+        }
+    }
 
 
 }

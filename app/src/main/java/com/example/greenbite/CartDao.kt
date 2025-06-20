@@ -16,7 +16,7 @@ interface CartDao {
     fun getCartByUser(email: String): LiveData<List<CartEntity>>
 
     @Query("SELECT * FROM cart WHERE user_email = :email")
-    fun getListCartbyUser(email: String): List<CartEntity>
+    suspend fun getListCart(email: String): List<CartEntity>
 
     @Query("DELETE FROM cart WHERE user_email = :email AND id_menu = :menuId")
     suspend fun deleteItemFromCart(email: String, menuId: Int)
