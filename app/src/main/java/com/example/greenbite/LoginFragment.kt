@@ -12,6 +12,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.example.greenbite.checker.CheckerActivity
+import com.example.greenbite.courier.CourierActivity
 import com.example.greenbite.databinding.FragmentLoginBinding
 
 class LoginFragment : Fragment() {
@@ -53,7 +54,6 @@ class LoginFragment : Fragment() {
                             findNavController().navigate(R.id.action_loginFragment_to_homeFragment)
                         }
                         2 -> { // Checker
-                            Toast.makeText(context, "Employee Dashboard - Coming Soon!", Toast.LENGTH_SHORT).show()
                             val intent = Intent(requireContext(), CheckerActivity::class.java)
                             intent.putExtra("userEmail", user.email)
                             startActivity(intent)
@@ -64,9 +64,9 @@ class LoginFragment : Fragment() {
                             findNavController().navigate(R.id.action_global_adminFragment3) // Temporary
                         }
                         4 -> {
-                            Toast.makeText(context, "Admin Dashboard - Coming Soon!", Toast.LENGTH_SHORT).show()
-                            // Navigate to courier dashboard when ready
-                            findNavController().navigate(R.id.action_loginFragment_to_homeFragment) // Temporary
+                            val intent = Intent(requireContext(), CourierActivity::class.java)
+                            intent.putExtra("userEmail", user.email)
+                            startActivity(intent)
                         }
                         else -> {
                             Toast.makeText(context, "Unknown user role", Toast.LENGTH_SHORT).show()

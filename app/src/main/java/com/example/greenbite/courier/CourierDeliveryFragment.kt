@@ -11,35 +11,34 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.greenbite.R
 import com.example.greenbite.databinding.FragmentCourierDeliveryBinding
-import com.example.greenbite.databinding.FragmentCourierHistoryBinding
 
-class CourierHistoryFragment : Fragment() {
+class CourierDeliveryFragment : Fragment() {
     private val courierViewModel: CourierViewModel by activityViewModels()
-    lateinit var binding: FragmentCourierHistoryBinding
+    lateinit var binding: FragmentCourierDeliveryBinding
     lateinit var dashboardAdapter: DashboardAdapter
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_courier_history, container, false)
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_courier_delivery, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        courierViewModel.getCompletedOrders()
+        courierViewModel.getShippingOrders()
         courierViewModel.activeUser.observe(viewLifecycleOwner) { user ->
             user?.let {
-                binding.txtWelcomeHistoryCourier.text = "Welcome, ${it.name}"
+                binding.txtWelcomeDeliveryCourier.text = "Welcome, ${it.name}"
             }
         }
-        dashboardAdapter = DashboardAdapter("Detail")
+        dashboardAdapter = DashboardAdapter("Details")
         dashboardAdapter.onDetailClickListener = { it ->
             courierViewModel.setActiveOrder(it)
-            findNavController().navigate(R.id.action_global_courierDetailHistoryFragment)
+            findNavController().navigate(R.id.action_global_courierDetailFragment)
         }
-        binding.rvHistoryCourier.layoutManager = LinearLayoutManager(requireContext())
-        binding.rvHistoryCourier.adapter = dashboardAdapter
+        binding.rvDeliveryCourier.layoutManager = LinearLayoutManager(requireContext())
+        binding.rvDeliveryCourier.adapter = dashboardAdapter
         courierViewModel.orders.observe(viewLifecycleOwner) { orders ->
             if (orders != null) {
                 dashboardAdapter.submitList(orders)
@@ -49,6 +48,6 @@ class CourierHistoryFragment : Fragment() {
 
     override fun onResume() {
         super.onResume()
-        courierViewModel.getCompletedOrders()
+        courierViewModel.getShippingOrders()
     }
 }

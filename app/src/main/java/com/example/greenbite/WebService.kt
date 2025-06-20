@@ -123,11 +123,28 @@ interface WebService {
     @PUT("orders/{id}/reject")
     suspend fun rejectOrder(@Path("id") id: Int)
 
+    @PUT("orders/{id}/ship")
+    suspend fun shipOrder(@Path("id") id: Int)
+
+    @PUT("orders/{id}/finish")
+    suspend fun finishOrder(@Path("id") id: Int)
+
+
+
     @GET("orders/status/pending")
     suspend fun getAllPendingOrder(): List<Order>
 
     @GET("orders/status/active")
     suspend fun getActiveOrders(): List<Order>
+
+    @GET("orders/status/cooking")
+    suspend fun getCookingOrders(): List<Order>
+
+    @GET("orders/status/shipping")
+    suspend fun getShippingOrders(): List<Order>
+
+    @GET("orders/status/completed")
+    suspend fun getCompletedOrders(): List<Order>
 
     //ADMIN
     //crud employee
