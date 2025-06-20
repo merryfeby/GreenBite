@@ -52,14 +52,12 @@ class CartFragment : Fragment() {
                 Toast.makeText(requireContext(), "Error: Grand total or user credit not available.", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
-
             val userCreditAsDouble = currentUserCredit.toDouble()
 
             if (grandTotalValue > userCreditAsDouble) {
                 Toast.makeText(requireContext(), "Saldo tidak cukup untuk order ini!", Toast.LENGTH_LONG).show()
                 return@setOnClickListener
             }
-
             cartViewModel.createOrder(userID, userEmail)
             usersViewModel.refreshActiveUser()
         }
