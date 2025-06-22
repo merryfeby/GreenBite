@@ -14,39 +14,6 @@ import retrofit2.http.PUT
 import retrofit2.http.Path
 import retrofit2.http.Query
 
-//data class TopMenu(
-//    val id_menu:Int,
-//    val name_menu: String,
-//    val price_menu:Int,
-//    val image_menu:String,
-//    val category_menu:String,
-//    val rating_menu:Int,
-//    val totalrating_menu:Int,
-//)
-
-
-@JsonClass(generateAdapter = true)
-data class UserRegistrationResponse(
-    @Json(name = "message")
-    val message: String
-)
-
-@JsonClass(generateAdapter = true)
-data class LoginRequest(
-    @Json(name = "email")
-    val email: String,
-    @Json(name = "password")
-    val password: String
-)
-
-@JsonClass(generateAdapter = true)
-data class LoginResponse(
-    @Json(name = "message")
-    val message: String,
-    @Json(name = "user")
-    val user: User
-)
-
 @JsonClass(generateAdapter = true)
 data class AmountRequest(
     @Json(name = "amount")
@@ -72,16 +39,19 @@ interface WebService {
     suspend fun getProductsByCategory(@Path("categoryName") category: String): List<Product>
 
     @POST("users")
-    suspend fun createUser(@Body user: User): Response<UserRegistrationResponse>
+    suspend fun createUser(@Body user: User): User?
 
     @PUT("users/{id}")
-    suspend fun updateUser(@Path("id") id: Int, @Body user: User): User
+    suspend fun updateUser(@Path("id") id: Int, @Body user: User): User?
 
     @GET("users/email/{email}")
-    suspend fun getUserByEmail(@Path("email") email: String): Response<User>
+    suspend fun getUserByEmail(@Path("email") email: String): User?
 
     @POST("login")
-    suspend fun loginUser(@Body loginRequest: LoginRequest): Response<LoginResponse>
+    suspend fun loginUser(
+        @Query("email") email: String,
+        @Query("password") password: String
+    ): User?
 
     @GET("postcode")
     suspend fun getPostcodes(): List<Postcode>
@@ -89,8 +59,8 @@ interface WebService {
     @DELETE("users/{userID}")
     suspend fun deleteUser(@Path("userID") userID: Int): Response<Unit>
 
-    @PUT("users/{userID}")
-    suspend fun updateUser(@Path("userID") userID: Int, @Body updatedData: Map<String, Any>): Response<Unit>
+//    @PUT("users/{userID}")
+//    suspend fun updateUser(@Path("userID") userID: Int, @Body updatedData: Map<String, Any>): Response<Unit>
 
     @POST("topup/token/{id}")
     suspend fun getSnapToken(@Path("id") id: Int, @Body amountRequest: AmountRequest): Response<com.example.greenbite.SnapTokenResponse>

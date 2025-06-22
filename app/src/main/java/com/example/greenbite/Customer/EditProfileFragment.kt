@@ -12,7 +12,6 @@ import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.example.greenbite.R
 import com.example.greenbite.User
-import com.example.greenbite.UserEntity
 import com.example.greenbite.UsersViewModel
 import com.example.greenbite.databinding.FragmentEditProfileBinding
 
@@ -61,10 +60,10 @@ class EditProfileFragment : Fragment() {
     }
     private fun currentUserData() {
         usersViewModel.activeUser.observe(viewLifecycleOwner) { user ->
-            binding.etEditName.setText(user.name)
-            binding.etEditEmail.setText(user.email)
-            binding.etEditPhone.setText(user.phone)
-            binding.etEditAddress.setText(user.address)
+            binding.etEditName.setText(user!!.name)
+            binding.etEditEmail.setText(user!!.email)
+            binding.etEditPhone.setText(user!!.phone)
+            binding.etEditAddress.setText(user!!.address)
 
            usersViewModel.postcodes.value?.let { postcodes ->
                 val userPostcodeIndex = postcodes.indexOfFirst { it.postcodeID == user.postcode }

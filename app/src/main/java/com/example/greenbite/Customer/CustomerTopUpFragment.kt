@@ -57,7 +57,7 @@ class CustomerTopUpFragment : Fragment() {
 
         usersViewModel.activeUser.observe(viewLifecycleOwner) { user ->
             binding.tvMybalanceCredit.text = "Rp ${user?.credit ?: "0"}"
-            Log.d("MenuFragment", " user credit: ${user.credit}")
+            Log.d("MenuFragment", " user credit: ${user!!.credit}")
         }
 
         binding.btnMybalanceBack.setOnClickListener {

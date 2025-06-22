@@ -59,9 +59,7 @@ class LoginFragment : Fragment() {
                             startActivity(intent)
                         }
                         3 -> { // Admin
-                            Toast.makeText(context, "Admin Dashboard - Coming Soon!", Toast.LENGTH_SHORT).show()
-                            // Navigate to admin dashboard when ready
-                            findNavController().navigate(R.id.action_global_adminFragment3) // Temporary
+                            findNavController().navigate(R.id.action_global_adminFragment3)
                         }
                         4 -> {
                             val intent = Intent(requireContext(), CourierActivity::class.java)

@@ -24,13 +24,12 @@ class CheckerViewModel: ViewModel(){
 
     fun init(userEmail: String){
         viewModelScope.launch {
-            var response = App.retrofitService.getUserByEmail(userEmail)
-            if (response.isSuccessful) {
-                val user = response.body()
-                if (user != null) {
-                    _activeUser.value = user!!
-                    Log.d("Login", "Active user set: ${user.email}")
-                }
+            val user = App.retrofitService.getUserByEmail(userEmail)
+            if (user != null) {
+                _activeUser.value = user!!
+                Log.d("Login", "Active user set: ${user.email}")
+            } else {
+                Log.e("Login", "User not found or error occurred")
             }
             getPendingOrders()
         }
