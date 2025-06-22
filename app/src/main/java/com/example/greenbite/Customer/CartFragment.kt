@@ -41,13 +41,25 @@ class CartFragment : Fragment() {
 
         val userID = usersViewModel.activeUser.value?.userID ?: 0
         val userEmail = usersViewModel.activeUser.value?.email ?: ""
-        val grandTotalValue = cartViewModel.grandTotal.value
-        val currentUserCredit = usersViewModel.activeUser.value?.credit
+
+        setupRecyclerView()
+        observeCartItems()
+
 
         binding.btnCartBack.setOnClickListener(){
             findNavController().navigate(R.id.action_global_homeFragment)
         }
+
         binding.btnOrder.setOnClickListener(){
+            val grandTotalValue = cartViewModel.grandTotal.value
+            val cartTotalValue = cartViewModel.cartTotal.value
+            val currentUserCredit = usersViewModel.activeUser.value?.credit
+
+            if (cartTotalValue == null) {
+                Toast.makeText(requireContext(), "Cart is Empty", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
             if (grandTotalValue == null || currentUserCredit == null) {
                 Toast.makeText(requireContext(), "Error: Grand total or user credit not available.", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
@@ -59,12 +71,14 @@ class CartFragment : Fragment() {
                 return@setOnClickListener
             }
             cartViewModel.createOrder(userID, userEmail)
+            binding.tvSubtotal.text = "Rp 0"
+            binding.tvTotal.text = "Rp 0"
+            binding.tvDeliveryFee.text = "Rp 0"
             usersViewModel.refreshActiveUser()
         }
 
 
-        setupRecyclerView()
-        observeCartItems()
+
 
     }
 
