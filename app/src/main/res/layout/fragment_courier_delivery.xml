@@ -5,34 +5,46 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".courier.CourierHistoryFragment">
+        tools:context=".courier.CourierDeliveryFragment">
 
         <Button
-            android:id="@+id/btnAsc_history_courier"
+            android:id="@+id/btnAsc_delivery_courier"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
             android:layout_marginEnd="16dp"
             android:backgroundTint="@color/green"
             android:text="Ascending"
             android:textSize="10sp"
-            app:layout_constraintBottom_toBottomOf="@+id/textView64"
-            app:layout_constraintEnd_toStartOf="@+id/btnDesc_history_courier"
-            app:layout_constraintTop_toTopOf="@+id/textView64" />
+            app:layout_constraintBottom_toBottomOf="@+id/textView63"
+            app:layout_constraintEnd_toStartOf="@+id/btnDesc_delivery_courier"
+            app:layout_constraintTop_toTopOf="@+id/textView63" />
 
         <Button
-            android:id="@+id/btnDesc_history_courier"
+            android:id="@+id/btnDesc_delivery_courier"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
             android:layout_marginEnd="16dp"
             android:backgroundTint="@color/green"
-            android:text="Ascending"
+            android:text="Descending"
             android:textSize="10sp"
-            app:layout_constraintBottom_toBottomOf="@+id/textView64"
+            app:layout_constraintBottom_toBottomOf="@+id/textView63"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/textView64" />
+            app:layout_constraintTop_toTopOf="@+id/textView63" />
+
+        <TextView
+            android:id="@+id/textView63"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="Delivering Order"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/navbar_delivery_courier" />
 
         <View
-            android:id="@+id/navbar_history_courier"
+            android:id="@+id/navbar_delivery_courier"
             android:layout_width="0dp"
             android:layout_height="100dp"
             android:background="@color/green"
@@ -41,7 +53,16 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/txtTitleHistory_courier"
+            android:id="@+id/txtWelcomeDelivery_courier"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Welcome, {user}"
+            android:textColor="#FFFFFF"
+            app:layout_constraintStart_toStartOf="@+id/txtTitleDelivery_courier"
+            app:layout_constraintTop_toBottomOf="@+id/txtTitleDelivery_courier" />
+
+        <TextView
+            android:id="@+id/txtTitleDelivery_courier"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -53,17 +74,8 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/txtWelcomeHistory_courier"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Welcome, {user}"
-            android:textColor="#FFFFFF"
-            app:layout_constraintStart_toStartOf="@+id/txtTitleHistory_courier"
-            app:layout_constraintTop_toBottomOf="@+id/txtTitleHistory_courier" />
-
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rvHistory_courier"
+            android:id="@+id/rvDelivery_Courier"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginStart="16dp"
@@ -72,18 +84,6 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView64" />
-
-        <TextView
-            android:id="@+id/textView64"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:text="All Order"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/navbar_history_courier" />
+            app:layout_constraintTop_toBottomOf="@+id/textView63" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

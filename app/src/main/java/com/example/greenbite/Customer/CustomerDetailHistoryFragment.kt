@@ -1,4 +1,4 @@
-package com.example.greenbite
+package com.example.greenbite.Customer
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -9,6 +9,11 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.greenbite.CustomerHistoryAdapter
+import com.example.greenbite.OrderViewModel
+import com.example.greenbite.ProductViewModel
+import com.example.greenbite.R
+import com.example.greenbite.UsersViewModel
 import com.example.greenbite.checker.Order
 import com.example.greenbite.databinding.FragmentCustomerDetailHistoryBinding
 import java.text.NumberFormat
@@ -18,13 +23,16 @@ class CustomerDetailHistoryFragment : Fragment() {
     lateinit var binding: FragmentCustomerDetailHistoryBinding
     private val usersViewModel: UsersViewModel by activityViewModels()
     private val orderViewModel: OrderViewModel by activityViewModels()
+    private val productViewModel: ProductViewModel by activityViewModels()
+
     private lateinit var adapter: CustomerHistoryAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_customer_detail_history, container, false)
+        binding = DataBindingUtil.inflate(inflater,
+            R.layout.fragment_customer_detail_history, container, false)
 
         binding.usersViewModel = usersViewModel
         binding.orderViewModel = orderViewModel

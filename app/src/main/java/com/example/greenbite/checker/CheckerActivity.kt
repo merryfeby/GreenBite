@@ -40,6 +40,10 @@ class CheckerActivity : AppCompatActivity() {
                     navController.navigate(R.id.checkerHistoryFragment)
                     true
                 }
+                R.id.logout_mi_checker -> {
+                    finish()
+                    true
+                }
                 else -> false
             }
         }
