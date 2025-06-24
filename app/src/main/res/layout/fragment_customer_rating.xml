@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout  xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="usersViewModel"
+            type="com.example.greenbite.UsersViewModel" />
+        <variable
+            name="orderViewModel"
+            type="com.example.greenbite.OrderViewModel" />
+        <variable
+            name="productViewModel"
+            type="com.example.greenbite.ProductViewModel" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".Customer.CustomerRatingFragment">
+
+        <ImageButton
+            android:id="@+id/btnBackRating"
+            android:layout_width="49dp"
+            android:layout_height="37dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="40dp"
+            android:background="#00FFFFFF"
+            android:src="@drawable/angle_left_solid"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView58"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="108dp"
+            android:fontFamily="sans-serif-black"
+            android:text="How was your food ?"
+            android:textSize="34sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btnRatingSubmit"
+            android:layout_width="316dp"
+            android:layout_height="67dp"
+            android:layout_marginTop="60dp"
+            android:backgroundTint="#33C98B"
+            android:fontFamily="sans-serif-medium"
+            android:text="Submit"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.515"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etRating" />
+
+        <EditText
+            android:id="@+id/etRating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="52dp"
+            android:hint="Enter rating (1-5)"
+            android:ems="10"
+            android:maxLength="1"
+            android:inputType="number"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView58" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,6 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/courier_nav">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/courier_nav"
+    app:startDestination="@id/courierDashboardFragment">
 
+    <fragment
+        android:id="@+id/courierDashboardFragment"
+        android:name="com.example.greenbite.courier.CourierDashboardFragment"
+        android:label="fragment_courier_dashboard"
+        tools:layout="@layout/fragment_courier_dashboard" />
+    <fragment
+        android:id="@+id/courierDetailFragment"
+        android:name="com.example.greenbite.courier.CourierDetailFragment"
+        android:label="fragment_courier_detail"
+        tools:layout="@layout/fragment_courier_detail" />
+    <fragment
+        android:id="@+id/courierDetailHistoryFragment"
+        android:name="com.example.greenbite.courier.CourierDetailHistoryFragment"
+        android:label="fragment_courier_detail_history"
+        tools:layout="@layout/fragment_courier_detail_history" />
+    <fragment
+        android:id="@+id/courierHistoryFragment"
+        android:name="com.example.greenbite.courier.CourierHistoryFragment"
+        android:label="fragment_courier_history"
+        tools:layout="@layout/fragment_courier_history" />
+    <action
+        android:id="@+id/action_global_courierDashboardFragment"
+        app:destination="@id/courierDashboardFragment" />
+    <action
+        android:id="@+id/action_global_courierDetailFragment"
+        app:destination="@id/courierDetailFragment" />
+    <action
+        android:id="@+id/action_global_courierDetailHistoryFragment"
+        app:destination="@id/courierDetailHistoryFragment" />
+    <action
+        android:id="@+id/action_global_courierHistoryFragment"
+        app:destination="@id/courierHistoryFragment" />
+    <fragment
+        android:id="@+id/courierDeliveryFragment"
+        android:name="com.example.greenbite.courier.CourierDeliveryFragment"
+        android:label="CourierDeliveryFragment" />
+    <action
+        android:id="@+id/action_global_courierDeliveryFragment"
+        app:destination="@id/courierDeliveryFragment" />
 </navigation>

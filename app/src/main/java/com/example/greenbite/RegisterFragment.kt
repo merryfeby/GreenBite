@@ -91,7 +91,7 @@ class RegisterFragment : Fragment() {
     private fun updateSpinnerData(postcodes: List<Postcode>) {
         val postcodeStrings = mutableListOf<String>()
         postcodeStrings.add("Select Postcode")
-        postcodeStrings.addAll(postcodes.map { "${it.postcodeID} (${it.latitude}, ${it.longitude})" })
+        postcodeStrings.addAll(postcodes.map { "${it.postcodeID}" })
 
         postcodeAdapter.clear()
         postcodeAdapter.addAll(postcodeStrings)

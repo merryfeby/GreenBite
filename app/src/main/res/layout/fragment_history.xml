@@ -28,26 +28,13 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <Button
-            android:id="@+id/btnFilterHistory"
-            android:layout_width="336dp"
-            android:layout_height="42dp"
-            android:layout_marginTop="24dp"
-            android:backgroundTint="#1CAD76"
-            android:text="Filter"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.493"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView22" />
-
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvHIstory"
-            android:layout_width="394dp"
-            android:layout_height="516dp"
-            android:layout_marginTop="12dp"
+            android:layout_width="401dp"
+            android:layout_height="607dp"
+            android:layout_marginTop="16dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.48"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btnFilterHistory" />
+            app:layout_constraintTop_toBottomOf="@+id/textView22" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

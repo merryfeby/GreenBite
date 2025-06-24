@@ -5,13 +5,11 @@ import com.example.greenbite.databinding.ListHistoryBinding
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.greenbite.checker.Order
-import com.example.greenbite.databinding.ListMenuBinding
 import java.text.NumberFormat
 import java.util.Locale
 

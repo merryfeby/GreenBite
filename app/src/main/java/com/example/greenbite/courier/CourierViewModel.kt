@@ -1,4 +1,4 @@
-package com.example.greenbite.checker
+package com.example.greenbite.courier
 
 import android.util.Log
 import androidx.lifecycle.LiveData
@@ -7,9 +7,10 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.greenbite.App
 import com.example.greenbite.User
+import com.example.greenbite.checker.Order
 import kotlinx.coroutines.launch
 
-class CheckerViewModel: ViewModel(){
+class CourierViewModel: ViewModel() {
     private val _activeUser = MutableLiveData<User>()
     val activeUser: LiveData<User>
         get() = _activeUser
@@ -31,15 +32,39 @@ class CheckerViewModel: ViewModel(){
             } else {
                 Log.e("Login", "User not found or error occurred")
             }
-            getPendingOrders()
+            getCookingOrders()
         }
     }
+
     fun setActiveOrder(id: Int){
         viewModelScope.launch {
             var response = App.retrofitService.getOrderById(id.toString())
             _activeOrder.value = response
         }
     }
+
+    fun getCookingOrders(){
+        viewModelScope.launch {
+            var orders = App.retrofitService.getCookingOrders()
+            _orders.value = orders
+        }
+    }
+
+    fun getShippingOrders(){
+        viewModelScope.launch {
+            var orders = App.retrofitService.getShippingOrders()
+            _orders.value = orders
+        }
+    }
+
+
+    fun getCompletedOrders(){
+        viewModelScope.launch {
+            var orders = App.retrofitService.getCompletedOrders()
+            _orders.value = orders
+        }
+    }
+
     fun sortOrderAsc(){
         _orders.value = _orders.value?.sortedBy { it.orderID }
     }
@@ -48,34 +73,15 @@ class CheckerViewModel: ViewModel(){
         _orders.value = _orders.value?.sortedByDescending { it.orderID }
     }
 
-    fun acceptOrder(time: Int){
-        val body = mapOf("prep_time" to time)
+    fun shipOrder(orderId: Int){
         viewModelScope.launch {
-            App.retrofitService.acceptOrder(_activeOrder.value!!.orderID, body)
-            var orders = App.retrofitService.getAllPendingOrder()
-            _orders.value = orders
+            App.retrofitService.shipOrder(orderId)
         }
     }
 
-    fun rejectOrder(){
+    fun finishOrder(){
         viewModelScope.launch {
-            App.retrofitService.rejectOrder(_activeOrder.value!!.orderID)
-            var orders = App.retrofitService.getAllPendingOrder()
-            _orders.value = orders
-        }
-    }
-
-    fun getActiveOrders(){
-        viewModelScope.launch {
-            var orders = App.retrofitService.getActiveOrders()
-            _orders.value = orders
-        }
-    }
-
-    fun getPendingOrders(){
-        viewModelScope.launch {
-            var orders = App.retrofitService.getAllPendingOrder()
-            _orders.value = orders
+            App.retrofitService.finishOrder(_activeOrder.value!!.orderID)
         }
     }
 }

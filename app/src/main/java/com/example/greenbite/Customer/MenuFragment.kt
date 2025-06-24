@@ -81,7 +81,7 @@ class MenuFragment : Fragment() {
         }
 
         val userEmail = userViewModel.activeUser.value?.email ?: "guest"
-        menuAdapter = MenuAdapter(  cartViewModel, userEmail)
+        menuAdapter = MenuAdapter(cartViewModel, userEmail)
         binding.rvAllMenu.layoutManager = GridLayoutManager(requireContext(), 2)
         binding.rvAllMenu.adapter = menuAdapter
 

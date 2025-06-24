@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
@@ -38,15 +39,46 @@ class CartFragment : Fragment() {
         binding.cartViewModel = cartViewModel
         binding.usersViewModel = usersViewModel
 
+        val userID = usersViewModel.activeUser.value?.userID ?: 0
+        val userEmail = usersViewModel.activeUser.value?.email ?: ""
+
+        setupRecyclerView()
+        observeCartItems()
+
+
         binding.btnCartBack.setOnClickListener(){
             findNavController().navigate(R.id.action_global_homeFragment)
         }
 
         binding.btnOrder.setOnClickListener(){
+            val grandTotalValue = cartViewModel.grandTotal.value
+            val cartTotalValue = cartViewModel.cartTotal.value
+            val currentUserCredit = usersViewModel.activeUser.value?.credit
 
+            if (cartTotalValue == null) {
+                Toast.makeText(requireContext(), "Cart is Empty", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
+            if (grandTotalValue == null || currentUserCredit == null) {
+                Toast.makeText(requireContext(), "Error: Grand total or user credit not available.", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+            val userCreditAsDouble = currentUserCredit.toDouble()
+
+            if (grandTotalValue > userCreditAsDouble) {
+                Toast.makeText(requireContext(), "Saldo tidak cukup untuk order ini!", Toast.LENGTH_LONG).show()
+                return@setOnClickListener
+            }
+            cartViewModel.createOrder(userID, userEmail)
+            binding.tvSubtotal.text = "Rp 0"
+            binding.tvTotal.text = "Rp 0"
+            binding.tvDeliveryFee.text = "Rp 0"
+            usersViewModel.refreshActiveUser()
         }
-        setupRecyclerView()
-        observeCartItems()
+
+
+
 
     }
 

@@ -9,13 +9,16 @@
         <variable
             name="orderViewModel"
             type="com.example.greenbite.OrderViewModel" />
+        <variable
+            name="productViewModel"
+            type="com.example.greenbite.ProductViewModel" />
     </data>
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#F5F5F5"
         android:paddingBottom="32dp"
-        tools:context=".CustomerDetailHistoryFragment">
+        tools:context=".Customer.CustomerDetailHistoryFragment">
 
         <!-- Header Section -->
         <ImageButton

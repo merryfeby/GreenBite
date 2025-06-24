@@ -2,6 +2,7 @@ package com.example.greenbite
 
 import com.example.greenbite.admin.Employee
 import com.example.greenbite.checker.Order
+import com.example.greenbite.checker.OrderReq
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 import retrofit2.Response
@@ -12,39 +13,6 @@ import retrofit2.http.DELETE
 import retrofit2.http.PUT
 import retrofit2.http.Path
 import retrofit2.http.Query
-
-data class TopMenu(
-    val id_menu:Int,
-    val name_menu: String,
-    val price_menu:Int,
-    val image_menu:String,
-    val category_menu:String,
-    val rating_menu:Int,
-    val totalrating_menu:Int,
-)
-
-
-@JsonClass(generateAdapter = true)
-data class UserRegistrationResponse(
-    @Json(name = "message")
-    val message: String
-)
-
-@JsonClass(generateAdapter = true)
-data class LoginRequest(
-    @Json(name = "email")
-    val email: String,
-    @Json(name = "password")
-    val password: String
-)
-
-@JsonClass(generateAdapter = true)
-data class LoginResponse(
-    @Json(name = "message")
-    val message: String,
-    @Json(name = "user")
-    val user: User
-)
 
 @JsonClass(generateAdapter = true)
 data class AmountRequest(
@@ -58,10 +26,11 @@ data class SnapTokenResponse(
     @Json(name = "orderId") val orderId: Int
 )
 
+
 interface WebService {
     //CUSTOMER
     @GET("topmenus")
-    suspend fun getTopMenus(): List<TopMenu>
+    suspend fun getTopMenus(): List<Product>
 
     @GET("products")
     suspend fun getAllProducts(): List<Product>
@@ -70,16 +39,19 @@ interface WebService {
     suspend fun getProductsByCategory(@Path("categoryName") category: String): List<Product>
 
     @POST("users")
-    suspend fun createUser(@Body user: User): Response<UserRegistrationResponse>
+    suspend fun createUser(@Body user: User): User?
 
     @PUT("users/{id}")
-    suspend fun updateUser(@Path("id") id: Int, @Body user: User): User
+    suspend fun updateUser(@Path("id") id: Int, @Body user: User): User?
 
     @GET("users/email/{email}")
-    suspend fun getUserByEmail(@Path("email") email: String): Response<User>
+    suspend fun getUserByEmail(@Path("email") email: String): User?
 
     @POST("login")
-    suspend fun loginUser(@Body loginRequest: LoginRequest): Response<LoginResponse>
+    suspend fun loginUser(
+        @Query("email") email: String,
+        @Query("password") password: String
+    ): User?
 
     @GET("postcode")
     suspend fun getPostcodes(): List<Postcode>
@@ -87,8 +59,8 @@ interface WebService {
     @DELETE("users/{userID}")
     suspend fun deleteUser(@Path("userID") userID: Int): Response<Unit>
 
-    @PUT("users/{userID}")
-    suspend fun updateUser(@Path("userID") userID: Int, @Body updatedData: Map<String, Any>): Response<Unit>
+//    @PUT("users/{userID}")
+//    suspend fun updateUser(@Path("userID") userID: Int, @Body updatedData: Map<String, Any>): Response<Unit>
 
     @POST("topup/token/{id}")
     suspend fun getSnapToken(@Path("id") id: Int, @Body amountRequest: AmountRequest): Response<com.example.greenbite.SnapTokenResponse>
@@ -96,11 +68,21 @@ interface WebService {
     @GET("products/{id}")
     suspend fun getProductById(@Path("id") id: Int): Product
 
+    //rating
+    @POST("ratings")
+    suspend fun addRating(@Body rating: Rating)
+
+    @GET("ratings/user/{userID}")
+    suspend fun getUserRatings(@Path("userID") userID: Int): List<Rating>
+
     @GET("/orders/{userid}")
     suspend fun getOrderByUserId(@Path("userid") userId: Int): List<Order>
 
     @GET("postcode-location")
     suspend fun getCoordinates(@Query("postcode") postcode: String): Postcode
+
+    @POST("orders")
+    suspend fun createOrder(@Body order: OrderReq)
 
     //EMPLOYEE
     @GET("orders")
@@ -112,11 +94,28 @@ interface WebService {
     @PUT("orders/{id}/reject")
     suspend fun rejectOrder(@Path("id") id: Int)
 
+    @PUT("orders/{id}/ship")
+    suspend fun shipOrder(@Path("id") id: Int)
+
+    @PUT("orders/{id}/finish")
+    suspend fun finishOrder(@Path("id") id: Int)
+
+
+
     @GET("orders/status/pending")
     suspend fun getAllPendingOrder(): List<Order>
 
     @GET("orders/status/active")
     suspend fun getActiveOrders(): List<Order>
+
+    @GET("orders/status/cooking")
+    suspend fun getCookingOrders(): List<Order>
+
+    @GET("orders/status/shipping")
+    suspend fun getShippingOrders(): List<Order>
+
+    @GET("orders/status/completed")
+    suspend fun getCompletedOrders(): List<Order>
 
     //ADMIN
     //crud employee
