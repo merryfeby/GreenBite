@@ -53,10 +53,11 @@
             android:id="@+id/rvReport_AdminFrag"
             android:layout_width="404dp"
             android:layout_height="451dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="8dp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.428"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView" />
+            app:layout_constraintTop_toBottomOf="@+id/textView65" />
 
         <HorizontalScrollView
             android:id="@+id/horizontalScrollView"
@@ -82,7 +83,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:text="Completed" />
+                    android:text="Completed"
+                    app:strokeColor="#32C98B" />
 
                 <Button
                     android:id="@+id/btnPending_FilterReport"
@@ -113,6 +115,17 @@
                     android:text="Cooking" />
             </LinearLayout>
         </HorizontalScrollView>
+
+        <TextView
+            android:id="@+id/textView65"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="12dp"
+            android:text="Reports List"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

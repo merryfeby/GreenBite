@@ -39,7 +39,7 @@ class ReportAdapter(
     }
     override fun onBindViewHolder(holder: ReportViewHolder, position: Int) {
         val report = getItem(position)
-        holder.binding.txtIDRvReport.text = report.orderID.toString()
+        holder.binding.txtIDRvReport.text = "No. "+report.orderID.toString()
         holder.binding.txtDateRvReport.text = report.created_at
         holder.binding.txtTotalRvReport.text = "Total: Rp."+report.total.toString()
         holder.binding.txtOngkirRvReport.text = "Ongkir: Rp."+report.shipping_fee.toString()
