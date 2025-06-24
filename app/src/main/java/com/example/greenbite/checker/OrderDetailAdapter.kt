@@ -38,8 +38,11 @@ class OrderDetailAdapter(
         val orderDetail = getItem(position)
         val formattedAmount = NumberFormat.getNumberInstance(Locale("in", "ID")).format(orderDetail.total)
         holder.binding.tvQtyItemDetailChecker.text = orderDetail.quantity.toString()
-        holder.binding.tvNameItemDetailChecker.text = orderDetail.product_name
+        holder.binding.tvNameItemDetailChecker.text = if (orderDetail.addon.isNullOrBlank()) {
+            orderDetail.product_name
+        } else {
+            "${orderDetail.product_name} (${orderDetail.addon})"
+        }
         holder.binding.tvPriceItemDetailChecker.text = "Rp."+formattedAmount+",00"
     }
-
 }
