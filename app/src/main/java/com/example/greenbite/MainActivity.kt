@@ -27,10 +27,6 @@ class MainActivity : AppCompatActivity() {
 
         binding.bottomNavAdmin.setOnItemSelectedListener { item ->
             when (item.itemId) {
-                R.id.btnHome_NavAdmin -> {
-                    navController.navigate(R.id.adminFragment3)
-                    true
-                }
                 R.id.btnReport_NavAdmin -> {
                     navController.navigate(R.id.action_global_adminReportFragment2)
                     true
@@ -87,6 +83,13 @@ class MainActivity : AppCompatActivity() {
                 R.id.adminFragment3, R.id.adminEmployeeFragment2,R.id.adminMenuFragment2,R.id.adminAddEmployeeFragment2,R.id.adminAddMenuFragment2, R.id.adminEditEmployee2,R.id.adminEditMenuFragment2,R.id.adminReportFragment2,R.id.adminReportDetail -> View.VISIBLE
                 else -> View.GONE
             }
+//            if (destination.id == R.id.adminEmployeeFragment2) {
+//                binding.bottomNavAdmin.item
+//            } else if (destination.id == R.id.adminMenuFragment2) {
+//                binding.bottomNavAdmin.selectedItemId = 1
+//            } else if (destination.id == R.id.adminReportFragment2) {
+//                binding.bottomNavAdmin.selectedItemId = 2
+//            }
         }
 
 

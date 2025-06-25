@@ -59,7 +59,7 @@ class LoginFragment : Fragment() {
                             startActivity(intent)
                         }
                         3 -> { // Admin
-                            findNavController().navigate(R.id.action_global_adminFragment3)
+                            findNavController().navigate(R.id.action_global_adminEmployeeFragment2)
                         }
                         4 -> {
                             val intent = Intent(requireContext(), CourierActivity::class.java)
