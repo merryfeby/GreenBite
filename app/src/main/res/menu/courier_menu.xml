@@ -14,4 +14,8 @@
         android:id="@+id/history_mi_courier"
         android:icon="@drawable/receipt_solid"
         android:title="History" />
+    <item
+        android:id="@+id/logout_mi_courier"
+        android:icon="@drawable/logout_svgrepo_com"
+        android:title="Log Out" />
 </menu>

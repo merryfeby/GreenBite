@@ -5,9 +5,13 @@
     <item
         android:id="@+id/home_mi_checker"
         android:icon="@drawable/home_svgrepo_com"
-        android:title="home" />
+        android:title="Home" />
     <item
         android:id="@+id/history_mi_checker"
         android:icon="@drawable/receipt_solid"
-        android:title="history" />
+        android:title="History" />
+    <item
+        android:id="@+id/logout_mi_checker"
+        android:icon="@drawable/logout_svgrepo_com"
+        android:title="Log Out" />
 </menu>

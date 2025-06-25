@@ -37,6 +37,10 @@ class ProductViewModel : ViewModel() {
         fetchTopMenus()
     }
 
+    fun AllProducts(){
+        fetchProducts("All")
+    }
+
     fun setActiveProduct(product: Product) {
         _activeProduct.value = product
     }

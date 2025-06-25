@@ -11,6 +11,7 @@ data class OrderDetail(
     val product_name: String,
     val quantity: Int,
     val price: Double,
+    val addon: String? = null,
     val total: Int,
     val addons: List<OrderAddon>
 )

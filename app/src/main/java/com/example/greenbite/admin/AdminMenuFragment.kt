@@ -1,6 +1,7 @@
 package com.example.greenbite.admin
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,6 +12,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.greenbite.Product
 import com.example.greenbite.ProductViewModel
 import com.example.greenbite.R
 import com.example.greenbite.UserViewModel
@@ -25,6 +27,7 @@ class AdminMenuFragment : Fragment() {
     private val vm: AdminProductViewModel by activityViewModels()
 
     override fun onCreateView(
+        // 1. Foods 2. Beverages 3. Snack
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
@@ -35,24 +38,15 @@ class AdminMenuFragment : Fragment() {
         binding.rvMenuAdminFrag.layoutManager = GridLayoutManager(requireContext(), spanCount)
         binding.rvMenuAdminFrag.adapter = productAdapter
 
-        viewModel.currentCategoryMenu.observe(viewLifecycleOwner) { productList ->
-            if (productList != null) {
-                productAdapter.submitList(productList)
-            }
-        }
-
-        viewModel.products.observe(viewLifecycleOwner) { products ->
-            if (products != null) {
-                val activeProducts = products.filter { it.deleted_at == null }
-                productAdapter.submitList(activeProducts)
-            }
+        viewModel.currentCategoryMenu.observe(viewLifecycleOwner) { filteredItems: List<Product>? ->
+            Log.d("MenuFragment", "Filtered items: $filteredItems")
+            productAdapter.submitList(filteredItems?.toList() ?: emptyList())
         }
 
         //refresh
         binding.button2.setOnClickListener(){
-            lifecycleScope.launch {
-                viewModel.getProducts()
-            }
+//            viewModel.setCategory("Foods")
+            viewModel.AllProducts()
         }
 
         binding.btnAddMenuFrag.setOnClickListener(){

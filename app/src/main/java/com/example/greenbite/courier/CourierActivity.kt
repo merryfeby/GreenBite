@@ -40,6 +40,10 @@ class CourierActivity : AppCompatActivity() {
                     navController.navigate(R.id.courierHistoryFragment)
                     true
                 }
+                R.id.logout_mi_courier -> {
+                    finish()
+                    true
+                }
                 else -> false
             }
         }

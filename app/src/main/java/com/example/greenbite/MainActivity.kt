@@ -25,6 +25,32 @@ class MainActivity : AppCompatActivity() {
             .findFragmentById(R.id.fragment_container) as NavHostFragment
         navController = navHostFragment.navController
 
+        binding.bottomNavAdmin.setOnItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.btnHome_NavAdmin -> {
+                    navController.navigate(R.id.adminFragment3)
+                    true
+                }
+                R.id.btnReport_NavAdmin -> {
+                    navController.navigate(R.id.action_global_adminReportFragment2)
+                    true
+                }
+                R.id.btnProducts_NavAdmin -> {
+                    navController.navigate(R.id.action_global_adminMenuFragment2)
+                    true
+                }
+                R.id.btnEmployees_NavAdmin -> {
+                    navController.navigate(R.id.action_global_adminEmployeeFragment2)
+                    true
+                }
+                R.id.btnLogout_NavAdmin -> {
+                    navController.navigate(R.id.loginFragment)
+                    true
+                }
+                else -> false
+            }
+        }
+
 
         binding.bottomNav.setOnItemSelectedListener { item ->
             when (item.itemId) {
@@ -56,6 +82,10 @@ class MainActivity : AppCompatActivity() {
             binding.bottomNav.visibility = when (destination.id) {
                 R.id.loginFragment, R.id.registerFragment, R.id.adminFragment3, R.id.adminEmployeeFragment2,R.id.adminMenuFragment2,R.id.adminAddEmployeeFragment2,R.id.adminAddMenuFragment2, R.id.adminEditEmployee2,R.id.adminEditMenuFragment2,R.id.adminReportFragment2,R.id.adminReportDetail -> View.GONE
                 else -> View.VISIBLE
+            }
+            binding.bottomNavAdmin.visibility = when (destination.id) {
+                R.id.adminFragment3, R.id.adminEmployeeFragment2,R.id.adminMenuFragment2,R.id.adminAddEmployeeFragment2,R.id.adminAddMenuFragment2, R.id.adminEditEmployee2,R.id.adminEditMenuFragment2,R.id.adminReportFragment2,R.id.adminReportDetail -> View.VISIBLE
+                else -> View.GONE
             }
         }
 

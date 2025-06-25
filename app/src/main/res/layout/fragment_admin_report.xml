@@ -51,23 +51,81 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvReport_AdminFrag"
-            android:layout_width="400dp"
-            android:layout_height="535dp"
-            android:layout_marginTop="40dp"
+            android:layout_width="404dp"
+            android:layout_height="451dp"
+            android:layout_marginTop="8dp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.428"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/constraintLayout3" />
+            app:layout_constraintTop_toBottomOf="@+id/textView65" />
+
+        <HorizontalScrollView
+            android:id="@+id/horizontalScrollView"
+            android:layout_width="409dp"
+            android:layout_height="58dp"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout3"
+            tools:layout_editor_absoluteX="1dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btnAll_FilterReport"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="All" />
+
+                <Button
+                    android:id="@+id/btnCompleted_FilterReport"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="Completed"
+                    app:strokeColor="#32C98B" />
+
+                <Button
+                    android:id="@+id/btnPending_FilterReport"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="Pending" />
+
+                <Button
+                    android:id="@+id/btnShipped_FilterReport"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="Shipped" />
+
+                <Button
+                    android:id="@+id/btnRejected_FilterReport"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="Rejected" />
+
+                <Button
+                    android:id="@+id/btnCooking_FilterReport"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="Cooking" />
+            </LinearLayout>
+        </HorizontalScrollView>
 
         <TextView
-            android:id="@+id/textView44"
+            android:id="@+id/textView65"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
+            android:layout_marginStart="16dp"
             android:layout_marginTop="12dp"
-            android:text="All Reports"
-            android:textSize="16sp"
+            android:text="Reports List"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/constraintLayout3" />
+            app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
