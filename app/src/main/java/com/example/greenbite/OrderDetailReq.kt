@@ -10,5 +10,5 @@ data class OrderDetailReq(
     val quantity: Int,
     val price: Double,
     val total: Int,
-    val addons: OrderAddon
+    val addons: String
 )

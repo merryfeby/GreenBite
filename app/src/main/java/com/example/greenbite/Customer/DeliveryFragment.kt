@@ -45,12 +45,17 @@ class DeliveryFragment : Fragment() {
         }
 
         orderViewModel.orders.observe(viewLifecycleOwner) { orders ->
-            if (orders != null) {
+            if (orders != null){
+                Log.d("AAA", "onCreateView: $orders")
                 val currentUser = usersViewModel.activeUser.value
                 if (currentUser != null) {
                     userDeliveryOrder(currentUser.userID!!)
                 }
+//                binding.tvDelivery.visibility = View.GONE
             }
+//            if (orders != null) {
+//
+//            }
         }
         return binding.root
     }
@@ -58,9 +63,15 @@ class DeliveryFragment : Fragment() {
         val allOrders = orderViewModel.orders.value
         if (allOrders != null) {
             val filteredOrders = allOrders.filter { order ->
-                order.userID == userId && order.status.equals("shipped", ignoreCase = true)
+                order.userID == userId && order.status.equals("shipping", ignoreCase = true)
             }
-            deliveryAdapter.submitList(filteredOrders)
+            if (filteredOrders.isEmpty()){
+                binding.tvDelivery.visibility = View.VISIBLE
+            }
+            else{
+                deliveryAdapter.submitList(filteredOrders)
+                binding.tvDelivery.visibility = View.GONE
+            }
             Log.d("FilteredOrders", "Showing ${filteredOrders.size} shipped orders for user $userId")
         }
     }

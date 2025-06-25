@@ -44,7 +44,7 @@ class CustomerHistoryAdapter
         holder.binding.tvPrice.text = "Rp $formattedPrice"
         holder.binding.tvTitle.text = historyDetail.product_name
         holder.binding.tvItemCount.text = "${historyDetail.quantity} items"
-        holder.binding.tvDetailHistAddOn.text = "${historyDetail.addons}"
+        holder.binding.tvDetailHistAddOn.text = "${historyDetail.addon}"
         holder.binding.btnRate.setOnClickListener(){
             val bundle = Bundle().apply {
                 putInt("productID", historyDetail.productID)

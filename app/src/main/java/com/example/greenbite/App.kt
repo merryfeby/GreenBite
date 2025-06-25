@@ -14,8 +14,8 @@ class App: Application() {
         val retrofit = Retrofit.Builder().addConverterFactory(
             MoshiConverterFactory.create(moshi)
         )
-            .baseUrl("http://192.168.1.16:8000/api/").build()
-//            .baseUrl("http://10.0.2.2:8000/api/").build()
+//            .baseUrl("http://192.168.1.16:8000/api/").build()
+            .baseUrl("http://10.0.2.2:8000/api/").build()
 //            .baseUrl("http://192.168.1.12:8000/api/").build() tino
 
         val retrofitService = retrofit.create(WebService::class.java)

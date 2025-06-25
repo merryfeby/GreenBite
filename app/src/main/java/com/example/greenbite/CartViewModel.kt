@@ -10,7 +10,7 @@ import com.example.greenbite.checker.Order
 import com.example.greenbite.checker.OrderAddon
 import com.example.greenbite.checker.OrderDetail
 import com.example.greenbite.checker.OrderDetailReq
-import com.example.greenbite.checker.OrderReq
+//import com.example.greenbite.checker.Order
 import kotlinx.coroutines.launch
 
 class CartViewModel : ViewModel() {
@@ -140,7 +140,7 @@ class CartViewModel : ViewModel() {
             Log.e("order", "ini grand total: ${_deliveryFee.value}")
             val cartItems = cartDao.getListCart(emailUser)
             Log.e("order", "ini grand total: ${_deliveryFee.value}")
-            val order = OrderReq(
+            val order = Order(
                 orderID = 0,
                 userID = userID,
                 customer_name = "",
@@ -152,18 +152,17 @@ class CartViewModel : ViewModel() {
                 status = "pending",
                 created_at = "",
                 updated_at = "",
+                address = "",
                 order_details = cartItems.map { item ->
-                    OrderDetailReq(
+                    OrderDetail(
                         orderDetailID = 0,
                         productID = item.id_menu,
                         product_name = "",
                         quantity = item.jumlah,
                         price = item.harga,
                         total = 0,
-                        addons = OrderAddon(
-                            orderAddonID = 0,
-                            addon_name = item.add_on
-                        )
+                        addon = item.add_on,
+                        addons = listOf()
                     )
                 }
             )

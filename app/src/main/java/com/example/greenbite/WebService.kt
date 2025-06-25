@@ -82,7 +82,7 @@ interface WebService {
     suspend fun getCoordinates(@Query("postcode") postcode: String): Postcode
 
     @POST("orders")
-    suspend fun createOrder(@Body order: OrderReq)
+    suspend fun createOrder(@Body order: Order)
 
     //EMPLOYEE
     @GET("orders")
