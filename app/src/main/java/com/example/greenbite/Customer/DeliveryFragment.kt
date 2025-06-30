@@ -58,7 +58,8 @@ class DeliveryFragment : Fragment() {
         val allOrders = orderViewModel.orders.value
         if (allOrders != null) {
             val filteredOrders = allOrders.filter { order ->
-                order.userID == userId && order.status.equals("shipped", ignoreCase = true)
+                order.userID == userId && order.status.equals("shipping", ignoreCase = true)
+                order.userID == userId && order.status.equals("pending", ignoreCase = true)
             }
             deliveryAdapter.submitList(filteredOrders)
             Log.d("FilteredOrders", "Showing ${filteredOrders.size} shipped orders for user $userId")
